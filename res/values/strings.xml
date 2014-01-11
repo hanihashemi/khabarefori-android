@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Khabarefori</string>
+    <string name="app_name_persian">خبرفوری</string>
+
+    <string name="news_loading">در حال بر قراری ارتباط با سرور</string>
+    <string name="news_nointernet">اینترنت در دسترس نیست</string>
+    <string name="news_nonews">امروز رویداد خبری مهمی در دسترس نیست</string>
+</resources>
