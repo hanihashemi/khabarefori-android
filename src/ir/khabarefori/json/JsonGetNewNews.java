@@ -26,7 +26,7 @@ import java.net.URLConnection;
 /**
  * Created by hani on 1/11/14.
  */
-public class GetNewNews  implements Runnable {
+public class JsonGetNewNews implements Runnable {
     private static ModelNews news;
 
     RemoteViews remoteViews;

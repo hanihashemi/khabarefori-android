@@ -26,6 +26,6 @@
     <ImageView
             android:layout_width="68dp"
             android:layout_height="56dp"
-            android:id="@+id/imageView" android:src="@drawable/ic_launcher" android:layout_gravity="center_vertical"/>
+            android:id="@+id/imageView" android:src="@drawable/logo_circle" android:layout_gravity="center_vertical"/>
 </LinearLayout>
 
