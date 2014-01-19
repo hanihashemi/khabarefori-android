@@ -21,7 +21,6 @@ public class WidgetActivity extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
         JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
-        json.run();
 
         final int N = appWidgetIds.length;
 
@@ -34,7 +33,7 @@ public class WidgetActivity extends AppWidgetProvider {
             intent.setData(Uri.parse(url));
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
             views.setOnClickPendingIntent(R.id.imageView, pendingIntent);
 
             // create intent for refresh :D
@@ -57,11 +56,10 @@ public class WidgetActivity extends AppWidgetProvider {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 
             JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
-            json.run();
 
             ComponentName watchWidget = new ComponentName(context, WidgetActivity.class);
 
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
             appWidgetManager.updateAppWidget(watchWidget, views);
         }
     }

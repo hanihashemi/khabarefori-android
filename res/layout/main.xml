@@ -32,11 +32,22 @@
             <ImageButton
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/imageButton" android:src="@drawable/button_refresh" android:scaleType="fitCenter"/>
+                    android:background="@null"
+                    android:id="@+id/imageButton" android:src="@drawable/button_refresh" android:scaleType="centerCrop"
+                    android:adjustViewBounds="false" android:cropToPadding="false" android:focusable="false"
+                    android:padding="8dp"/>
         </LinearLayout>
     </RelativeLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView2" android:layout_gravity="center_horizontal" android:singleLine="true"
+            android:textAlignment="center" android:visibility="visible"
+            android:text="لطفا صبر کنید"/>
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listView"/>
+            android:id="@+id/listNews" android:choiceMode="singleChoice" android:drawSelectorOnTop="false"
+            android:smoothScrollbar="true" android:layout_gravity="right"/>
 </LinearLayout>

@@ -59,7 +59,7 @@ public class JsonGetNewNews implements Runnable {
     }
 
     public void run() {
-
+if (true) return;
         try {
             Log.d("Hani", "Start checking ...");
 
@@ -91,7 +91,7 @@ public class JsonGetNewNews implements Runnable {
             }
         } catch (IOException e) {
             setMessage("", context.getString(R.string.news_nointernet));
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
