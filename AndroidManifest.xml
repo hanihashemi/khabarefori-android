@@ -31,5 +31,10 @@
             <meta-data android:name="android.appwidget.provider"
                        android:resource="@xml/widget_provider"/>
         </receiver>
+
+        <service
+                android:name="ir.khabarefori.service.SCheckServer"
+                android:icon="@drawable/logo_circle"
+                android:label="@string/service_name"/>
     </application>
 </manifest>
