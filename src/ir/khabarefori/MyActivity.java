@@ -16,9 +16,7 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        if (!isSCheckServerRunning())
-            startService(new Intent(this, SCheckServer.class));
+        startService(new Intent(this, SCheckServer.class));
 
     }
 

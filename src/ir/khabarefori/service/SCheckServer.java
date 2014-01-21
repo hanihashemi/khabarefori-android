@@ -1,11 +1,11 @@
 package ir.khabarefori.service;
 
-import android.app.ActivityManager;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.*;
-import android.os.Process;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,8 +16,6 @@ import java.util.TimerTask;
  * Created by hani on 1/19/14.
  */
 public class SCheckServer extends Service {
-
-
     private static Timer timer = new Timer();
     private Context ctx;
 
@@ -31,6 +29,24 @@ public class SCheckServer extends Service {
         return null;
     }
 
+    private void restartService()
+    {
+        Intent restartServiceIntent = new Intent(getApplicationContext(), this.getClass());
+        restartServiceIntent.setPackage(getPackageName());
+
+        PendingIntent restartServicePendingIntent = PendingIntent.getService(getApplicationContext(), 1, restartServiceIntent, PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager alarmService = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        alarmService.set(
+                AlarmManager.ELAPSED_REALTIME,
+                SystemClock.elapsedRealtime() + 5000,
+                restartServicePendingIntent);
+    }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent){
+        restartService();
+    }
+
     /**
      * this method call when service create , not when start
      */
@@ -38,15 +54,13 @@ public class SCheckServer extends Service {
     {
         super.onCreate();
         ctx = this;
-        startService();
+        Log.d("service" , "onCreate");
     }
 
-    /**
-     * This method call when service start
-     */
-    private void startService()
-    {
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d("service" , "onStartCommand");
         timer.scheduleAtFixedRate(new mainTask(), 0, 5000);
+        return android.app.Service.START_STICKY;
     }
 
     /**
@@ -57,6 +71,7 @@ public class SCheckServer extends Service {
         public void run()
         {
             toastHandler.sendEmptyMessage(0);
+            Log.d("service" , "timer");
         }
     }
 
@@ -65,6 +80,9 @@ public class SCheckServer extends Service {
      */
     public void onDestroy()
     {
+        restartService();
+
+        Log.d("service" , "Destroy");
         super.onDestroy();
         Toast.makeText(this, "Service Stopped ...", Toast.LENGTH_SHORT).show();
     }
