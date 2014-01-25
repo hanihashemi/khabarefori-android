@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_bg">#BC0000</color>
-    <color name="topper_bg">#ffff3b33</color>
+    <color name="waiting_bg">#ffdb6a60</color>
+    <color name="Black">#ff000000</color>
+    <color name="LightBlue">#ff5d8cdb</color>
+    <color name="White">#ffffffff</color>
+    <color name="list_row_text">#ff202020</color>
+    <color name="list_view">#fff3e7e6</color>
+    <color name="list_view_item_bf">#ffdfdadb</color>
+    <color name="Green">#ff1dff00</color>
+    <color name="Yellow">#ffffeb00</color>
 </resources>

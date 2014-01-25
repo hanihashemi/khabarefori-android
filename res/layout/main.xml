@@ -6,8 +6,8 @@
         android:layout_height="fill_parent" android:orientation="vertical">
     <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="47dp"
-            android:background="@color/topper_bg" android:orientation="horizontal">
+            android:layout_height="60dp"
+            android:orientation="horizontal" android:gravity="center_vertical">
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
@@ -18,7 +18,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="خبرفوری"
-                    android:id="@+id/textView"/>
+                    android:id="@+id/textView" android:textStyle="bold"/>
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -28,26 +28,44 @@
                 android:layout_width="@android:dimen/app_icon_size"
                 android:layout_height="fill_parent"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true">
+                android:layout_alignParentLeft="true" android:gravity="center_vertical">
             <ImageButton
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@null"
-                    android:id="@+id/imageButton" android:src="@drawable/button_refresh" android:scaleType="centerCrop"
-                    android:adjustViewBounds="false" android:cropToPadding="false" android:focusable="false"
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/button_refresh"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:focusable="false"
                     android:padding="8dp"/>
         </LinearLayout>
     </RelativeLayout>
-    <TextView
-            android:layout_width="wrap_content"
+    <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textView2" android:layout_gravity="center_horizontal" android:singleLine="true"
-            android:textAlignment="center" android:visibility="visible"
-            android:text="لطفا صبر کنید"/>
+            android:gravity="center"
+            android:minHeight="5dp"
+            android:background="@color/waiting_bg">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:height="2dp"
+                android:text="لطفا چند لحظه صبر کنید ..."
+                />
+    </LinearLayout>
     <ListView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listNews" android:choiceMode="singleChoice" android:drawSelectorOnTop="false"
-            android:smoothScrollbar="true" android:layout_gravity="right"/>
+            android:background="@color/list_view"
+            android:dividerHeight="0dp"
+            android:listSelector="@drawable/item_color"
+            android:id="@+id/listView" android:layout_gravity="center_horizontal" android:smoothScrollbar="true"/>
 </LinearLayout>
