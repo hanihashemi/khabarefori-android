@@ -2,7 +2,7 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:background="@color/color_bg"
+        android:background="@color/topper_bg"
         android:layout_height="fill_parent" android:orientation="vertical">
     <RelativeLayout
             android:layout_width="fill_parent"
@@ -64,8 +64,9 @@
     <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/list_view"
+            android:background="@color/list_view_bg"
             android:dividerHeight="0dp"
-            android:listSelector="@drawable/item_color"
+            android:divider="@color/list_view_bg"
+            android:listSelector="@drawable/list_view_selector"
             android:id="@+id/listView" android:layout_gravity="center_horizontal" android:smoothScrollbar="true"/>
 </LinearLayout>
