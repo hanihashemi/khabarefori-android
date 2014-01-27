@@ -38,13 +38,13 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@null"
-                    android:id="@+id/imageButton"
+                    android:id="@+id/btnReload"
                     android:src="@drawable/button_refresh"
                     android:scaleType="centerCrop"
                     android:adjustViewBounds="false"
                     android:cropToPadding="false"
                     android:focusable="false"
-                    android:padding="8dp"/>
+                    android:padding="8dp" android:focusableInTouchMode="false"/>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

@@ -20,12 +20,12 @@ public class Item {
 
     public String getDescription()
     {
-        return getShortText(description);
+        return description;
     }
 
-    private String getShortText(String text)
+    public String getShortDescription()
     {
-        text = text.trim();
+        String text = description.trim();
         String[] texts = text.split(" ");
         String result = "";
 

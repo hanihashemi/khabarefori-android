@@ -7,18 +7,18 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.*;
 import ir.khabarefori.listview.Item;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.service.SCheckServer;
 
 import java.util.ArrayList;
 
-public class MyActivity extends Activity {
+public class MyActivity extends Activity implements View.OnClickListener {
     /**
      * Called when the activity is first created.
      */
@@ -27,12 +27,12 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        // 1. pass context and data to the custom adapter
-        ListViewAdapter adapter = new ListViewAdapter(this, generateData());
-        // 2. Get ListView from activity_main.xml
         ListView listView = (ListView) findViewById(R.id.listView);
-        // 3. setListAdapter
+        ListViewAdapter adapter = new ListViewAdapter(this, generateData() ,listView);
         listView.setAdapter(adapter);
+
+        ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
+        btnReload.setOnClickListener(this);
 
         if (!isSCheckServerRunning())
             startService(new Intent(this, SCheckServer.class));
@@ -63,4 +63,14 @@ public class MyActivity extends Activity {
                 return true;
         return false;
     }
+
+    @Override
+    public void onClick(View view) {
+        if (findViewById(R.id.btnReload).equals(view))
+        {
+            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
+            view.startAnimation(hyperspaceJumpAnimation);
+        }
+    }
+
 }

@@ -2,14 +2,15 @@ package ir.khabarefori.listview;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Color;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.*;
 import ir.khabarefori.R;
 
 import java.util.ArrayList;
@@ -17,21 +18,21 @@ import java.util.ArrayList;
 /**
  * Created by hani on 1/24/14.
  */
-public class ListViewAdapter extends ArrayAdapter<Item> {
+public class ListViewAdapter extends ArrayAdapter<Item> implements AdapterView.OnItemClickListener{
 
     private final Context context;
     private final ArrayList<Item> itemsArrayList;
 
-    public ListViewAdapter(Context context, ArrayList<Item> itemsArrayList) {
-
+    public ListViewAdapter(Context context, ArrayList<Item> itemsArrayList , ListView listView) {
         super(context, R.layout.list_row, itemsArrayList);
 
+        listView.setOnItemClickListener(this);
         this.context = context;
         this.itemsArrayList = itemsArrayList;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         // 1. Create inflater
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,28 +42,45 @@ public class ListViewAdapter extends ArrayAdapter<Item> {
 
         // 3. Get the two text view from the rowView
         TextView labelView = (TextView) rowView.findViewById(R.id.label);
-        TextView valueView = (TextView) rowView.findViewById(R.id.value);
+        TextSwitcher valueView = (TextSwitcher) rowView.findViewById(R.id.value);
+
+        valueView.setFactory(new ViewSwitcher.ViewFactory() {
+
+            public View makeView() {
+                TextView myText = new TextView(context);
+                myText.setTextSize(13);
+                myText.setGravity(Gravity.RIGHT);
+                myText.setTextColor(context.getResources().getColor(R.color.item_text_color));
+                return myText;
+            }
+        });
+
+        Animation in = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+        Animation out = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+
+        // set the animation type of textSwitcher
+        valueView.setInAnimation(in);
+        valueView.setOutAnimation(out);
 
         // 4. Set the text for textView
         labelView.setText(itemsArrayList.get(position).getTitle());
-        valueView.setText(itemsArrayList.get(position).getDescription());
+        valueView.setText(itemsArrayList.get(position).getShortDescription());
 
         //Set anim
-        LinearLayout itemLayout = (LinearLayout) rowView.findViewById(R.id.itemLayout);
-        itemLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-
-                DropDownAnim animation = new DropDownAnim(view, 300, view.getHeight());
-                animation.setDuration(500);
-                view.startAnimation(animation);
-
-            }
-        });
+//                DropDownAnim animation = new DropDownAnim(view, 300, view.getHeight());
+//                animation.setDuration(500);
+//                view.startAnimation(animation);
 
         // 5. retrn rowView
         return rowView;
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+        TextSwitcher valueView = (TextSwitcher) view.findViewById(R.id.value);
+        valueView.setText(itemsArrayList.get(position).getDescription());
+    }
+
 }
 
 class DropDownAnim extends Animation {
