@@ -12,7 +12,7 @@
 
     <uses-sdk android:minSdkVersion="8"
               android:targetSdkVersion="19"
-              android:maxSdkVersion="19" />
+              android:maxSdkVersion="19"/>
 
 
     <application android:label="@string/app_name" android:icon="@drawable/logo_circle" android:debuggable="true">
@@ -37,7 +37,7 @@
 
         <receiver android:name="ir.khabarefori.service.AutoStart">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
@@ -45,6 +45,6 @@
                 android:name="ir.khabarefori.service.SCheckServer"
                 android:icon="@drawable/logo_circle"
                 android:label="@string/service_name"
-                android:enabled="true" />
+                android:enabled="true"/>
     </application>
 </manifest>

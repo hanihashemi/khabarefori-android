@@ -7,7 +7,11 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 import ir.khabarefori.listview.Item;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.service.SCheckServer;
@@ -25,17 +29,17 @@ public class MyActivity extends Activity {
 
         // 1. pass context and data to the custom adapter
         ListViewAdapter adapter = new ListViewAdapter(this, generateData());
-
         // 2. Get ListView from activity_main.xml
         ListView listView = (ListView) findViewById(R.id.listView);
-
         // 3. setListAdapter
         listView.setAdapter(adapter);
 
         if (!isSCheckServerRunning())
             startService(new Intent(this, SCheckServer.class));
-
     }
+
+
+
 
     private ArrayList<Item> generateData(){
         ArrayList<Item> items = new ArrayList<Item>();

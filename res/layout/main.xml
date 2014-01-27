@@ -3,11 +3,13 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:background="@color/topper_bg"
-        android:layout_height="fill_parent" android:orientation="vertical">
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal" android:gravity="center_vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
@@ -18,11 +20,14 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="خبرفوری"
-                    android:id="@+id/textView" android:textStyle="bold"/>
+                    android:id="@+id/textView"
+                    android:textStyle="bold"/>
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView" android:src="@drawable/logo_circle" android:scaleType="centerInside"/>
+                    android:id="@+id/imageView"
+                    android:src="@drawable/logo_circle"
+                    android:scaleType="centerInside"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="@android:dimen/app_icon_size"
