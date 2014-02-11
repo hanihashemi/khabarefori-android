@@ -7,21 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.Transformation;
 import android.widget.*;
 import ir.khabarefori.R;
+import ir.khabarefori.database.model.NewsModel;
 
 import java.util.ArrayList;
 
 /**
  * Created by hani on 1/24/14.
  */
-public class ListViewAdapter extends ArrayAdapter<Item> implements AdapterView.OnItemClickListener{
+public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterView.OnItemClickListener{
 
     private final Context context;
-    private final ArrayList<Item> itemsArrayList;
+    private final ArrayList<NewsModel> itemsArrayList;
 
-    public ListViewAdapter(Context context, ArrayList<Item> itemsArrayList , ListView listView) {
+    public ListViewAdapter(Context context, ArrayList<NewsModel> itemsArrayList , ListView listView) {
         super(context, R.layout.list_row, itemsArrayList);
 
         listView.setOnItemClickListener(this);
@@ -61,8 +61,8 @@ public class ListViewAdapter extends ArrayAdapter<Item> implements AdapterView.O
         valueView.setOutAnimation(out);
 
         // 4. Set the text for textView
-        labelView.setText(itemsArrayList.get(position).getTitle());
-        valueView.setText(itemsArrayList.get(position).getShortDescription());
+        labelView.setText(itemsArrayList.get(position).getSubject());
+        valueView.setText(itemsArrayList.get(position).getContextShort());
 
         //Set anim
 //                DropDownAnim animation = new DropDownAnim(view, 300, view.getHeight());
@@ -76,32 +76,32 @@ public class ListViewAdapter extends ArrayAdapter<Item> implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
         TextSwitcher valueView = (TextSwitcher) view.findViewById(R.id.value);
-        valueView.setText(itemsArrayList.get(position).getDescription());
+        valueView.setText(itemsArrayList.get(position).getContext());
     }
 
 }
 
-class DropDownAnim extends Animation {
-    private final int targetHeight;
-    private final View view;
-    private final int defaultHeight;
-
-    public DropDownAnim(View view, int targetHeight, int defaultHeight) {
-        this.view = view;
-        this.targetHeight = targetHeight;
-        this.defaultHeight = defaultHeight;
-    }
-
-    @Override
-    protected void applyTransformation(float interpolatedTime, Transformation t) {
-        int newHeight;
-        newHeight = (int) ((targetHeight - defaultHeight) * interpolatedTime + defaultHeight);
-        view.getLayoutParams().height = newHeight;
-        view.requestLayout();
-    }
-
-    @Override
-    public boolean willChangeBounds() {
-        return true;
-    }
-}
+//class DropDownAnim extends Animation {
+//    private final int targetHeight;
+//    private final View view;
+//    private final int defaultHeight;
+//
+//    public DropDownAnim(View view, int targetHeight, int defaultHeight) {
+//        this.view = view;
+//        this.targetHeight = targetHeight;
+//        this.defaultHeight = defaultHeight;
+//    }
+//
+//    @Override
+//    protected void applyTransformation(float interpolatedTime, Transformation t) {
+//        int newHeight;
+//        newHeight = (int) ((targetHeight - defaultHeight) * interpolatedTime + defaultHeight);
+//        view.getLayoutParams().height = newHeight;
+//        view.requestLayout();
+//    }
+//
+//    @Override
+//    public boolean willChangeBounds() {
+//        return true;
+//    }
+//}

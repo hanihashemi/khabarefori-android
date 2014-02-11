@@ -80,4 +80,19 @@ public class NewsModel {
     public void setIsBreakingNews(int is_breaking_news) {
         this.is_breaking_news = is_breaking_news != 0 ? true : false;
     }
+
+    public String getContextShort() {
+
+        String text = context.trim();
+        String[] texts = text.split(" ");
+        String result = "";
+
+        if (texts.length <= 30)
+            return text;
+
+        for (int i = 0; i < 30; i++)
+            result += texts[i] + " ";
+
+        return result + "...";
+    }
 }
