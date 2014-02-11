@@ -1,8 +1,6 @@
 package ir.khabarefori.listview;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;

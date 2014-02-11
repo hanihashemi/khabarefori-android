@@ -1,22 +1,24 @@
 package ir.khabarefori;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
+import ir.khabarefori.database.SqlLite;
+import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.listview.Item;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.service.SCheckServer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyActivity extends Activity implements View.OnClickListener {
     /**
@@ -36,6 +38,19 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
         if (!isSCheckServerRunning())
             startService(new Intent(this, SCheckServer.class));
+
+        SqlLite.getInstance();
+
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+        NewsDatasource.getInstance().add(new NewsModel("عنوان", "متن متن متن متن متن متن متن متن ", "link", "1392/08/02", "image", true));
+
+        List<NewsModel> models = NewsDatasource.getInstance().getAllContents();
+        for (int i = 0; i < models.size(); i++)
+            Log.d("Hani", models.get(i).getSubject() + " " + models.get(i).getContext());
     }
 
 
