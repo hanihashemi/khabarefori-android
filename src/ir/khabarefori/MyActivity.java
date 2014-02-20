@@ -2,9 +2,9 @@ package ir.khabarefori;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.content.Context;
-import android.content.Intent;
+import android.content.*;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,9 +15,26 @@ import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.service.SCheckServer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MyActivity extends Activity implements View.OnClickListener {
+    SCheckServer serviceCheck;
+    boolean isBound = false;
+
+    private ServiceConnection myConnection = new ServiceConnection() {
+
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            SCheckServer.MyLocalBinder binder = (SCheckServer.MyLocalBinder) service;
+            serviceCheck = binder.getService();
+            isBound = true;
+        }
+
+        public void onServiceDisconnected(ComponentName arg0) {
+            isBound = false;
+        }
+
+    };
+
     /**
      * Called when the activity is first created.
      */
@@ -35,11 +52,32 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
         if (!isSCheckServerRunning())
             startService(new Intent(this, SCheckServer.class));
+
+        doBindService();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        doUnbindService();
+    }
+
+    private void doBindService() {
+        bindService(new Intent(this, SCheckServer.class), myConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    private void doUnbindService() {
+        if (isBound) {
+            unbindService(myConnection);
+            isBound = false;
+        }
     }
 
 
     private ArrayList<NewsModel> generateData() {
-        return (ArrayList) NewsDatasource.getInstance().getAllContents();
+        ArrayList<NewsModel> models = (ArrayList) NewsDatasource.getInstance().getAllContents();
+
+        return models;
     }
 
     /**
@@ -60,6 +98,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
         if (findViewById(R.id.btnReload).equals(view)) {
             Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
             view.startAnimation(hyperspaceJumpAnimation);
+
+            Toast.makeText(getApplicationContext(), serviceCheck.getCurrentTime(), Toast.LENGTH_LONG).show();
         }
     }
 

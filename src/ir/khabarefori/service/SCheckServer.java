@@ -7,18 +7,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.*;
 import android.util.Log;
-import android.widget.Toast;
+import ir.khabarefori.ApplicationContextProvider;
 
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by hani on 1/19/14.
  */
 public class SCheckServer extends Service {
-    private static Timer timer ;
-    private Context ctx;
+    private final IBinder myBinder = new MyLocalBinder();
+
+    private static Timer timer;
+    private Context context;
     private int serial_num = 0;
 
     /**
@@ -28,7 +29,20 @@ public class SCheckServer extends Service {
      * @return
      */
     public IBinder onBind(Intent arg0) {
-        return null;
+// TODO Auto-generated method stub
+        return myBinder;
+    }
+
+    public String getCurrentTime() {
+        SimpleDateFormat dateformat =
+                new SimpleDateFormat("HH:mm:ss MM/dd/yyyy", Locale.US);
+        return (dateformat.format(new Date()));
+    }
+
+    public class MyLocalBinder extends Binder {
+        public SCheckServer getService() {
+            return SCheckServer.this;
+        }
     }
 
     private void restartService() {
@@ -53,20 +67,21 @@ public class SCheckServer extends Service {
      */
     public void onCreate() {
         super.onCreate();
-        ctx = this;
+
+        Log.d("Service", "_____________________Service Started_________________");
+
+        context = this;
 
         Random randomGenerator = new Random();
         serial_num = randomGenerator.nextInt(1000);
 
         Log.d("service", "onCreate" + serial_num);
 
-        if (timer == null)
-        {
+        if (timer == null) {
             timer = new Timer();
             timer.scheduleAtFixedRate(new mainTask(), 0, 10000);
             Log.d("service", "Timer start " + serial_num);
-        }else
-        {
+        } else {
             Log.d("service", "Timer Set null " + serial_num);
             timer.cancel();
             timer = new Timer();
@@ -96,10 +111,10 @@ public class SCheckServer extends Service {
     public void onDestroy() {
         restartService();
 
-        Log.d("service", "Destroy" + serial_num);
+        Log.d("Service", "_____________________Service Stop_________________");
         super.onDestroy();
-        Toast.makeText(this, "Service Stopped ...", Toast.LENGTH_SHORT).show();
     }
+
 
     /**
      * Handle toast message
@@ -107,7 +122,7 @@ public class SCheckServer extends Service {
     private final Handler toastHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
         }
     };
 }
