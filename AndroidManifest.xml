@@ -47,7 +47,7 @@
         </receiver>
 
         <service
-                android:name="ir.khabarefori.service.SCheckServer"
+                android:name=".service.ServiceCheckServer"
                 android:icon="@drawable/logo_circle"
                 android:label="@string/service_name"
                 android:enabled="true"/>
