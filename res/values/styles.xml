@@ -4,6 +4,8 @@
     <color name="waiting_bg">#ffdb6a60</color>
     <color name="widget_bg">#BC0000</color>
 
+    <color name="knotify_text">#ffffff</color>
+
     <color name="item_text_color">#ff202020</color>
     <color name="item_bg_default">#ffe4d9d8</color>
     <color name="item_bg_pressed">#ffd3cac9</color>

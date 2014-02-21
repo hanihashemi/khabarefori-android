@@ -80,28 +80,3 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
     }
 
 }
-
-//class DropDownAnim extends Animation {
-//    private final int targetHeight;
-//    private final View view;
-//    private final int defaultHeight;
-//
-//    public DropDownAnim(View view, int targetHeight, int defaultHeight) {
-//        this.view = view;
-//        this.targetHeight = targetHeight;
-//        this.defaultHeight = defaultHeight;
-//    }
-//
-//    @Override
-//    protected void applyTransformation(float interpolatedTime, Transformation t) {
-//        int newHeight;
-//        newHeight = (int) ((targetHeight - defaultHeight) * interpolatedTime + defaultHeight);
-//        view.getLayoutParams().height = newHeight;
-//        view.requestLayout();
-//    }
-//
-//    @Override
-//    public boolean willChangeBounds() {
-//        return true;
-//    }
-//}

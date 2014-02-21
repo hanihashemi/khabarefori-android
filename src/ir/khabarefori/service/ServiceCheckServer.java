@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.*;
 import android.util.Log;
 import ir.khabarefori.ApplicationContextProvider;
+import ir.khabarefori.R;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -126,6 +127,21 @@ public class ServiceCheckServer extends Service {
 //            Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
         }
     };
+
+    private void showNotification() {
+//        NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        // In this sample, we'll use the same text for the ticker and the expanded notification
+//        CharSequence text = getText(R.string.service_started);
+//        // Set the icon, scrolling text and timestamp
+//        android.app.Notification notification = new android.app.Notification(R.drawable.ic_launcher, text, System.currentTimeMillis());
+//        // The PendingIntent to launch our activity if the user selects this notification
+//        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+//        // Set the info for the views that show in the notification panel.
+//        notification.setLatestEventInfo(this, getText(R.string.service_label), text, contentIntent);
+//        // Send the notification.
+//        // We use a layout id because it is a unique number.  We use it later to cancel.
+//        mNotificationManager.notify(R.string.service_started, notification);
+    }
 
     /**
      * Send the data to all clients.

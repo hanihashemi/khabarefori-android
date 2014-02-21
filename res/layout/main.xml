@@ -52,12 +52,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minHeight="5dp"
-            android:background="@color/waiting_bg">
-        <TextView
-                android:layout_width="wrap_content"
+            android:background="@color/waiting_bg"
+            android:id="@+id/layoutKnotify">
+        <TextSwitcher
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/textView2"
+                android:id="@+id/txtMessage"
                 android:layout_gravity="center_vertical"
                 android:singleLine="true"
                 android:textAlignment="center"

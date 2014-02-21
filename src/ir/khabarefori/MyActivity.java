@@ -4,13 +4,16 @@ import android.app.*;
 import android.content.*;
 import android.os.*;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Transformation;
 import android.widget.*;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.listview.ListViewAdapter;
+import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
 
 import java.util.ArrayList;
@@ -53,7 +56,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
             Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
             view.startAnimation(hyperspaceJumpAnimation);
 
-            sendMessageToService();
+            new Knotify(this).show();
         }
     }
 
@@ -130,21 +133,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     }
 
 
-//    private void showNotification() {
-//        private NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//        // In this sample, we'll use the same text for the ticker and the expanded notification
-//        CharSequence text = getText(R.string.service_started);
-//        // Set the icon, scrolling text and timestamp
-//        Notification notification = new Notification(R.drawable.ic_launcher, text, System.currentTimeMillis());
-//        // The PendingIntent to launch our activity if the user selects this notification
-//        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
-//        // Set the info for the views that show in the notification panel.
-//        notification.setLatestEventInfo(this, getText(R.string.service_label), text, contentIntent);
-//        // Send the notification.
-//        // We use a layout id because it is a unique number.  We use it later to cancel.
-//        mNotificationManager.notify(R.string.service_started, notification);
-//    }
-
     public void onServiceConnected(ComponentName className,
                                    IBinder service) {
         serviceMessenger = new Messenger(service);
@@ -171,11 +159,15 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
             switch (msg.what) {
                 case ServiceCheckServer.MessageType.MSG_2:
                     String str1 = msg.getData().getString("str1");
-                    Log.d(LOGTAG , str1);
+                    Log.d(LOGTAG, str1);
                     break;
                 default:
                     super.handleMessage(msg);
             }
         }
+    }
+
+    public int toDIPMetric(int value) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
     }
 }
