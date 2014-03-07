@@ -64,12 +64,6 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         labelView.setText(itemsArrayList.get(position).getSubject());
         valueView.setText(itemsArrayList.get(position).getContextShort());
 
-        //Set anim
-//                DropDownAnim animation = new DropDownAnim(view, 300, view.getHeight());
-//                animation.setDuration(500);
-//                view.startAnimation(animation);
-
-        // 5. retrn rowView
         return rowView;
     }
 
@@ -78,5 +72,4 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         TextSwitcher valueView = (TextSwitcher) view.findViewById(R.id.value);
         valueView.setText(itemsArrayList.get(position).getContext());
     }
-
 }

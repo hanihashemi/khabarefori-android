@@ -20,11 +20,10 @@ import java.util.ArrayList;
 
 public class MyActivity extends Activity implements View.OnClickListener, ServiceConnection {
     private final String LOGTAG = "MyActivity";
-    private ServiceCheckServer serviceCheck;
-    private Messenger serviceMessenger = null;
     private final Messenger messenger = new Messenger(new IncomingMessageHandler());
     boolean isBound = false;
-
+    private ServiceCheckServer serviceCheck;
+    private Messenger serviceMessenger = null;
     private ServiceConnection serviceConnection = this;
 
     /**
@@ -55,8 +54,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         if (findViewById(R.id.btnReload).equals(view)) {
             Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
             view.startAnimation(hyperspaceJumpAnimation);
-
-            new Knotify(this).show();
         }
     }
 
@@ -96,7 +93,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         }
     }
 
-
     private ArrayList<NewsModel> generateData() {
         ArrayList<NewsModel> models = (ArrayList) NewsDatasource.getInstance().getAllContents();
 
@@ -132,7 +128,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         }
     }
 
-
     public void onServiceConnected(ComponentName className,
                                    IBinder service) {
         serviceMessenger = new Messenger(service);
@@ -150,6 +145,10 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         isBound = false;
     }
 
+    public int toDIPMetric(int value) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
+    }
+
     /**
      * Handle incoming messages from MyService
      */
@@ -165,9 +164,5 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
                     super.handleMessage(msg);
             }
         }
-    }
-
-    public int toDIPMetric(int value) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
     }
 }
