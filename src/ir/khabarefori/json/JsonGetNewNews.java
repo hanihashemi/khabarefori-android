@@ -43,7 +43,7 @@ public class JsonGetNewNews implements Runnable {
         remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
         thisWidget = new ComponentName(context, MyActivity.class);
 
-        setMessage("", context.getString(R.string.news_loading));
+//        setMessage("", context.getString(R.string.news_loading));
     }
 
     private void setTextNews(String text) {
@@ -76,7 +76,7 @@ if (true) return;
             news = gson.fromJson(buffer, ModelNews.class);
 
             if (getNews().getNews().size() < 1){
-                setMessage(context.getString(R.string.news_nonews), "");
+//                setMessage(context.getString(R.string.news_nonews), "");
                 Log.d("Hani" , "No news .");
             }
             else {
@@ -90,7 +90,7 @@ if (true) return;
                 Log.d("Hani" , "Founded new news.");
             }
         } catch (IOException e) {
-            setMessage("", context.getString(R.string.news_nointernet));
+//            setMessage("", context.getString(R.string.news_nointernet));
             //e.printStackTrace();
         }
     }

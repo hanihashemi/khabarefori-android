@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
+              android:layout_height="wrap_content"
               android:orientation="vertical"
               android:background="@color/list_view_bg"
-              >
+        >
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:padding="4dp"
             android:layout_margin="8dp"
             android:background="@drawable/item_selector"
             android:id="@+id/itemLayout">
         <TextView
-                android:id="@+id/label"
+                android:id="@+id/subject"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
@@ -27,17 +27,59 @@
                 android:paddingTop="4dp">
         </TextView>
         <TextSwitcher
-                android:id="@+id/value"
+                android:id="@+id/context"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:measureAllChildren="false"
                 >
         </TextSwitcher>
-        <TextView
-                android:layout_width="wrap_content"
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1392/11/02"
+                    android:textColor="@color/item_text_color"
+                    android:id="@+id/txtDatetime"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="بیشتر بخوانید"
+                    android:textColor="@color/item_link_color"
+                    android:id="@+id/txtReadMore"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/txtPoint"
+                    android:layout_marginRight="5dp" android:textStyle="bold" android:textSize="12dp"
+                    android:visibility="invisible"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="اشتراک"
+                    android:textColor="@color/item_link_color"
+                    android:id="@+id/txtShare"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="2dp" android:textStyle="bold" android:textSize="12dp"
+                    android:visibility="invisible"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" . "
+                    android:textColor="@color/item_text_color"
+                    android:id="@+id/txtPoint"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/txtShare"
+                    android:layout_marginRight="5dp" android:visibility="invisible"/>
+        </RelativeLayout>
+        <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="1392/11/02"
-                android:textColor="@color/item_text_color"
-                android:id="@+id/textView"/>
+                android:minHeight="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/item_red_news_color"
+                />
     </LinearLayout>
-
 </LinearLayout>

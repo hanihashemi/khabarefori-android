@@ -2,12 +2,14 @@ package ir.khabarefori.notify;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.*;
+import android.widget.LinearLayout;
+import android.widget.TextSwitcher;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 import ir.khabarefori.MyActivity;
 import ir.khabarefori.R;
 

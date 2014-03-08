@@ -1,19 +1,22 @@
 package ir.khabarefori;
 
-import android.app.*;
-import android.content.*;
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.*;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.Transformation;
-import android.widget.*;
+import android.widget.ImageButton;
+import android.widget.ListView;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.listview.ListViewAdapter;
-import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
 
 import java.util.ArrayList;
@@ -94,7 +97,68 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     }
 
     private ArrayList<NewsModel> generateData() {
+        NewsDatasource.getInstance().deleteAll();
+        NewsDatasource.getInstance().add(new NewsModel("1 عنوان",
+                "مت1ن متن متن متن متن متن متن متن متن م1تن متن متن متم ت1متن",
+                "#",
+                "1392/11/02",
+                "url",
+                true));
+
+        NewsDatasource.getInstance().add(new NewsModel("2 عنوان",
+                "متن م2تن متن متن متن مت2ن متن متن متن متن متن متن مت3م تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+        NewsDatasource.getInstance().add(new NewsModel("3 عنوان",
+                "متن متن متن 3متن متن متن متن متن متن متن متن متن 3متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن 3متن متن متن متم تم3تن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+        NewsDatasource.getInstance().add(new NewsModel("4 عنوان",
+                "متن 4متن متن متن متن 4متن متن متن متن متن متن متن متم تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+        NewsDatasource.getInstance().add(new NewsModel("5 عنوان",
+                "متن متن متن متن متن مت5ن متن متن متن متن متن متن متم تمتنمتن متن متن متن 5متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن 5متن متن متن متن متن متن متن متن متن متن متن متم تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+        NewsDatasource.getInstance().add(new NewsModel("6 عنوان",
+                "متن متن 6متن متن متن متن متن متن متن متن متن متن 67متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن 6متن متن متن متن متن متن 6متن متن متن متن متم تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+
+        NewsDatasource.getInstance().add(new NewsModel("7 عنوان",
+                "متن متن متن متن 7متن متن متن متن متن متن متن متن متم تمتنمتن 7متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم ت7متنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
+
+
+        NewsDatasource.getInstance().add(new NewsModel("8 عنوان",
+                "متن متن متن 8متن متن متن متن 9متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن متن متن متن متن متن متن متن متم تمتنمتن متن متن متن متن 9متن متن متن متن متن متن متن متم تمتن",
+                "#",
+                "1392/11/02",
+                "url",
+                false));
         ArrayList<NewsModel> models = (ArrayList) NewsDatasource.getInstance().getAllContents();
+
+        for (int i=0 ; i<models.size() ; i++)
+            Log.d(LOGTAG , models.get(i).getSubject());
 
         return models;
     }

@@ -16,12 +16,14 @@ import java.util.ArrayList;
 /**
  * Created by hani on 1/24/14.
  */
-public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterView.OnItemClickListener{
+public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterView.OnItemClickListener {
 
+    private static LastItem lastItemSelected;
     private final Context context;
     private final ArrayList<NewsModel> itemsArrayList;
+    private final String LOGTAG = "ListViewAdapter";
 
-    public ListViewAdapter(Context context, ArrayList<NewsModel> itemsArrayList , ListView listView) {
+    public ListViewAdapter(Context context, ArrayList<NewsModel> itemsArrayList, ListView listView) {
         super(context, R.layout.list_row, itemsArrayList);
 
         listView.setOnItemClickListener(this);
@@ -39,37 +41,83 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         View rowView = inflater.inflate(R.layout.list_row, parent, false);
 
         // 3. Get the two text view from the rowView
-        TextView labelView = (TextView) rowView.findViewById(R.id.label);
-        TextSwitcher valueView = (TextSwitcher) rowView.findViewById(R.id.value);
+        TextView txtSubject = (TextView) rowView.findViewById(R.id.subject);
+        TextSwitcher txtContext = (TextSwitcher) rowView.findViewById(R.id.context);
 
-        valueView.setFactory(new ViewSwitcher.ViewFactory() {
+        txtContext.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
                 TextView myText = new TextView(context);
-                myText.setTextSize(13);
+                myText.setTextAppearance(context, android.R.style.TextAppearance_DeviceDefault_Small);
                 myText.setGravity(Gravity.RIGHT);
                 myText.setTextColor(context.getResources().getColor(R.color.item_text_color));
                 return myText;
             }
         });
 
-        Animation in = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
-        Animation out = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+        Animation animIn = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+        Animation animOut = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
 
         // set the animation type of textSwitcher
-        valueView.setInAnimation(in);
-        valueView.setOutAnimation(out);
+        txtContext.setInAnimation(animIn);
+        txtContext.setOutAnimation(animOut);
 
         // 4. Set the text for textView
-        labelView.setText(itemsArrayList.get(position).getSubject());
-        valueView.setText(itemsArrayList.get(position).getContextShort());
+        txtSubject.setText(itemsArrayList.get(position).getSubject());
+
+        if (lastItemSelected != null && lastItemSelected.isOpen &&
+                lastItemSelected.position == position) {
+            txtContext.setText(itemsArrayList.get(position).getContext());
+            lastItemSelected.objUiUpdateContext = txtContext;
+        } else
+            txtContext.setText(itemsArrayList.get(position).getContextShort());
+
 
         return rowView;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
-        TextSwitcher valueView = (TextSwitcher) view.findViewById(R.id.value);
-        valueView.setText(itemsArrayList.get(position).getContext());
+        TextSwitcher txtContext = (TextSwitcher) view.findViewById(R.id.context);
+
+        if (lastItemSelected != null && lastItemSelected.isOpen) {
+            try {
+                lastItemSelected.objContext.setText(lastItemSelected.shortText);
+                lastItemSelected.objUiUpdateContext.setText(lastItemSelected.shortText);
+
+                lastItemSelected.objContext.setText(lastItemSelected.shortText);
+                lastItemSelected.objUiUpdateContext.setText(lastItemSelected.shortText);
+            } catch (Exception ex) {
+            }
+
+            if (lastItemSelected.position == position) {
+                lastItemSelected.isOpen = false;
+                return;
+            }
+        }
+
+        openItem(txtContext,
+                itemsArrayList.get(position).getContext(),
+                itemsArrayList.get(position).getContextShort(),
+                position);
+    }
+
+    private void openItem(TextSwitcher txtContext, String value, String valueShort, int position) {
+        lastItemSelected = new LastItem();
+        lastItemSelected.isOpen = true;
+        lastItemSelected.objContext = txtContext;
+        lastItemSelected.objUiUpdateContext = txtContext;
+        lastItemSelected.shortText = valueShort;
+        lastItemSelected.position = position;
+
+        txtContext.setText(value);
+    }
+
+    private class LastItem {
+        public TextSwitcher objContext;
+        public TextSwitcher objUiUpdateContext;
+        public String shortText = "";
+        public boolean isOpen = false;
+        public int position = -1;
     }
 }

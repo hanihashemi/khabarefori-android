@@ -14,33 +14,25 @@
   </component>
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState>
-        <option name="visible" value="false" />
-      </GlobalState>
+      <GlobalState />
     </option>
   </component>
   <component name="AndroidLayouts">
     <shared>
       <config />
     </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/res/layout/main.xml">
-        <config>
-          <device>Nexus 4</device>
-          <theme>@android:style/Theme.Holo</theme>
-        </config>
-      </layout>
-    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Khabarefori" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="007906b3-cb81-4cc7-957a-3b266436ab2d" name="Default" comment="">
+    <list default="true" id="7dea6009-219f-44e1-8abb-059f38a57477" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/json/JsonGetNewNews.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/json/JsonGetNewNews.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list_row.xml" afterPath="$PROJECT_DIR$/res/layout/list_row.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Khabarefori.iws" />
@@ -105,34 +97,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Knotify.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java">
+      <file leaf-file-name="ListViewAdapter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="63" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2448">
+            <state line="121" column="0" selection-start="4571" selection-end="4571" vertical-scroll-proportion="0.6904177" vertical-offset="1843" max-vertical-offset="2250">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1168#1218#0" expanded="true" />
-                <element signature="e#1376#1412#0" expanded="true" />
-                <element signature="e#1969#2158#0" expanded="true" />
-                <element signature="e#2143#2144#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="1" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.68031496" vertical-offset="126" max-vertical-offset="2844">
+            <state line="159" column="45" selection-start="6457" selection-end="6457" vertical-scroll-proportion="0.0" vertical-offset="2412" max-vertical-offset="3942">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <file leaf-file-name="list_row.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="25" selection-start="439" selection-end="439" vertical-scroll-proportion="-7.2" vertical-offset="0" max-vertical-offset="342">
+            <state line="32" column="50" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-5.3137255" vertical-offset="305" max-vertical-offset="1620">
               <folding />
             </state>
           </provider>
@@ -151,96 +142,26 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/json/models/ModelNews.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/json/GetNewNews.java" />
-        <option value="$PROJECT_DIR$/res/xml/widget_provider.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/json/JsonGetNewNews.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/widget/WidgetActivity.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/service/AutoStart.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/justify/TextJustifyUtils.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/justify/TextViewEx.java" />
-        <option value="$PROJECT_DIR$/res/drawable/Item_bg.xsl" />
-        <option value="$PROJECT_DIR$/res/drawable/item_bg_hover.xsl" />
-        <option value="$PROJECT_DIR$/res/drawable/item_selector.xsl" />
-        <option value="$PROJECT_DIR$/res/layout/list_row.xsl" />
-        <option value="$PROJECT_DIR$/res/values/item_color.xsl" />
-        <option value="$PROJECT_DIR$/res/drawable/test.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_select.xml" />
-        <option value="$PROJECT_DIR$/res/color/item_color.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_color_focused.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_color.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/list_view_color_default.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/list_view_color.xml" />
-        <option value="$PROJECT_DIR$/res/layout/widget.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/topper_color.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_selector.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_color_pressed.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/item_color_default.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/sxac.xml" />
-        <option value="$PROJECT_DIR$/res/values/test.xml" />
-        <option value="$PROJECT_DIR$/res/layout/test.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/Test.java" />
-        <option value="$PROJECT_DIR$/res/anim/hyperspace_jump.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/listview/Item.java" />
-        <option value="$PROJECT_DIR$/res/layout/list_row.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/database/table/News.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/ApplicationContextProvider.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/listview/item.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/database/model/NewsModel.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/database/SqlLite.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/database/datasource/NewsDatasource.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/service/BoundService.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/service/SCheckServer.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/knotify/Knotify.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/notify/Notification.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/service/ServiceCheckServer.java" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/notify/DropDownAnim.java" />
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java" />
         <option value="$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/list_row.xml" />
+        <option value="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
-    <option name="y" value="-4" />
+    <option name="y" value="25" />
     <option name="width" value="1368" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Android Lint</id>
-          </State>
-          <State>
-            <id>Plugin DevKit</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Abstraction issues</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -259,7 +180,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,117 +227,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notify" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,23 +249,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Khabarefori" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -464,30 +261,9 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="LayoutCode.rearrangeEntriesJava" value="true" />
-    <property name="options.lastSelected" value="preferences.keymap" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ServiceBinding" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="LayoutCode.rearrangeEntriesXML" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="SearchEverywhereHistory" value="&#10;S" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/drawable" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/drawable" />
-      <recent name="$PROJECT_DIR$/res/color" />
-    </key>
   </component>
   <component name="RunManager" selected="Android Application.Khabarefori">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -524,19 +300,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -562,6 +325,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -599,12 +375,12 @@
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
+      <module name="Khabarefori" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
@@ -619,8 +395,8 @@
     </configuration>
     <configuration default="false" name="Khabarefori" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="Khabarefori" />
-      <option name="ACTIVITY_CLASS" value="ir.khabarefori.MyActivity" />
-      <option name="MODE" value="specific_activity" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
@@ -647,11 +423,6 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SliceManager">
-    <option name="analysisUIOptions">
-      <AnalysisUIOptions />
-    </option>
-  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -671,154 +442,43 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="007906b3-cb81-4cc7-957a-3b266436ab2d" name="Default" comment="" />
-      <created>1389424876287</created>
-      <updated>1389424876287</updated>
+      <changelist id="7dea6009-219f-44e1-8abb-059f38a57477" name="Default" comment="" />
+      <created>1394216214923</created>
+      <updated>1394216214923</updated>
     </task>
-    <task id="LOCAL-00001" summary="Initial commit&#10;">
-      <created>1389450520518</created>
-      <updated>1389450520518</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Initialize&#10;">
-      <created>1389454394667</created>
-      <updated>1389454394667</updated>
-    </task>
-    <task id="LOCAL-00003" summary="UI Design">
-      <created>1389973797221</created>
-      <updated>1389973797221</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Stable widget&#10;">
-      <created>1390128095018</created>
-      <updated>1390128095018</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Add Service">
-      <created>1390164796305</created>
-      <updated>1390164796305</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Service Never DIE :P">
-      <created>1390341256873</created>
-      <updated>1390341256873</updated>
-    </task>
-    <task id="LOCAL-00007" summary="List view create&#10;">
-      <created>1390678517628</created>
-      <updated>1390678517628</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Main activity UI complete">
-      <created>1390687135203</created>
-      <updated>1390687135203</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Item animation pre-complete">
-      <created>1390837629769</created>
-      <updated>1390837629770</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Item animation complete&#10;">
-      <created>1390856809164</created>
-      <updated>1390856809164</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Database created">
-      <created>1392120602035</created>
-      <updated>1392120602035</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Connect database to listview :P">
-      <created>1392123292981</created>
-      <updated>1392123292981</updated>
-    </task>
-    <task id="LOCAL-00013" summary="change service class">
-      <created>1392913443008</created>
-      <updated>1392913443008</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add message to service , for send commands to UI">
-      <created>1392977002784</created>
-      <updated>1392977002784</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Create Knotify message">
-      <created>1392987045528</created>
-      <updated>1392987045528</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1368" height="772" extended-state="6" />
+    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48222566" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25679758" sideWeight="0.5011442" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25757575" sideWeight="0.50149256" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46074075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25622255" sideWeight="0.49850747" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="96" width="1168" height="572" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290469" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740742" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="96" width="1168" height="572" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48222566" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25757575" sideWeight="0.50149256" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25622255" sideWeight="0.49850747" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25679758" sideWeight="0.5011442" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740742" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46074075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -832,22 +492,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Initial commit&#10;" />
-    <MESSAGE value="Initialize&#10;" />
-    <MESSAGE value="UI Design" />
-    <MESSAGE value="Stable widget&#10;" />
-    <MESSAGE value="Add Service" />
-    <MESSAGE value="Service Never DIE :P" />
-    <MESSAGE value="List view create&#10;" />
-    <MESSAGE value="Main activity UI complete" />
-    <MESSAGE value="Item animation pre-complete" />
-    <MESSAGE value="Item animation complete&#10;" />
-    <MESSAGE value="Database created" />
-    <MESSAGE value="Connect database to listview :P" />
-    <MESSAGE value="change service class" />
-    <MESSAGE value="Add message to service , for send commands to UI" />
-    <MESSAGE value="Create Knotify message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Knotify message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -857,231 +501,79 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="150" />
+        <state line="94" column="41" selection-start="3564" selection-end="3564" vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="2214">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/widget.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="555" />
+        <state line="159" column="0" selection-start="6385" selection-end="6385" vertical-scroll-proportion="0.0" vertical-offset="2862" max-vertical-offset="4212">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state line="10" column="48" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="330" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="150" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/widget.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="555" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/widget_provider.xml">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="180" />
+        <state line="94" column="70" selection-start="3593" selection-end="3593" vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="2214">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/widget/WidgetActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1110" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="50" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/widget.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="74" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="555" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="113" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="375">
+        <state line="159" column="0" selection-start="6385" selection-end="6385" vertical-scroll-proportion="0.0" vertical-offset="2862" max-vertical-offset="4212">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/widget.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="225" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/json/models/ModelNews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="210" selection-end="210" vertical-scroll-proportion="0.2777778" vertical-offset="0" max-vertical-offset="648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/AppPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="420" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/widget_provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="57" selection-start="318" selection-end="324" vertical-scroll-proportion="0.19480519" vertical-offset="0" max-vertical-offset="385" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/list_view_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="61" selection-start="414" selection-end="414" vertical-scroll-proportion="-5.04" vertical-offset="0" max-vertical-offset="270" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/widget.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="50" selection-start="258" selection-end="258" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/logo_white.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/list_view_color_default.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="45" selection-start="184" selection-end="184" vertical-scroll-proportion="0.091216214" vertical-offset="0" max-vertical-offset="592" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.030405406" vertical-offset="0" max-vertical-offset="592" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/item_color_pressed.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="187" selection-end="187" vertical-scroll-proportion="0.19285715" vertical-offset="0" max-vertical-offset="280" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/item_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="48" selection-start="314" selection-end="314" vertical-scroll-proportion="0.3857143" vertical-offset="0" max-vertical-offset="280" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/item_color_default.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="48" selection-start="311" selection-end="311" vertical-scroll-proportion="0.42142856" vertical-offset="26" max-vertical-offset="306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/anim/hyperspace_jump.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="324" selection-end="324" vertical-scroll-proportion="0.35714287" vertical-offset="44" max-vertical-offset="324" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/json/JsonGetNewNews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="48" selection-start="3631" selection-end="3631" vertical-scroll-proportion="3.0119047" vertical-offset="247" max-vertical-offset="2358" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/view/Choreographer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/model/NewsModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="30" selection-start="1816" selection-end="1816" vertical-scroll-proportion="3.4387097" vertical-offset="50" max-vertical-offset="1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/SqlLite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="18" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/datasource/NewsDatasource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="2177" selection-end="2177" vertical-scroll-proportion="1.0870968" vertical-offset="671" max-vertical-offset="2250" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/ApplicationContextProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="0.33126935" vertical-offset="37" max-vertical-offset="666" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/content/ContextWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="16" selection-start="8064" selection-end="8064" vertical-scroll-proportion="0.33333334" vertical-offset="2452" max-vertical-offset="3474" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/app/Service.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="19" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.3480315" vertical-offset="463" max-vertical-offset="1098" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="38" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0" vertical-offset="487" max-vertical-offset="1098">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/widget/WidgetActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="61" selection-start="758" selection-end="758" vertical-scroll-proportion="0.055555556" vertical-offset="198" max-vertical-offset="1134">
-          <folding />
+        <state line="96" column="34" selection-start="3666" selection-end="3666" vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="1926">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/service/AutoStart.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="405" selection-end="405" vertical-scroll-proportion="0.3611111" vertical-offset="0" max-vertical-offset="648">
+        <state line="75" column="35" selection-start="2881" selection-end="2881" vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="1908">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="45" selection-start="6457" selection-end="6457" vertical-scroll-proportion="0.0" vertical-offset="2412" max-vertical-offset="3942">
           <folding />
         </state>
       </provider>
@@ -1091,178 +583,20 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="21" selection-start="1158" selection-end="1170" vertical-scroll-proportion="-1.2156863" vertical-offset="442" max-vertical-offset="864">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1006" column="16" selection-start="44795" selection-end="44795" vertical-scroll-proportion="0.33333334" vertical-offset="17982" max-vertical-offset="21384" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/view/animation/Animation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="32" selection-start="4440" selection-end="4440" vertical-scroll-proportion="0.055555556" vertical-offset="2052" max-vertical-offset="2430" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/notify/DropDownAnim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="29" selection-start="898" selection-end="898" vertical-scroll-proportion="0.5875371" vertical-offset="270" max-vertical-offset="738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="186" selection-end="186" vertical-scroll-proportion="0.2244389" vertical-offset="0" max-vertical-offset="401">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/App/android-sdk/platforms/android-19/android.jar!/android/os/Message.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="159" selection-end="159" vertical-scroll-proportion="-0.33333334" vertical-offset="198" max-vertical-offset="1116" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/service/ServiceCheckServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="63" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.0" vertical-offset="719" max-vertical-offset="2862">
+        <state line="32" column="50" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-5.3137255" vertical-offset="305" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="49" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1188">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="56" column="21" selection-start="2623" selection-end="2623" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1494">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="63" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2448">
+        <state line="121" column="0" selection-start="4571" selection-end="4571" vertical-scroll-proportion="0.6904177" vertical-offset="1843" max-vertical-offset="2250">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1168#1218#0" expanded="true" />
-            <element signature="e#1376#1412#0" expanded="true" />
-            <element signature="e#1969#2158#0" expanded="true" />
-            <element signature="e#2143#2144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="25" selection-start="439" selection-end="439" vertical-scroll-proportion="-7.2" vertical-offset="0" max-vertical-offset="342">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="1" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.68031496" vertical-offset="126" max-vertical-offset="2844">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Android</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>Android SDK (2.2)</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Khabarefori</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>Android API 19 Platform (1)</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>gson-2.2.4</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
 
