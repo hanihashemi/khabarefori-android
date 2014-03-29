@@ -69,14 +69,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         if (findViewById(R.id.btnReload).equals(view)) {
             Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
             view.startAnimation(hyperspaceJumpAnimation);
-            sd++;
-            if (sd % 2 == 0) {
-                Knotify.getInstance().show(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
-            } else {
-                Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
-            }
-
-
         }
     }
 

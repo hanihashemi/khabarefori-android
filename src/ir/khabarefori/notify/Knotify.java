@@ -70,6 +70,10 @@ public class Knotify {
                         activity.getString(R.string.no_internet)
                         , false);
                 break;
+            case MessageType.MSG_NEW_NEWS_UPDATED:
+                setMessage(activity.getString(R.string.new_news_updated), true);
+                break;
+
         }
     }
 
@@ -148,5 +152,6 @@ public class Knotify {
         public static final int MSG_TRY_CONNECT_TO_SERVER = 0;
         public static final int MSG_NO_INTERNET = 1;
         public static final int MSG_NO_NEWS = 2;
+        public static final int MSG_NEW_NEWS_UPDATED = 3;
     }
 }

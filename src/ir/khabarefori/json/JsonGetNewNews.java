@@ -1,11 +1,11 @@
 package ir.khabarefori.json;
 
-import android.util.Log;
 import com.google.gson.Gson;
 import ir.khabarefori.AppPath;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.models.ModelNews;
+import ir.khabarefori.notify.Knotify;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -26,6 +26,8 @@ public class JsonGetNewNews implements Runnable {
 
     public void run() {
         try {
+            Knotify.getInstance().show(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
+
             URL url = new URL(AppPath.Network.getNewNewsPage(NewsDatasource.getInstance().getLastId()));
             InputStream inputStream = url.openConnection().getInputStream();
             BufferedReader buffer = new BufferedReader(new InputStreamReader(
@@ -44,13 +46,18 @@ public class JsonGetNewNews implements Runnable {
                 model.setIsBreakingNewsParamBoolean(news.getNews().get(i).isBreakingNews);
 
                 NewsDatasource.getInstance().add(model);
-                Log.d(LOGTAG, news.getNews().get(i).isBreakingNews + "");
             }
+
+            if (news.getNews().size() == 0)
+                Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
+            else
+                Knotify.getInstance().show(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
 
         } catch (
                 Exception ex
                 ) {
             ex.printStackTrace();
+            Knotify.getInstance().show(Knotify.MessageType.MSG_NO_INTERNET);
         } finally {
 
         }
