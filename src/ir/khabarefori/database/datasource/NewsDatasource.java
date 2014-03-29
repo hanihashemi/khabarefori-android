@@ -1,7 +1,6 @@
 package ir.khabarefori.database.datasource;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import ir.khabarefori.database.SqlLite;
 import ir.khabarefori.database.model.NewsModel;
@@ -13,10 +12,12 @@ import java.util.List;
  * Created by hani on 2/1/14.
  */
 public class NewsDatasource {
+    private String LOGTAG = getClass().getName();
     private static NewsDatasource instance;
     public static final String TABLE = "news";
 
     public static final String COLUMN_ID = "id";
+    public static final String COLUMN_SERVER_ID = "server_id";
     public static final String COLUMN_SUBJECT = "subject";
     public static final String COLUMN_CONTEXT = "context";
     public static final String COLUMN_LINK = "link";
@@ -26,6 +27,7 @@ public class NewsDatasource {
 
     public static final String CREATE_TABLE = "CREATE TABLE \"" + TABLE + "\" (" +
             "    \"" + COLUMN_ID + "\" INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "    \"" + COLUMN_SERVER_ID + "\" INTEGER," +
             "    \"" + COLUMN_SUBJECT + "\" TEXT," +
             "    \"" + COLUMN_CONTEXT + "\" TEXT," +
             "    \"" + COLUMN_LINK + "\" TEXT," +
@@ -45,6 +47,7 @@ public class NewsDatasource {
     public long add(NewsModel model) {
         ContentValues initialValues = new ContentValues();
         initialValues.put(COLUMN_SUBJECT, model.getSubject());
+        initialValues.put(COLUMN_SERVER_ID, model.getServerID());
         initialValues.put(COLUMN_CONTEXT, model.getContext());
         initialValues.put(COLUMN_IMAGE, model.getImage());
         initialValues.put(COLUMN_LINK, model.getLink());
@@ -76,9 +79,27 @@ public class NewsDatasource {
         return null;
     }
 
+    public int getLastId() {
+        Cursor cursor = null;
+        try {
+            cursor = SqlLite.getInstance().query(TABLE, new String[]{
+                    "max(" + COLUMN_SERVER_ID + ")"}, null, null, null, null, null);
+        } catch (Exception ex) {
+            return 0;
+        }
+
+
+        if (cursor.moveToFirst()) {
+            return cursor.getInt(0);
+        }
+
+        return 0;
+    }
+
     public List<NewsModel> getAllContents() {
         Cursor cursor = SqlLite.getInstance().query(TABLE, new String[]{
                 COLUMN_ID,
+                COLUMN_SERVER_ID,
                 COLUMN_SUBJECT,
                 COLUMN_CONTEXT,
                 COLUMN_IMAGE,
@@ -106,14 +127,21 @@ public class NewsDatasource {
         NewsModel model = new NewsModel();
 
         model.setId(cursor.getInt(0));
-        model.setSubject(cursor.getString(1));
-        model.setContext(cursor.getString(2));
-        model.setLink(cursor.getString(3));
-        model.setDatetime(cursor.getString(4));
-        model.setImage(cursor.getString(5));
-        model.setIsBreakingNews(cursor.getInt(6));
+        model.setServerID(cursor.getInt(1));
+        model.setSubject(cursor.getString(2));
+        model.setContext(cursor.getString(3));
+        model.setLink(cursor.getString(4));
+        model.setDatetime(cursor.getString(5));
+        model.setImage(cursor.getString(6));
+        model.setIsBreakingNewsParamInt(cursor.getInt(7));
 
         return model;
     }
 
+    /**
+     * Remove table
+     */
+    public void deleteTable() {
+        SqlLite.getInstance().execSQL("DROP TABLE IF EXISTS " + TABLE);
+    }
 }

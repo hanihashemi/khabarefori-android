@@ -22,6 +22,7 @@ public class ModelNews {
         public String subject;
         public String context;
         public String datetime;
+        public boolean isBreakingNews;
 
     }
 }

@@ -80,6 +80,8 @@
                 android:minHeight="1dp"
                 android:layout_marginTop="2dp"
                 android:background="@color/item_red_news_color"
+                android:id="@+id/lineBreakingNews"
+                android:orientation="horizontal"
                 />
     </LinearLayout>
 </LinearLayout>

@@ -43,6 +43,11 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         // 3. Get the two text view from the rowView
         TextView txtSubject = (TextView) rowView.findViewById(R.id.subject);
         TextSwitcher txtContext = (TextSwitcher) rowView.findViewById(R.id.context);
+        LinearLayout lineBreakingNews = (LinearLayout) rowView.findViewById(R.id.lineBreakingNews);
+
+        //
+        if (!itemsArrayList.get(position).getIsBreakingNews())
+            lineBreakingNews.setVisibility(View.INVISIBLE);
 
         txtContext.setFactory(new ViewSwitcher.ViewFactory() {
 

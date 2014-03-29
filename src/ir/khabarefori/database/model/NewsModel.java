@@ -5,6 +5,7 @@ package ir.khabarefori.database.model;
  */
 public class NewsModel {
     private int id;
+    private int serverID;
     private String subject;
     private String context;
     private String link;
@@ -16,17 +17,21 @@ public class NewsModel {
 
     }
 
-    public NewsModel(String subject, String context, String link, String datetime, String image, boolean is_breaking_news) {
+    public NewsModel(int serverID, String subject, String context, String link, String datetime, String image, boolean is_breaking_news) {
+        this.serverID = serverID;
         this.subject = subject;
         this.context = context;
         this.link = link;
         this.datetime = datetime;
-        this.image = image;
         this.is_breaking_news = is_breaking_news;
     }
 
     public int getid() {
         return id;
+    }
+
+    public int getServerID() {
+        return serverID;
     }
 
     public String getSubject() {
@@ -77,8 +82,16 @@ public class NewsModel {
         this.image = image;
     }
 
-    public void setIsBreakingNews(int is_breaking_news) {
-        this.is_breaking_news = is_breaking_news != 0 ? true : false;
+    public void setServerID(int serverID) {
+        this.serverID = serverID;
+    }
+
+    public void setIsBreakingNewsParamInt(int is_breaking_news) {
+        this.is_breaking_news = is_breaking_news == 1 ? true : false;
+    }
+
+    public void setIsBreakingNewsParamBoolean(boolean is_breaking_news) {
+        this.is_breaking_news = is_breaking_news;
     }
 
     public String getContextShort() {

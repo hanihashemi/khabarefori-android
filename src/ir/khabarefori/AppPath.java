@@ -12,11 +12,11 @@ public class AppPath {
         private static String host = "http://khabarefori.ir/";
 
         public static String getNewNewsPage() {
-            return host + "api/get_news.php";
+            return host + "api_1/get_news.php";
         }
 
-        public static String getUpdateVersion() {
-            return host + "api/get_last_update_mobile.php";
+        public static String getNewNewsPage(int lastId) {
+            return host + "api_1/get_news.php/?id=" + lastId;
         }
     }
 }

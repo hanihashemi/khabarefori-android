@@ -1,11 +1,8 @@
 package ir.khabarefori.database;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
 import ir.khabarefori.ApplicationContextProvider;
 import ir.khabarefori.database.datasource.NewsDatasource;
 
@@ -21,9 +18,8 @@ public class SqlLite extends SQLiteOpenHelper {
         super(context, DATABASE, null, VERSION);
     }
 
-    public static SQLiteDatabase getInstance()
-    {
-        if(sqlLite == null)
+    public static SQLiteDatabase getInstance() {
+        if (sqlLite == null)
             sqlLite = new SqlLite(ApplicationContextProvider.getContext());
         return sqlLite.getWritableDatabase();
     }

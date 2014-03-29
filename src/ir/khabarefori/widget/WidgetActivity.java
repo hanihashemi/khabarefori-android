@@ -20,31 +20,31 @@ public class WidgetActivity extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
-        JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
-
-        final int N = appWidgetIds.length;
-
-        for (int i = 0; i < N; i++) {
-            int appWidgetId = appWidgetIds[i];
-
-            // create intent for open web site
-            String url = "http://www.khabarefori.ir";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-            views.setOnClickPendingIntent(R.id.imageView, pendingIntent);
-
-            // create intent for refresh :D
-            Intent intentRefresh = new Intent(WIDGET_BUTTON);
-            PendingIntent pendingIntentRefresh = PendingIntent.getBroadcast(context, 0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
-            views.setOnClickPendingIntent(R.id.txtNews, pendingIntentRefresh);
-
-            // just for update
-            appWidgetManager.updateAppWidget(appWidgetId, views);
-        }
-
+//        JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
+//
+//        final int N = appWidgetIds.length;
+//
+//        for (int i = 0; i < N; i++) {
+//            int appWidgetId = appWidgetIds[i];
+//
+//            // create intent for open web site
+//            String url = "http://www.khabarefori.ir";
+//            Intent intent = new Intent(Intent.ACTION_VIEW);
+//            intent.setData(Uri.parse(url));
+//            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+//
+//            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+//            views.setOnClickPendingIntent(R.id.imageView, pendingIntent);
+//
+//            // create intent for refresh :D
+//            Intent intentRefresh = new Intent(WIDGET_BUTTON);
+//            PendingIntent pendingIntentRefresh = PendingIntent.getBroadcast(context, 0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
+//            views.setOnClickPendingIntent(R.id.txtNews, pendingIntentRefresh);
+//
+//            // just for update
+//            appWidgetManager.updateAppWidget(appWidgetId, views);
+//        }
+//
 
     }
 
@@ -52,15 +52,15 @@ public class WidgetActivity extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
 
-        if (WIDGET_BUTTON.equals(intent.getAction())) {
-            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-
-            JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
-
-            ComponentName watchWidget = new ComponentName(context, WidgetActivity.class);
-
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-            appWidgetManager.updateAppWidget(watchWidget, views);
-        }
+//        if (WIDGET_BUTTON.equals(intent.getAction())) {
+//            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+//
+//            JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
+//
+//            ComponentName watchWidget = new ComponentName(context, WidgetActivity.class);
+//
+//            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+//            appWidgetManager.updateAppWidget(watchWidget, views);
+//        }
     }
 }
