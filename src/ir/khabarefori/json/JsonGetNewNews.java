@@ -51,6 +51,8 @@ public class JsonGetNewNews implements Runnable {
                 Exception ex
                 ) {
             ex.printStackTrace();
+        } finally {
+
         }
     }
 }

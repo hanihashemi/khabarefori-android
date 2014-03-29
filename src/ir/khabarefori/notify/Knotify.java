@@ -20,44 +20,55 @@ import java.util.TimerTask;
  * Created by hani on 2/11/14.
  */
 public class Knotify {
+    private static Knotify instance;
 
     private static boolean isOpen = false;
     private final String LOGTAG = "Knotify";
-    private MyActivity activity;
-    private Timer timer = null;
+    protected MyActivity activity;
+    private Timer timerWaiting = null;
     private Handler handlerFoldLayoutKnotify = new Handler() {
         public void handleMessage(Message msg) {
-            foldLayoutKnotify();
+            hide();
         }
     };
 
-    public Knotify(MyActivity activity) {
-        this.activity = activity;
+    public static Knotify getInstance() {
+        if (instance == null)
+            instance = new Knotify();
+
+        return instance;
     }
 
-    public void show(int type, boolean enableTimer) {
+    public static void updateMainActivity(MyActivity activity) {
+        getInstance().activity = activity;
+    }
 
-        if (timer == null) {
-            timer = new Timer();
-            timer.cancel();
-            timer.purge();
+    public Knotify() {
+
+    }
+
+    public void show(int type) {
+
+        if (timerWaiting != null) {
+            timerWaiting.cancel();
+            timerWaiting = null;
         }
 
         switch (type) {
             case MessageType.MSG_TRY_CONNECT_TO_SERVER:
                 setMessage(
                         activity.getString(R.string.try_connect_to_server)
-                        , enableTimer);
+                        , false);
                 break;
             case MessageType.MSG_NO_NEWS:
                 setMessage(
                         activity.getString(R.string.no_news)
-                        , enableTimer);
+                        , true);
                 break;
             case MessageType.MSG_NO_INTERNET:
                 setMessage(
                         activity.getString(R.string.no_internet)
-                        , enableTimer);
+                        , false);
                 break;
         }
     }
@@ -70,13 +81,15 @@ public class Knotify {
     private void setMessage(String value, boolean enableTimer) {
         expandLayoutKnotify();
         setTextMessage(value);
-        if (enableTimer)
-            new Timer().schedule(new TimerTask() {
+        if (enableTimer) {
+            timerWaiting = new Timer();
+            timerWaiting.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     handlerFoldLayoutKnotify.obtainMessage(1).sendToTarget();
                 }
             }, 10000);
+        }
     }
 
     private void setTextMessage(String value) {

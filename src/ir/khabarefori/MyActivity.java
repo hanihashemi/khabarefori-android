@@ -17,6 +17,7 @@ import android.widget.ListView;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.listview.ListViewAdapter;
+import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
 
 import java.util.ArrayList;
@@ -44,6 +45,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
         btnReload.setOnClickListener(this);
 
+        Knotify.updateMainActivity(this);
+
         // bind service :P
         doBindService();
 
@@ -53,10 +56,27 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        Knotify.updateMainActivity(this);
+    }
+
+    int sd = 0;
+
+    @Override
     public void onClick(View view) {
         if (findViewById(R.id.btnReload).equals(view)) {
             Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
             view.startAnimation(hyperspaceJumpAnimation);
+            sd++;
+            if (sd % 2 == 0) {
+                Knotify.getInstance().show(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
+            } else {
+                Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
+            }
+
+
         }
     }
 
