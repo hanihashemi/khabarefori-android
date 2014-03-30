@@ -47,12 +47,26 @@ public class Knotify {
 
     }
 
+    /**
+     * TODO this method should get to myactivity
+     */
+    private void refreshBtnReload() {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                activity.refreshbtnReload();
+            }
+        });
+    }
+
     public void show(int type) {
 
         if (timerWaiting != null) {
             timerWaiting.cancel();
             timerWaiting = null;
         }
+
+        refreshBtnReload();
 
         switch (type) {
             case MessageType.MSG_TRY_CONNECT_TO_SERVER:

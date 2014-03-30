@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
+import ir.khabarefori.json.JsonGetNewNews;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
@@ -29,8 +30,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     private ServiceCheckServer serviceCheck;
     private Messenger serviceMessenger = null;
     private ServiceConnection serviceConnection = this;
-
-    public static boolean btnReloadIsActive = true;
+    private static boolean btnReloadIsActive = false;
 
     /**
      * Called when the activity is first created.
@@ -65,14 +65,16 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         Knotify.updateMainActivity(this);
     }
 
-    int sd = 0;
-
     @Override
     public void onClick(View view) {
         if (findViewById(R.id.btnReload).equals(view)) {
-            btnReloadIsActive = true;
+            JsonGetNewNews.CheckNews();
             refreshbtnReload();
         }
+    }
+
+    public static void setBtnReloadIsActive(boolean isActive) {
+        btnReloadIsActive = isActive;
     }
 
     public void refreshbtnReload() {

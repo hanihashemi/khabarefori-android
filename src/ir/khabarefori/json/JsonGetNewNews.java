@@ -3,6 +3,7 @@ package ir.khabarefori.json;
 import android.util.Log;
 import com.google.gson.Gson;
 import ir.khabarefori.AppPath;
+import ir.khabarefori.MyActivity;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.models.ModelNews;
@@ -19,6 +20,7 @@ import java.net.URL;
 public class JsonGetNewNews implements Runnable {
 
     private static final String LOGTAG = JsonGetNewNews.class.getName();
+    private static boolean isRun = false;
 
     public static void CheckNews() {
         Thread thread = new Thread(new JsonGetNewNews());
@@ -26,7 +28,12 @@ public class JsonGetNewNews implements Runnable {
     }
 
     public void run() {
+        if (isRun)
+            return;
+        isRun = true;
+
         try {
+            MyActivity.setBtnReloadIsActive(true);
             Knotify.getInstance().show(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
 
             URL url = new URL(AppPath.Network.getNewNewsPage(NewsDatasource.getInstance().getLastId()));
@@ -49,6 +56,7 @@ public class JsonGetNewNews implements Runnable {
                 NewsDatasource.getInstance().add(model);
             }
 
+            MyActivity.setBtnReloadIsActive(false);
             if (news.getNews().size() == 0) {
                 Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
                 Log.d(LOGTAG, "no news today");
@@ -61,9 +69,10 @@ public class JsonGetNewNews implements Runnable {
                 Exception ex
                 ) {
             ex.printStackTrace();
+            MyActivity.setBtnReloadIsActive(false);
             Knotify.getInstance().show(Knotify.MessageType.MSG_NO_INTERNET);
         } finally {
-
+            isRun = false;
         }
     }
 }
