@@ -40,9 +40,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-        ListViewAdapter adapter = new ListViewAdapter(this, generateData(), listView);
-        listView.setAdapter(adapter);
+        refreshListView();
 
         ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
         btnReload.setOnClickListener(this);
@@ -57,11 +55,18 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
             startService(new Intent(this, ServiceCheckServer.class));
     }
 
+    public void refreshListView() {
+        ListView listView = (ListView) findViewById(R.id.listView);
+        ListViewAdapter adapter = new ListViewAdapter(this, generateData(), listView);
+        listView.setAdapter(adapter);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
 
         refreshbtnReload();
+        refreshListView();
         Knotify.updateMainActivity(this);
     }
 

@@ -1,6 +1,5 @@
 package ir.khabarefori.json;
 
-import android.util.Log;
 import com.google.gson.Gson;
 import ir.khabarefori.AppPath;
 import ir.khabarefori.MyActivity;
@@ -59,10 +58,8 @@ public class JsonGetNewNews implements Runnable {
             MyActivity.setBtnReloadIsActive(false);
             if (news.getNews().size() == 0) {
                 Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
-                Log.d(LOGTAG, "no news today");
             } else {
                 Knotify.getInstance().show(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
-                Log.d(LOGTAG, "new news updated");
             }
 
         } catch (

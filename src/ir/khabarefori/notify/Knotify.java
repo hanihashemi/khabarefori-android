@@ -59,6 +59,18 @@ public class Knotify {
         });
     }
 
+    /**
+     * TODO this method should get to myactivity
+     */
+    private void refreshListView() {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                activity.refreshListView();
+            }
+        });
+    }
+
     public void show(int type) {
 
         if (timerWaiting != null) {
@@ -86,6 +98,7 @@ public class Knotify {
                 break;
             case MessageType.MSG_NEW_NEWS_UPDATED:
                 setMessage(activity.getString(R.string.new_news_updated), true);
+                refreshListView();
                 break;
 
         }
