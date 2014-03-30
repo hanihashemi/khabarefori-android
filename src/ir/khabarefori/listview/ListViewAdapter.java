@@ -1,6 +1,8 @@
 package ir.khabarefori.listview;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,10 +46,37 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         TextView txtSubject = (TextView) rowView.findViewById(R.id.subject);
         TextSwitcher txtContext = (TextSwitcher) rowView.findViewById(R.id.context);
         LinearLayout lineBreakingNews = (LinearLayout) rowView.findViewById(R.id.lineBreakingNews);
+        TextView txtReadMore = (Button) rowView.findViewById(R.id.txtReadMore);
+        TextView txtShare = (Button) rowView.findViewById(R.id.txtShare);
 
-        //
+        //set visible breaking news line
         if (!itemsArrayList.get(position).getIsBreakingNews())
             lineBreakingNews.setVisibility(View.INVISIBLE);
+
+
+        //set onclick link
+        txtReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("http://www.Khabarefori.ir/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
+        txtShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "خبرفوری ," + itemsArrayList.get(position).getSubject() + " http://khabarefori.ir";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "خبرفوری");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                sharingIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
 
         txtContext.setFactory(new ViewSwitcher.ViewFactory() {
 
@@ -74,11 +103,29 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
                 lastItemSelected.position == position) {
             txtContext.setText(itemsArrayList.get(position).getContext());
             lastItemSelected.objUiUpdateContext = txtContext;
+            lastItemSelected.viewUiUpdate = rowView;
+            itemButtonStatus(rowView, true);
         } else
             txtContext.setText(itemsArrayList.get(position).getContextShort());
 
 
         return rowView;
+    }
+
+    private void itemButtonStatus(View view, boolean visible) {
+        TextView txtReadMore = (Button) view.findViewById(R.id.txtReadMore);
+        TextView txtPoint = (TextView) view.findViewById(R.id.txtPoint);
+        TextView txtShare = (Button) view.findViewById(R.id.txtShare);
+
+        if (visible) {
+            txtShare.setVisibility(View.VISIBLE);
+            txtPoint.setVisibility(View.VISIBLE);
+            txtReadMore.setVisibility(View.VISIBLE);
+        } else {
+            txtShare.setVisibility(View.INVISIBLE);
+            txtPoint.setVisibility(View.INVISIBLE);
+            txtReadMore.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -87,12 +134,29 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
 
         if (lastItemSelected != null && lastItemSelected.isOpen) {
             try {
-                lastItemSelected.objContext.setText(lastItemSelected.shortText);
-                lastItemSelected.objUiUpdateContext.setText(lastItemSelected.shortText);
+                itemButtonStatus(lastItemSelected.view, false);
+            } catch (Exception ex) {
 
+            }
+
+            try {
+                itemButtonStatus(lastItemSelected.viewUiUpdate, false);
+            } catch (Exception ex) {
+
+            }
+
+            try {
                 lastItemSelected.objContext.setText(lastItemSelected.shortText);
                 lastItemSelected.objUiUpdateContext.setText(lastItemSelected.shortText);
             } catch (Exception ex) {
+
+            }
+
+            try {
+                lastItemSelected.objContext.setText(lastItemSelected.shortText);
+                lastItemSelected.objUiUpdateContext.setText(lastItemSelected.shortText);
+            } catch (Exception ex) {
+
             }
 
             if (lastItemSelected.position == position) {
@@ -101,19 +165,22 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
             }
         }
 
-        openItem(txtContext,
+        openItem(view, txtContext,
                 itemsArrayList.get(position).getContext(),
                 itemsArrayList.get(position).getContextShort(),
                 position);
     }
 
-    private void openItem(TextSwitcher txtContext, String value, String valueShort, int position) {
+    private void openItem(View view, TextSwitcher txtContext, String value, String valueShort, int position) {
         lastItemSelected = new LastItem();
         lastItemSelected.isOpen = true;
         lastItemSelected.objContext = txtContext;
         lastItemSelected.objUiUpdateContext = txtContext;
         lastItemSelected.shortText = valueShort;
         lastItemSelected.position = position;
+        lastItemSelected.view = view;
+
+        itemButtonStatus(view, true);
 
         txtContext.setText(value);
     }
@@ -121,6 +188,8 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
     private class LastItem {
         public TextSwitcher objContext;
         public TextSwitcher objUiUpdateContext;
+        public View view;
+        public View viewUiUpdate;
         public String shortText = "";
         public boolean isOpen = false;
         public int position = -1;

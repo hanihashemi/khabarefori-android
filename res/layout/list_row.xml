@@ -10,7 +10,6 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:layout_margin="8dp"
             android:background="@drawable/item_selector"
             android:id="@+id/itemLayout">
@@ -19,6 +18,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
+                android:layout_margin="4dp"
                 android:textColor="@color/item_text_color"
                 android:gravity="right"
                 android:textDirection="rtl"
@@ -31,39 +31,59 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:measureAllChildren="false"
+                android:layout_margin="4dp"
                 >
         </TextSwitcher>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#ffd9d0d1"
+                android:orientation="horizontal"
+                />
+
         <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="fill_parent"
+                android:padding="5dp"
+                >
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1392/11/02"
+                    android:text="11/02 "
                     android:textColor="@color/item_text_color"
                     android:id="@+id/txtDatetime"
                     android:layout_alignParentTop="true"
+                    android:drawableRight="@drawable/calendar"
                     android:layout_alignParentLeft="true"/>
-            <TextView
+            <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="بیشتر بخوانید"
+                    android:text="منبع "
                     android:textColor="@color/item_link_color"
                     android:id="@+id/txtReadMore"
                     android:layout_alignParentTop="true"
                     android:layout_toLeftOf="@+id/txtPoint"
-                    android:layout_marginRight="5dp" android:textStyle="bold" android:textSize="12dp"
-                    android:visibility="invisible"/>
-            <TextView
+                    android:layout_marginRight="5dp"
+                    android:drawableRight="@drawable/open_web"
+                    android:background="@color/item_bg_default"
+                    android:visibility="invisible"
+                    />
+            <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="اشتراک"
+                    android:text="اشتراک "
                     android:textColor="@color/item_link_color"
                     android:id="@+id/txtShare"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="2dp" android:textStyle="bold" android:textSize="12dp"
-                    android:visibility="invisible"/>
+                    android:drawableRight="@drawable/share"
+                    android:background="@color/item_bg_default"
+
+                    android:visibility="invisible"
+                    />
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,7 +92,10 @@
                     android:id="@+id/txtPoint"
                     android:layout_alignParentTop="true"
                     android:layout_toLeftOf="@+id/txtShare"
-                    android:layout_marginRight="5dp" android:visibility="invisible"/>
+                    android:layout_marginRight="5dp"
+                    android:textSize="10dp"
+                    android:visibility="invisible"
+                    />
         </RelativeLayout>
         <LinearLayout
                 android:layout_width="fill_parent"
@@ -82,6 +105,7 @@
                 android:background="@color/item_red_news_color"
                 android:id="@+id/lineBreakingNews"
                 android:orientation="horizontal"
+                android:layout_margin="4dp"
                 />
     </LinearLayout>
 </LinearLayout>
