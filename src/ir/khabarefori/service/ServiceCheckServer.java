@@ -1,17 +1,14 @@
 package ir.khabarefori.service;
 
 import android.app.AlarmManager;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.*;
 import android.util.Log;
-import ir.khabarefori.ApplicationContextProvider;
-import ir.khabarefori.R;
+import ir.khabarefori.json.JsonGetNewNews;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -61,13 +58,13 @@ public class ServiceCheckServer extends Service {
 
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 0, 5000);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
             Log.d("service", "Timer start " + serial_num);
         } else {
             Log.d("service", "Timer Set null " + serial_num);
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 0, 5000);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
         }
     }
 
@@ -83,8 +80,11 @@ public class ServiceCheckServer extends Service {
      */
     private class mainTask extends TimerTask {
         public void run() {
+//            Log.d(LOGTAG, "timer " + serial_num);
+//            sendMessageToUI();
             Log.d(LOGTAG, "timer " + serial_num);
-            sendMessageToUI();
+
+            JsonGetNewNews.CheckNews();
         }
     }
 

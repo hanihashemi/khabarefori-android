@@ -57,14 +57,7 @@
         <TextSwitcher
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/txtMessage"
-                android:layout_gravity="center_vertical"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:visibility="gone"
-                android:height="2dp"
-                android:text="لطفا چند لحظه صبر کنید ..."
                 />
     </LinearLayout>
     <ListView

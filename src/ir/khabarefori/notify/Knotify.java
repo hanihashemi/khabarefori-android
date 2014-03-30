@@ -22,7 +22,7 @@ import java.util.TimerTask;
 public class Knotify {
     private static Knotify instance;
 
-    private static boolean isOpen = false;
+    public static boolean isOpen = false;
     private final String LOGTAG = "Knotify";
     protected MyActivity activity;
     private Timer timerWaiting = null;
@@ -78,8 +78,10 @@ public class Knotify {
     }
 
     public void hide() {
-        foldLayoutKnotify();
-        setTextMessage("");
+        if (isOpen) {
+            foldLayoutKnotify();
+            setTextMessage("");
+        }
     }
 
     private void setMessage(String value, boolean enableTimer) {
@@ -96,56 +98,68 @@ public class Knotify {
         }
     }
 
-    private void setTextMessage(String value) {
-        TextSwitcher valueView = (TextSwitcher) activity.findViewById(R.id.txtMessage);
+    private void setTextMessage(final String value) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TextSwitcher valueView = (TextSwitcher) activity.findViewById(R.id.txtMessage);
 
-        try {
-            valueView.setFactory(new ViewSwitcher.ViewFactory() {
+                try {
+                    valueView.setFactory(new ViewSwitcher.ViewFactory() {
 
-                public View makeView() {
-                    TextView myText = new TextView(activity.getApplicationContext());
-                    myText.setGravity(Gravity.CENTER);
-                    myText.setTextColor(activity.getBaseContext().getResources().getColor(R.color.knotify_text));
-                    myText.setTextAppearance(activity.getApplicationContext(), android.R.style.TextAppearance_DeviceDefault_Medium);
-                    return myText;
+                        public View makeView() {
+                            TextView myText = new TextView(activity.getApplicationContext());
+                            myText.setGravity(Gravity.CENTER);
+                            myText.setTextColor(activity.getBaseContext().getResources().getColor(R.color.knotify_text));
+                            myText.setTextAppearance(activity.getApplicationContext(), android.R.style.TextAppearance_DeviceDefault_Medium);
+                            return myText;
+                        }
+                    });
+                    Animation in = AnimationUtils.loadAnimation(activity.getApplicationContext(), android.R.anim.slide_in_left);
+                    Animation out = AnimationUtils.loadAnimation(activity.getApplicationContext(), android.R.anim.slide_out_right);
+
+                    valueView.setInAnimation(in);
+                    valueView.setOutAnimation(out);
+                } catch (Exception ex) {
                 }
-            });
-            Animation in = AnimationUtils.loadAnimation(activity.getApplicationContext(), android.R.anim.slide_in_left);
-            Animation out = AnimationUtils.loadAnimation(activity.getApplicationContext(), android.R.anim.slide_out_right);
 
-            valueView.setInAnimation(in);
-            valueView.setOutAnimation(out);
-        } catch (Exception ex) {
-
-        }
-
-        valueView.setVisibility(View.VISIBLE);
-        valueView.setText(value);
+                valueView.setText(value);
+            }
+        });
     }
 
     private void expandLayoutKnotify() {
-        LinearLayout layoutKnotify = (LinearLayout) activity.findViewById(R.id.layoutKnotify);
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (!isOpen) {
+                    isOpen = true;
+                    LinearLayout layoutKnotify = (LinearLayout) activity.findViewById(R.id.layoutKnotify);
 
-        if (!isOpen) {
-            isOpen = true;
-
-            DropDownAnim dropDownAnim = new DropDownAnim(layoutKnotify, activity.toDIPMetric(35), activity.toDIPMetric(5));
-            dropDownAnim.setDuration(500);
-            layoutKnotify.startAnimation(dropDownAnim);
-        }
+                    DropDownAnim dropDownAnim = new DropDownAnim(layoutKnotify, activity.toDIPMetric(35), activity.toDIPMetric(5));
+                    dropDownAnim.setDuration(500);
+                    layoutKnotify.startAnimation(dropDownAnim);
+                }
+            }
+        });
 
     }
 
     private void foldLayoutKnotify() {
-        LinearLayout layoutKnotify = (LinearLayout) activity.findViewById(R.id.layoutKnotify);
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (isOpen) {
+                    isOpen = false;
 
-        if (isOpen) {
-            isOpen = false;
+                    LinearLayout layoutKnotify = (LinearLayout) activity.findViewById(R.id.layoutKnotify);
 
-            DropDownAnim dropDownAnim = new DropDownAnim(layoutKnotify, activity.toDIPMetric(5), activity.toDIPMetric(35));
-            dropDownAnim.setDuration(500);
-            layoutKnotify.startAnimation(dropDownAnim);
-        }
+                    DropDownAnim dropDownAnim = new DropDownAnim(layoutKnotify, activity.toDIPMetric(5), activity.toDIPMetric(35));
+                    dropDownAnim.setDuration(500);
+                    layoutKnotify.startAnimation(dropDownAnim);
+                }
+            }
+        });
     }
 
     public class MessageType {

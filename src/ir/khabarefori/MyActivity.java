@@ -30,6 +30,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     private Messenger serviceMessenger = null;
     private ServiceConnection serviceConnection = this;
 
+    public static boolean btnReloadIsActive = true;
+
     /**
      * Called when the activity is first created.
      */
@@ -59,6 +61,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     protected void onResume() {
         super.onResume();
 
+        refreshbtnReload();
         Knotify.updateMainActivity(this);
     }
 
@@ -67,9 +70,29 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     @Override
     public void onClick(View view) {
         if (findViewById(R.id.btnReload).equals(view)) {
-            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
-            view.startAnimation(hyperspaceJumpAnimation);
+            btnReloadIsActive = true;
+            refreshbtnReload();
         }
+    }
+
+    public void refreshbtnReload() {
+        if (btnReloadIsActive) {
+            ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
+
+            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
+            btnReload.startAnimation(hyperspaceJumpAnimation);
+        } else {
+            ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
+
+            btnReload.clearAnimation();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Knotify.isOpen = false;
     }
 
     @Override
@@ -80,6 +103,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         } catch (Throwable t) {
             Log.e(LOGTAG, "Failed to unbind from the service");
         }
+
+        Knotify.isOpen = false;
     }
 
     private void doBindService() {

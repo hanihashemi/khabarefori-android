@@ -141,7 +141,7 @@ public class NewsDatasource {
     /**
      * Remove table
      */
-    public void deleteTable() {
+    public void dropTable() {
         SqlLite.getInstance().execSQL("DROP TABLE IF EXISTS " + TABLE);
     }
 }

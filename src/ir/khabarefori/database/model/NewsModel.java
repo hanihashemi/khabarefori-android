@@ -96,6 +96,9 @@ public class NewsModel {
 
     public String getContextShort() {
 
+        if (context == null)
+            return "null";
+
         String text = context.trim();
         String[] texts = text.split(" ");
         String result = "";
