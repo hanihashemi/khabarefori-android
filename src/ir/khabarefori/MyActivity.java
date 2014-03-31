@@ -2,10 +2,15 @@ package ir.khabarefori;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.*;
 import android.util.Log;
 import android.util.TypedValue;

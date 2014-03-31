@@ -61,7 +61,7 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="منبع "
+                    android:text=" منبع "
                     android:textColor="@color/item_link_color"
                     android:id="@+id/txtReadMore"
                     android:layout_alignParentTop="true"
@@ -74,7 +74,7 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="اشتراک "
+                    android:text=" اشتراک "
                     android:textColor="@color/item_link_color"
                     android:id="@+id/txtShare"
                     android:layout_alignParentTop="true"

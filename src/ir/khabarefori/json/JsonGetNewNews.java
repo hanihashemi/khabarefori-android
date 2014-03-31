@@ -1,8 +1,16 @@
 package ir.khabarefori.json;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import com.google.gson.Gson;
 import ir.khabarefori.AppPath;
+import ir.khabarefori.ApplicationContextProvider;
 import ir.khabarefori.MyActivity;
+import ir.khabarefori.R;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.models.ModelNews;
@@ -12,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Calendar;
 
 /**
  * Created by hani on 1/11/14.
@@ -53,6 +62,9 @@ public class JsonGetNewNews implements Runnable {
                 model.setIsBreakingNewsParamBoolean(news.getNews().get(i).isBreakingNews);
 
                 NewsDatasource.getInstance().add(model);
+
+                if (model.getIsBreakingNews() && checkIsNewNews(model.getDatetime()))
+                    GoNotify(model.getSubject());
             }
 
             MyActivity.setBtnReloadIsActive(false);
@@ -72,35 +84,45 @@ public class JsonGetNewNews implements Runnable {
             isRun = false;
         }
     }
-}
 
-//    private void startNotify(final String message) {
-//        Runnable taskNotify = new Runnable() {
-//            @Override
-//            public void run() {
-//                NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-//                Intent launchIntenet = new Intent(context,
-//                        MyActivity.class);
-//                PendingIntent contentIntent = PendingIntent.getActivity(
-//                        context, 0, launchIntenet, 0);
-//
-//                android.app.Notification note = new android.app.Notification(
-//                        R.drawable.logo_circle, "خبر فوری",
-//                        System.currentTimeMillis());
-//                note.setLatestEventInfo(context, message, "خبر فوری",
-//                        contentIntent);
-//
-//                try {
-//                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-//                    Ringtone r = RingtoneManager.getRingtone(context, notification);
-//                    r.play();
-//                } catch (Exception e) {
-//                }
-//
-//                manager.notify(10110, note);
-//            }
-//        };
-//        Thread threadNotify = new Thread(taskNotify);
-//        threadNotify.setName("Thread Notify");
-//        threadNotify.start();
-//    }
+    private boolean checkIsNewNews(String date) {
+        try {
+            String[] strDate = date.split(" ")[0].split("-");
+            int[] intDate = new int[3];
+            for (int i = 0; i < strDate.length; i++)
+                intDate[i] = Integer.parseInt(strDate[i]);
+
+            Calendar c = Calendar.getInstance();
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            int month = c.get(Calendar.MONTH);
+            int year = c.get(Calendar.YEAR);
+
+            if (intDate[0] == year && intDate[1] == month && intDate[2] == day)
+                return true;
+        } catch (Exception ex) {
+
+        }
+
+        return false;
+    }
+
+    private void GoNotify(String subject) {
+        NotificationManager mNotificationManager =
+                (NotificationManager) ApplicationContextProvider.getContext().getSystemService
+                        (ApplicationContextProvider.getContext().NOTIFICATION_SERVICE);
+        CharSequence text = subject;
+        android.app.Notification notification = new android.app.Notification(R.drawable.logo_circle_notify, text, System.currentTimeMillis());
+        PendingIntent contentIntent = PendingIntent.getActivity(ApplicationContextProvider.getContext(), 0, new Intent(ApplicationContextProvider.getContext(), MyActivity.class), 0);
+        notification.setLatestEventInfo(ApplicationContextProvider.getContext(), "خبرفوری", text, contentIntent);
+
+        try {
+            Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(ApplicationContextProvider.getContext(), sound);
+            r.play();
+        } catch (Exception e) {
+        }
+
+        mNotificationManager.notify(subject.length(), notification);
+    }
+
+}

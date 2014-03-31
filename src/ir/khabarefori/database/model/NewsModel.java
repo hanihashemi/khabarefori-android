@@ -50,14 +50,18 @@ public class NewsModel {
 
 
     public void setPersianDatetime(String datetime) {
-        String[] strDate = datetime.split(" ")[0].split("-");
-        int[] intDate = new int[3];
-        for (int i = 0; i < strDate.length; i++)
-            intDate[i] = Integer.parseInt(strDate[i]);
+        try {
+            String[] strDate = datetime.split(" ")[0].split("-");
+            int[] intDate = new int[3];
+            for (int i = 0; i < strDate.length; i++)
+                intDate[i] = Integer.parseInt(strDate[i]);
 
-        Roozh roozh = new Roozh();
-        roozh.GregorianToPersian(intDate[0], intDate[1], intDate[2]);
-        this.datetime = roozh.toString();
+            Roozh roozh = new Roozh();
+            roozh.GregorianToPersian(intDate[0], intDate[1], intDate[2]);
+            this.datetime = roozh.toString();
+        } catch (Exception ex) {
+            this.datetime = "";
+        }
     }
 
     public String getDatetime() {
