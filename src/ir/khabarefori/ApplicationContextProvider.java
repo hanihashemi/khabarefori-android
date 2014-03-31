@@ -2,10 +2,16 @@ package ir.khabarefori;
 
 import android.app.Application;
 import android.content.Context;
+import org.acra.ACRA;
+import org.acra.ReportingInteractionMode;
+import org.acra.annotation.ReportsCrashes;
 
-/**
- * Created by hani on 2/9/14.
- */
+@ReportsCrashes(formKey = "",
+        formUri = "http://khabarefori.ir/ACRA/index.php",
+        formUriBasicAuthLogin = "yourlogin",
+        formUriBasicAuthPassword = "y0uRpa$$w0rd",
+        mode = ReportingInteractionMode.TOAST,
+        resToastText = R.string.crash_toast_text)
 
 public class ApplicationContextProvider extends Application {
 
@@ -17,6 +23,7 @@ public class ApplicationContextProvider extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ACRA.init(this);
 
         sContext = getApplicationContext();
 
