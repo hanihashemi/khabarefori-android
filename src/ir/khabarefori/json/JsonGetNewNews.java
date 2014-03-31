@@ -49,7 +49,7 @@ public class JsonGetNewNews implements Runnable {
                 model.setServerID(news.getNews().get(i).id);
                 model.setSubject(news.getNews().get(i).subject);
                 model.setContext(news.getNews().get(i).context);
-                model.setDatetime(news.getNews().get(i).datetime);
+                model.setPersianDatetime(news.getNews().get(i).datetime);
                 model.setIsBreakingNewsParamBoolean(news.getNews().get(i).isBreakingNews);
 
                 NewsDatasource.getInstance().add(model);

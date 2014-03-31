@@ -1,5 +1,7 @@
 package ir.khabarefori.database.model;
 
+import ir.khabarefori.lib.datetime.Roozh;
+
 /**
  * Created by hani on 2/3/14.
  */
@@ -46,7 +48,20 @@ public class NewsModel {
         return link;
     }
 
+
+    public void setPersianDatetime(String datetime) {
+        String[] strDate = datetime.split(" ")[0].split("-");
+        int[] intDate = new int[3];
+        for (int i = 0; i < strDate.length; i++)
+            intDate[i] = Integer.parseInt(strDate[i]);
+
+        Roozh roozh = new Roozh();
+        roozh.GregorianToPersian(intDate[0], intDate[1], intDate[2]);
+        this.datetime = roozh.toString();
+    }
+
     public String getDatetime() {
+
         return datetime;
     }
 

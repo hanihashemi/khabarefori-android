@@ -48,6 +48,10 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         LinearLayout lineBreakingNews = (LinearLayout) rowView.findViewById(R.id.lineBreakingNews);
         TextView txtReadMore = (Button) rowView.findViewById(R.id.txtReadMore);
         TextView txtShare = (Button) rowView.findViewById(R.id.txtShare);
+        TextView txtDateTime = (TextView) rowView.findViewById(R.id.txtDatetime);
+
+        //set date time
+        txtDateTime.setText(itemsArrayList.get(position).getDatetime() + " ");
 
         //set visible breaking news line
         if (!itemsArrayList.get(position).getIsBreakingNews())
