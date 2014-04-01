@@ -2,15 +2,10 @@ package ir.khabarefori;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.*;
 import android.util.Log;
 import android.util.TypedValue;
@@ -19,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.JsonGetNewNews;
@@ -32,7 +28,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     private final String LOGTAG = "MyActivity";
     private final Messenger messenger = new Messenger(new IncomingMessageHandler());
     boolean isBound = false;
-    private ServiceCheckServer serviceCheck;
     private Messenger serviceMessenger = null;
     private ServiceConnection serviceConnection = this;
     private static boolean btnReloadIsActive = false;
@@ -51,6 +46,10 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         btnReload.setOnClickListener(this);
 
         Knotify.updateMainActivity(this);
+
+        Intent i = new Intent(this,
+                TutorialActivity.class);
+        startActivity(i);
 
         // bind service :P
         doBindService();
@@ -73,6 +72,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         refreshbtnReload();
         refreshListView();
         Knotify.updateMainActivity(this);
+
+        Toast.makeText(this, "Resume__________", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -91,8 +92,9 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         if (btnReloadIsActive) {
             ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
 
-            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.hyperspace_jump);
-            btnReload.startAnimation(hyperspaceJumpAnimation);
+            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
+            if (hyperspaceJumpAnimation != null)
+                btnReload.startAnimation(hyperspaceJumpAnimation);
         } else {
             ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
 
@@ -137,6 +139,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
                     serviceMessenger.send(msg);
                 } catch (RemoteException e) {
                     // There is nothing special we need to do if the service has crashed.
+                } catch (NullPointerException e) {
+                    //
                 }
             }
             // Detach our existing connection.
@@ -146,7 +150,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     }
 
     private ArrayList<NewsModel> generateData() {
-        ArrayList<NewsModel> models = (ArrayList) NewsDatasource.getInstance().getAllContents();
+        ArrayList<NewsModel> models = (ArrayList<NewsModel>) NewsDatasource.getInstance().getAllContents();
         return models;
     }
 
@@ -156,29 +160,32 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
      * @return boolean
      */
     public boolean isSCheckServerRunning() {
-        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
-            if (ServiceCheckServer.class.getName().equals(service.service.getClassName()))
-                return true;
+        try {
+            ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+            for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
+                if (ServiceCheckServer.class.getName().equals(service.service.getClassName()))
+                    return true;
+        } catch (NullPointerException e) {
+            //
+        }
         return false;
     }
 
     /**
      * Send data to the service
      */
-    private void sendMessageToService() {
-        if (isBound) {
-            if (serviceMessenger != null) {
-                try {
-                    Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_1, 101, 0);
-                    msg.replyTo = messenger;
-                    serviceMessenger.send(msg);
-                } catch (RemoteException e) {
-                }
-            }
-        }
-    }
-
+//    private void sendMessageToService() {
+//        if (isBound) {
+//            if (serviceMessenger != null) {
+//                try {
+//                    Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_1, 101, 0);
+//                    msg.replyTo = messenger;
+//                    serviceMessenger.send(msg);
+//                } catch (RemoteException e) {
+//                }
+//            }
+//        }
+//    }
     public void onServiceConnected(ComponentName className,
                                    IBinder service) {
         serviceMessenger = new Messenger(service);
@@ -188,6 +195,9 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
             serviceMessenger.send(msg);
             isBound = true;
         } catch (RemoteException e) {
+//
+        } catch (NullPointerException e) {
+//
         }
     }
 
@@ -208,8 +218,8 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case ServiceCheckServer.MessageType.MSG_2:
-                    String str1 = msg.getData().getString("str1");
-                    Log.d(LOGTAG, str1);
+//                    String str1 = msg.getData().getString("str1");
+//                    Log.d(LOGTAG, str1);
                     break;
                 default:
                     super.handleMessage(msg);

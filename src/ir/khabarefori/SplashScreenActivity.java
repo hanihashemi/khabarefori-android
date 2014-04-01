@@ -1,9 +1,8 @@
 package ir.khabarefori;
 
 /**
- * Created by hani on 3/31/14.
+ * Created by Hani on 3/31/14.
  */
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
