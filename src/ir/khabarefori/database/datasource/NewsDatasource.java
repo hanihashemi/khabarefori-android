@@ -79,6 +79,23 @@ public class NewsDatasource {
         return null;
     }
 
+    public NewsModel getLastNews() {
+        Cursor cursor = null;
+        try {
+            cursor = SqlLite.getInstance().query(TABLE, new String[]{
+                    "max(" + COLUMN_SERVER_ID + ") , " + COLUMN_SERVER_ID + " , " + COLUMN_SUBJECT + " ,*"}, null, null, null, null, null);
+        } catch (Exception ex) {
+            return null;
+        }
+
+
+        if (cursor.moveToFirst()) {
+            return createModel(cursor);
+        }
+
+        return null;
+    }
+
     public int getLastId() {
         Cursor cursor = null;
         try {

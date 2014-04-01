@@ -3,13 +3,14 @@ package ir.khabarefori.widget;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.widget.RemoteViews;
+import ir.khabarefori.ApplicationContextProvider;
+import ir.khabarefori.MyActivity;
 import ir.khabarefori.R;
-import ir.khabarefori.json.JsonGetNewNews;
+import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.model.NewsModel;
 
 /**
  * Created by hani on 1/11/14.
@@ -20,32 +21,31 @@ public class WidgetActivity extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
-//        JsonGetNewNews json = new JsonGetNewNews(context, appWidgetManager);
-//
-//        final int N = appWidgetIds.length;
-//
-//        for (int i = 0; i < N; i++) {
-//            int appWidgetId = appWidgetIds[i];
-//
-//            // create intent for open web site
-//            String url = "http://www.khabarefori.ir";
-//            Intent intent = new Intent(Intent.ACTION_VIEW);
-//            intent.setData(Uri.parse(url));
-//            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-//
-//            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-//            views.setOnClickPendingIntent(R.id.imageView, pendingIntent);
-//
-//            // create intent for refresh :D
+        final int N = appWidgetIds.length;
+
+        for (int i = 0; i < N; i++) {
+            int appWidgetId = appWidgetIds[i];
+
+            // create intent for open web site
+            PendingIntent contentIntent = PendingIntent.getActivity(ApplicationContextProvider.getContext(), 0, new Intent(ApplicationContextProvider.getContext(), MyActivity.class), 0);
+
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+            views.setOnClickPendingIntent(R.id.imageView, contentIntent);
+
+            // create intent for refresh :D
 //            Intent intentRefresh = new Intent(WIDGET_BUTTON);
-//            PendingIntent pendingIntentRefresh = PendingIntent.getBroadcast(context, 0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
-//            views.setOnClickPendingIntent(R.id.txtNews, pendingIntentRefresh);
-//
-//            // just for update
-//            appWidgetManager.updateAppWidget(appWidgetId, views);
-//        }
+//            views.setOnClickPendingIntent(R.id.txtNews, contentIntent);
 //
 
+            NewsModel lastNews = NewsDatasource.getInstance().getLastNews();
+            if (lastNews != null)
+                views.setTextViewText(R.id.txtNews, lastNews.getSubject());
+            else
+                views.setTextViewText(R.id.txtNews, context.getString(R.string.no_internet));
+
+            // just for update
+            appWidgetManager.updateAppWidget(appWidgetId, views);
+        }
     }
 
     @Override

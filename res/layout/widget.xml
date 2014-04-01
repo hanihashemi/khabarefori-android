@@ -12,7 +12,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name_persian"
+                android:text="آخرین رویداد"
                 android:id="@+id/txtStatus" android:layout_gravity="right" android:gravity="right"
                 android:singleLine="true" android:textColor="@android:color/white"
                 android:textAppearance="@android:style/TextAppearance.Small"/>
