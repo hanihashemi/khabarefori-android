@@ -69,7 +69,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         refreshListView();
         Knotify.updateMainActivity(this);
 
-        Toast.makeText(this, "Resume__________", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Resume__________", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -111,7 +111,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         try {
             doUnbindService();
         } catch (Throwable t) {
-            Log.e(LOGTAG, "Failed to unbind from the service");
+            //
         }
 
         Knotify.isOpen = false;
@@ -121,7 +121,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         try {
             bindService(new Intent(this, ServiceCheckServer.class), serviceConnection, Context.BIND_AUTO_CREATE);
         } catch (Exception ex) {
-            Log.d(LOGTAG, "errro on doBindService");
+//            Log.d(LOGTAG, "errro on doBindService");
         }
     }
 

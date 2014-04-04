@@ -122,7 +122,7 @@ public class NewsDatasource {
                 COLUMN_IMAGE,
                 COLUMN_LINK,
                 COLUMN_DATETIME,
-                COLUMN_IS_BREAKING_NEWS}, null, null, null, null, COLUMN_ID + " DESC LIMIT 0,10");
+                COLUMN_IS_BREAKING_NEWS}, null, null, null, null, COLUMN_DATETIME + " DESC LIMIT 0,10");
 
         return createModelsOfArray(cursor);
     }

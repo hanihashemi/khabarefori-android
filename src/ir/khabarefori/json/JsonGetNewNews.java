@@ -42,7 +42,7 @@ public class JsonGetNewNews implements Runnable {
 
         try {
             MyActivity.setBtnReloadIsActive(true);
-            Knotify.getInstance().show(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
+            knotify(Knotify.MessageType.MSG_TRY_CONNECT_TO_SERVER);
 
             URL url = new URL(AppPath.Network.getNewNewsPage(NewsDatasource.getInstance().getLastId()));
             InputStream inputStream = url.openConnection().getInputStream();
@@ -69,9 +69,9 @@ public class JsonGetNewNews implements Runnable {
 
             MyActivity.setBtnReloadIsActive(false);
             if (news.getNews().size() == 0) {
-                Knotify.getInstance().show(Knotify.MessageType.MSG_NO_NEWS);
+                knotify(Knotify.MessageType.MSG_NO_NEWS);
             } else {
-                Knotify.getInstance().show(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
+                knotify(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
             }
 
         } catch (
@@ -79,9 +79,17 @@ public class JsonGetNewNews implements Runnable {
                 ) {
             ex.printStackTrace();
             MyActivity.setBtnReloadIsActive(false);
-            Knotify.getInstance().show(Knotify.MessageType.MSG_NO_INTERNET);
+            knotify(Knotify.MessageType.MSG_NO_INTERNET);
         } finally {
             isRun = false;
+        }
+    }
+
+    private void knotify(int type) {
+        try {
+            Knotify.getInstance().show(type);
+        } catch (Exception ex) {
+            //
         }
     }
 

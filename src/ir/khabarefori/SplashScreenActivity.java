@@ -8,10 +8,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import ir.khabarefori.database.datasource.NewsDatasource;
 
 public class SplashScreenActivity extends Activity {
 
-    private static final int SPLASH_SHOW_TIME = 5000;
+    private static final int SPLASH_SHOW_TIME = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +63,11 @@ public class SplashScreenActivity extends Activity {
             startActivity(i);
 
 
-            Intent ii = new Intent(SplashScreenActivity.this,
-                    TutorialActivity.class);
-            startActivity(ii);
+            if (NewsDatasource.getInstance().getLastId() == 0) {
+                Intent ii = new Intent(SplashScreenActivity.this,
+                        TutorialActivity.class);
+                startActivity(ii);
+            }
 
             finish();
         }

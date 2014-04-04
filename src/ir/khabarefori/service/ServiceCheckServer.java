@@ -83,7 +83,6 @@ public class ServiceCheckServer extends Service {
 //            Log.d(LOGTAG, "timer " + serial_num);
 //            sendMessageToUI();
             Log.d(LOGTAG, "timer " + serial_num);
-
             JsonGetNewNews.CheckNews();
         }
     }
