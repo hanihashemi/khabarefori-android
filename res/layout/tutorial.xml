@@ -32,8 +32,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginRight="10dp"
-                android:text="با نرم افزار خبرفوری می توانید از آخرین رویداد ها با خبر باشید، برای آشنایی بیشتر نکات زیر را مطالعه کنید"
-                android:id="@+id/textView3" android:gravity="center" android:layout_gravity="center"/>
+                android:text="به نرم افزار خبر فوری خوش آمدید، با این نرم افزار می توانید از آخرین رویدادها با خبر شوید، برای آشنایی بیشتر نکات زیر را مطالعه کنید:"
+                android:id="@+id/textView3" android:gravity="right" android:layout_gravity="right"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"
@@ -94,7 +94,7 @@
     <Button
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="8dp"
             android:paddingTop="5dp"
             android:layout_marginRight="10dp"
             android:text="باشه"

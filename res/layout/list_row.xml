@@ -17,7 +17,7 @@
                 android:id="@+id/subject"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:layout_margin="4dp"
                 android:textColor="@color/item_text_color"
                 android:gravity="right"
