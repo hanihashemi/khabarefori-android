@@ -22,7 +22,11 @@ public class ModelNews {
         public String subject;
         public String context;
         public String datetime;
-        public boolean isBreakingNews;
+        public int is_breaking_news;
+
+        public boolean getIsBreakingNews() {
+            return is_breaking_news == 1 ? true : false;
+        }
 
     }
 }

@@ -3,6 +3,7 @@ package ir.khabarefori;
 /**
  * Created by Hani on 3/31/14.
  */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -59,6 +60,12 @@ public class SplashScreenActivity extends Activity {
             // below
             i.putExtra("loaded_info", " ");
             startActivity(i);
+
+
+            Intent ii = new Intent(SplashScreenActivity.this,
+                    TutorialActivity.class);
+            startActivity(ii);
+
             finish();
         }
     }

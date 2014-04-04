@@ -47,10 +47,6 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
 
         Knotify.updateMainActivity(this);
 
-        Intent i = new Intent(this,
-                TutorialActivity.class);
-        startActivity(i);
-
         // bind service :P
         doBindService();
 

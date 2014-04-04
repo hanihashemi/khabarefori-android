@@ -9,7 +9,7 @@
     <!--Message String-->
     <string name="try_connect_to_server">در حال بر قراری ارتباط با سرور</string>
     <string name="no_internet">اینترنت در دسترس نیست</string>
-    <string name="no_news">امروز رویداد خبری مهمی در دسترس  نیست</string>
+    <string name="no_news">رویداد خبری جدیدی در دسترس نیست</string>
     <string name="new_news_updated">با موفقیت بروز رسانی انجام شد</string>
 
 </resources>

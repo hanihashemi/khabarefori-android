@@ -59,11 +59,11 @@ public class JsonGetNewNews implements Runnable {
                 model.setSubject(news.getNews().get(i).subject);
                 model.setContext(news.getNews().get(i).context);
                 model.setPersianDatetime(news.getNews().get(i).datetime);
-                model.setIsBreakingNewsParamBoolean(news.getNews().get(i).isBreakingNews);
+                model.setIsBreakingNewsParamBoolean(news.getNews().get(i).getIsBreakingNews());
 
                 NewsDatasource.getInstance().add(model);
 
-                if (model.getIsBreakingNews() && checkIsNewNews(model.getDatetime()))
+                if (model.getIsBreakingNews() && checkIsNewNews(news.getNews().get(i).datetime))
                     GoNotify(model.getSubject());
             }
 
@@ -94,7 +94,7 @@ public class JsonGetNewNews implements Runnable {
 
             Calendar c = Calendar.getInstance();
             int day = c.get(Calendar.DAY_OF_MONTH);
-            int month = c.get(Calendar.MONTH);
+            int month = c.get(Calendar.MONTH) + 1;
             int year = c.get(Calendar.YEAR);
 
             if (intDate[0] == year && intDate[1] == month && intDate[2] == day)

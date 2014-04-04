@@ -2,6 +2,6 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"
-          android:drawable="@android:color/black" /> <!-- pressed -->
-    <item android:drawable="@android:color/white" /> <!-- default -->
+          android:drawable="@color/tutorial_button_pressed" /> <!-- pressed -->
+    <item android:drawable="@color/tutorial_button_default" /> <!-- default -->
 </selector>

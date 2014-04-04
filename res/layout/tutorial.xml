@@ -14,8 +14,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="خوش آمدید"
-            android:textColor="#cce78178"
-            android:shadowColor="#ff292929"
+            android:textColor="#ccf4877e"
+            android:shadowColor="#ff1c1206"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="2"
@@ -30,15 +30,9 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="خبرفوری"
-                android:id="@+id/textView2" android:layout_gravity="right"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginRight="10dp"
-                android:text="با این نرم افزار از مهمترین رویداد ها با خبر شوید"
+                android:text="با نرم افزار خبرفوری می توانید از آخرین رویداد ها با خبر باشید، در زیر با امکانات نرم افزار آشنا می شوید:"
                 android:id="@+id/textView3" android:layout_gravity="right"/>
     </LinearLayout>
     <LinearLayout
@@ -98,6 +92,7 @@
             android:paddingTop="5dp"
             android:layout_marginRight="10dp"
             android:text="باشه"
+            android:textColor="#ffffffff"
             android:background="@drawable/tutorial_button"
             android:layout_gravity="center_horizontal|right"
 

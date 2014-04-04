@@ -14,6 +14,9 @@
 
     <color name="item_red_news_color">#BC0000</color>
 
+    <color name="tutorial_button_default">#BC0000</color>
+    <color name="tutorial_button_pressed">#fff12127</color>
+
     <style name="Theme.Transparent" parent="android:Theme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
