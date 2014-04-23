@@ -63,8 +63,11 @@ public class JsonGetNewNews implements Runnable {
 
                 NewsDatasource.getInstance().add(model);
 
-                if (model.getIsBreakingNews() && checkIsNewNews(news.getNews().get(i).datetime))
+                if (checkIsNewNews(news.getNews().get(i).datetime)) {
                     GoNotify(model.getSubject());
+                    if (model.getIsBreakingNews())
+                        AlertNotify();
+                }
             }
 
             MyActivity.setBtnReloadIsActive(false);
@@ -77,7 +80,7 @@ public class JsonGetNewNews implements Runnable {
         } catch (
                 Exception ex
                 ) {
-            ex.printStackTrace();
+//            ex.printStackTrace();
             MyActivity.setBtnReloadIsActive(false);
             knotify(Knotify.MessageType.MSG_NO_INTERNET);
         } finally {
@@ -123,14 +126,16 @@ public class JsonGetNewNews implements Runnable {
         PendingIntent contentIntent = PendingIntent.getActivity(ApplicationContextProvider.getContext(), 0, new Intent(ApplicationContextProvider.getContext(), MyActivity.class), 0);
         notification.setLatestEventInfo(ApplicationContextProvider.getContext(), "خبرفوری", text, contentIntent);
 
+        mNotificationManager.notify(subject.length(), notification);
+    }
+
+    private void AlertNotify() {
         try {
             Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             Ringtone r = RingtoneManager.getRingtone(ApplicationContextProvider.getContext(), sound);
             r.play();
         } catch (Exception e) {
         }
-
-        mNotificationManager.notify(subject.length(), notification);
     }
 
 }

@@ -13,14 +13,28 @@
             android:src="@drawable/splash_screen_logo2"
             android:tileMode="repeat"/>
 
-    <TextView
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal"
-            android:text="khabarefori.ir"
-            android:textColor="#ffffffff"
-            android:textSize="12sp"/>
+            android:gravity="center_horizontal">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:text="khabarefori.ir"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" android:id="@+id/textView"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="ver 1.0"
+                android:gravity="center_horizontal"
+                android:textColor="#ffffffff"
+                android:textSize="6sp"/>
+    </LinearLayout>
 
 </RelativeLayout>

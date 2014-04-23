@@ -15,12 +15,12 @@
                 android:text="آخرین رویداد"
                 android:id="@+id/txtStatus" android:layout_gravity="right" android:gravity="right"
                 android:singleLine="true" android:textColor="@android:color/white"
-                android:textAppearance="@android:style/TextAppearance.Small"/>
+                android:textAppearance="@android:style/TextAppearance.Small" android:textStyle="bold"/>
         <TextView
                 android:layout_width="230dip"
                 android:layout_height="fill_parent"
                 android:id="@+id/txtNews" android:textStyle="bold"
-                android:textAppearance="@android:style/TextAppearance.Medium" android:layout_gravity="right"
+                android:textAppearance="@android:style/TextAppearance.Small" android:layout_gravity="right"
                 android:gravity="center_vertical|right" android:autoText="true"/>
     </LinearLayout>
     <ImageView
