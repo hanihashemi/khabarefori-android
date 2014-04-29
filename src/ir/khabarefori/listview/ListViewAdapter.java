@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
+import ir.khabarefori.AppPath;
 import ir.khabarefori.R;
 import ir.khabarefori.database.model.NewsModel;
 
@@ -62,7 +63,12 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         txtReadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("http://www.Khabarefori.ir/");
+                if (itemsArrayList.get(position).getLink() == null || itemsArrayList.get(position).getLink().equals("") || itemsArrayList.get(position).getLink().equals("#")) {
+                    Toast.makeText(context, "منبع خبر در دسترس نیست", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Uri uri = Uri.parse(AppPath.Network.getNewsSource(itemsArrayList.get(position).getServerID(), itemsArrayList.get(position).getSubject()));
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

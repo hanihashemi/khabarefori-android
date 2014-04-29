@@ -122,7 +122,7 @@ public class NewsDatasource {
                 COLUMN_IMAGE,
                 COLUMN_LINK,
                 COLUMN_DATETIME,
-                COLUMN_IS_BREAKING_NEWS}, null, null, null, null, COLUMN_DATETIME + " DESC LIMIT 0,10");
+                COLUMN_IS_BREAKING_NEWS}, null, null, null, null, COLUMN_SERVER_ID + " DESC LIMIT 0,10");
 
         return createModelsOfArray(cursor);
     }
@@ -147,9 +147,9 @@ public class NewsDatasource {
         model.setServerID(cursor.getInt(1));
         model.setSubject(cursor.getString(2));
         model.setContext(cursor.getString(3));
-        model.setLink(cursor.getString(4));
+        model.setLink(cursor.getString(5));
         model.setDatetime(cursor.getString(6));
-        model.setImage(cursor.getString(5));
+        model.setImage(cursor.getString(4));
         model.setIsBreakingNewsParamInt(cursor.getInt(7));
 
         return model;

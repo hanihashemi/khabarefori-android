@@ -2,19 +2,16 @@ package ir.khabarefori;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.*;
-import android.util.Log;
+import android.os.Bundle;
+import android.os.Messenger;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.JsonGetNewNews;
@@ -24,12 +21,12 @@ import ir.khabarefori.service.ServiceCheckServer;
 
 import java.util.ArrayList;
 
-public class MyActivity extends Activity implements View.OnClickListener, ServiceConnection {
+public class MyActivity extends Activity implements View.OnClickListener {
     private final String LOGTAG = "MyActivity";
-    private final Messenger messenger = new Messenger(new IncomingMessageHandler());
-    boolean isBound = false;
-    private Messenger serviceMessenger = null;
-    private ServiceConnection serviceConnection = this;
+    //    private final Messenger messenger = new Messenger(new IncomingMessageHandler());
+//    boolean isBound = false;
+//    private Messenger serviceMessenger = null;
+    //    private ServiceConnection serviceConnection = this;
     private static boolean btnReloadIsActive = false;
 
     /**
@@ -48,7 +45,7 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
         Knotify.updateMainActivity(this);
 
         // bind service :P
-        doBindService();
+//        doBindService();
 
         // run service
         if (!isSCheckServerRunning())
@@ -108,42 +105,42 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        try {
-            doUnbindService();
-        } catch (Throwable t) {
-            //
-        }
+//        try {
+//            doUnbindService();
+//        } catch (Throwable t) {
+        //
+//        }
 
         Knotify.isOpen = false;
     }
 
-    private void doBindService() {
-        try {
-            bindService(new Intent(this, ServiceCheckServer.class), serviceConnection, Context.BIND_AUTO_CREATE);
-        } catch (Exception ex) {
+//    private void doBindService() {
+//        try {
+//            bindService(new Intent(this, ServiceCheckServer.class), serviceConnection, Context.BIND_AUTO_CREATE);
+//        } catch (Exception ex) {
 //            Log.d(LOGTAG, "errro on doBindService");
-        }
-    }
+//        }
+//    }
 
-    private void doUnbindService() {
-        if (isBound) {
-            // If we have received the service, and hence registered with it, then now is the time to unregister.
-            if (serviceMessenger != null) {
-                try {
-                    Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_UNREGISTER_CLIENT);
-                    msg.replyTo = messenger;
-                    serviceMessenger.send(msg);
-                } catch (RemoteException e) {
-                    // There is nothing special we need to do if the service has crashed.
-                } catch (NullPointerException e) {
-                    //
-                }
-            }
-            // Detach our existing connection.
-            unbindService(serviceConnection);
-            isBound = false;
-        }
-    }
+//    private void doUnbindService() {
+//        if (isBound) {
+//            If we have received the service, and hence registered with it, then now is the time to unregister.
+//            if (serviceMessenger != null) {
+//                try {
+//                    Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_UNREGISTER_CLIENT);
+//                    msg.replyTo = messenger;
+//                    serviceMessenger.send(msg);
+//                } catch (RemoteException e) {
+//                    // There is nothing special we need to do if the service has crashed.
+//                } catch (NullPointerException e) {
+//                    //
+//                }
+//            }
+//            // Detach our existing connection.
+//            unbindService(serviceConnection);
+//            isBound = false;
+//        }
+//    }
 
     private ArrayList<NewsModel> generateData() {
         ArrayList<NewsModel> models = (ArrayList<NewsModel>) NewsDatasource.getInstance().getAllContents();
@@ -182,44 +179,43 @@ public class MyActivity extends Activity implements View.OnClickListener, Servic
 //            }
 //        }
 //    }
-    public void onServiceConnected(ComponentName className,
-                                   IBinder service) {
-        serviceMessenger = new Messenger(service);
-        try {
-            Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_REGISTER_CLIENT);
-            msg.replyTo = messenger;
-            serviceMessenger.send(msg);
-            isBound = true;
-        } catch (RemoteException e) {
-//
-        } catch (NullPointerException e) {
-//
-        }
-    }
+//    public void onServiceConnected(ComponentName className,
+//                                   IBinder service) {
+//        serviceMessenger = new Messenger(service);
+//        try {
+//            Message msg = Message.obtain(null, ServiceCheckServer.MessageType.MSG_REGISTER_CLIENT);
+//            msg.replyTo = messenger;
+//            serviceMessenger.send(msg);
+//            isBound = true;
+//        } catch (RemoteException e) {
+////
+//        } catch (NullPointerException e) {
+////
+//        }
+//    }
 
-    public void onServiceDisconnected(ComponentName arg0) {
-        serviceMessenger = null;
-        isBound = false;
-    }
-
+//    public void onServiceDisconnected(ComponentName arg0) {
+//        serviceMessenger = null;
+//        isBound = false;
+//    }
     public int toDIPMetric(int value) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
     }
 
-    /**
-     * Handle incoming messages from MyService
-     */
-    private class IncomingMessageHandler extends Handler {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case ServiceCheckServer.MessageType.MSG_2:
-//                    String str1 = msg.getData().getString("str1");
-//                    Log.d(LOGTAG, str1);
-                    break;
-                default:
-                    super.handleMessage(msg);
-            }
-        }
-    }
+//    /**
+//     * Handle incoming messages from MyService
+//     */
+//    private class IncomingMessageHandler extends Handler {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            switch (msg.what) {
+//                case ServiceCheckServer.MessageType.MSG_2:
+////                    String str1 = msg.getData().getString("str1");
+////                    Log.d(LOGTAG, str1);
+//                    break;
+//                default:
+//                    super.handleMessage(msg);
+//            }
+//        }
+//    }
 }

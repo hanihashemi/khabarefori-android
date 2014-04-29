@@ -22,6 +22,7 @@ public class ModelNews {
         public String subject;
         public String context;
         public String datetime;
+        public String link;
         public int is_breaking_news;
 
         public boolean getIsBreakingNews() {
