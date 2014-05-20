@@ -19,25 +19,9 @@ public class ServiceCheckServer extends Service {
     private static Timer timer;
     private Context context;
 
-//    private List<Messenger> clients = new ArrayList<Messenger>(); // Keeps track of all current registered clients.
-//    private final Messenger messenger = new Messenger(new IncomingMessageHandler()); // Target we publish for clients to send messages to IncomingHandler.
-
-//    public class MessageType {
-//        public static final int MSG_1 = 0;
-//        public static final int MSG_REGISTER_CLIENT = 1;
-//        public static final int MSG_UNREGISTER_CLIENT = 2;
-//        public static final int MSG_2 = 3;
-//    }
-
     private int serial_num = 0;
 
-//    /**
-//     * @param arg0
-//     * @return
-//     */
     public IBinder onBind(Intent arg0) {
-//        Log.d(LOGTAG, "onBind");
-//        return messenger.getBinder();
         return null;
     }
 
@@ -48,24 +32,18 @@ public class ServiceCheckServer extends Service {
     public void onCreate() {
         super.onCreate();
 
-        Log.d("Service", "_____________________Service Started_________________");
-
         context = this;
 
         Random randomGenerator = new Random();
         serial_num = randomGenerator.nextInt(1000);
 
-        Log.d("service", "onCreate" + serial_num);
-
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
-            Log.d("service", "Timer start " + serial_num);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 300000);
         } else {
-            Log.d("service", "Timer Set null " + serial_num);
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 300000);
         }
     }
 
@@ -74,7 +52,6 @@ public class ServiceCheckServer extends Service {
      */
     private class mainTask extends TimerTask {
         public void run() {
-            Log.d(LOGTAG, "timer " + serial_num);
             JsonGetNewNews.CheckNews();
         }
     }
@@ -84,15 +61,12 @@ public class ServiceCheckServer extends Service {
      */
     @Override
     public void onDestroy() {
-        Log.d(LOGTAG, "_______________Destroy Service Stop_________________");
         restartService();
-
         super.onDestroy();
     }
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
-        Log.d(LOGTAG, "_______________Task Service Stop_________________");
         restartService();
     }
 
@@ -107,64 +81,5 @@ public class ServiceCheckServer extends Service {
                 SystemClock.elapsedRealtime() + 10000,
                 restartServicePendingIntent);
     }
-
-
-    /**
-     * Handle toast message
-     */
-//    private final Handler toastHandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-////            Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
-//        }
-//    };
-
-//    /**
-//     * Send the data to all clients.
-//     */
-//    private void sendMessageToUI() {
-//        Iterator<Messenger> messengerIterator = clients.iterator();
-//        while (messengerIterator.hasNext()) {
-//            Messenger messenger = messengerIterator.next();
-//            try {
-//                // Send data as an Integer
-////                messenger.send(Message.obtain(null, MSG_SET_INT_VALUE, intvaluetosend, 0));
-//
-//                // Send data as a String
-//                Bundle bundle = new Bundle();
-//                bundle.putString("str1", "abcd");
-//                Message msg = Message.obtain(null, MessageType.MSG_2);
-//                msg.setData(bundle);
-//                messenger.send(msg);
-//
-//            } catch (RemoteException e) {
-//                // The client is dead. Remove it from the list.
-//                clients.remove(messenger);
-//            }
-//        }
-//    }
-
-//    /**
-//     * Handle incoming messages from MainActivity
-//     */
-//    private class IncomingMessageHandler extends Handler {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            Log.d(LOGTAG, "handleMessage: " + msg.what);
-//            switch (msg.what) {
-//                case MessageType.MSG_REGISTER_CLIENT:
-//                    clients.add(msg.replyTo);
-//                    break;
-//                case MessageType.MSG_UNREGISTER_CLIENT:
-//                    clients.remove(msg.replyTo);
-//                    break;
-//                case MessageType.MSG_1:
-//                    Log.d(LOGTAG, "received message");
-//                    break;
-//                default:
-//                    super.handleMessage(msg);
-//            }
-//        }
-//    }
 }
 
