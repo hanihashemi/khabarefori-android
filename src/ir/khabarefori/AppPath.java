@@ -13,7 +13,7 @@ public class AppPath {
     }
 
     public static class Network {
-        private static String host = "http://khabarefori.ir/";
+        public static String host = "http://91.109.23.175/";
 
         public static String getNewNewsPage() {
             return host + "api_1/get_news.php";

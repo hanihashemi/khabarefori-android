@@ -12,7 +12,7 @@ import ir.khabarefori.database.datasource.NewsDatasource;
 
 public class SplashScreenActivity extends Activity {
 
-    private static final int SPLASH_SHOW_TIME = 3000;
+    private static final int SPLASH_SHOW_TIME = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

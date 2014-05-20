@@ -11,5 +11,6 @@
     <string name="no_internet">اینترنت در دسترس نیست</string>
     <string name="no_news">رویداد خبری جدیدی در دسترس نیست</string>
     <string name="new_news_updated">با موفقیت بروز رسانی انجام شد</string>
+    <string name="no_server">سرور در دسترس نیست</string>
 
 </resources>

@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center_horizontal"
-                android:text="khabarefori.ir"
+                android:text="khabarefori"
                 android:textColor="#ffffffff"
                 android:textSize="12sp" android:id="@+id/textView"/>
         <TextView

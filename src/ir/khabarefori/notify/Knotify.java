@@ -1,5 +1,8 @@
 package ir.khabarefori.notify;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
@@ -71,6 +74,22 @@ public class Knotify {
         });
     }
 
+    public boolean isOnline() {
+        ConnectivityManager connectivity = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null)
+        {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null)
+                for (int i = 0; i < info.length; i++)
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED)
+                    {
+                        return true;
+                    }
+
+        }
+        return false;
+    }
+
     public void show(int type) {
 
         if (timerWaiting != null) {
@@ -92,9 +111,14 @@ public class Knotify {
                         , true);
                 break;
             case MessageType.MSG_NO_INTERNET:
-                setMessage(
-                        activity.getString(R.string.no_internet)
-                        , false);
+                if (isOnline())
+                    setMessage(
+                            activity.getString(R.string.no_server)
+                            , false);
+                else
+                    setMessage(
+                            activity.getString(R.string.no_internet)
+                            , false);
                 break;
             case MessageType.MSG_NEW_NEWS_UPDATED:
                 setMessage(activity.getString(R.string.new_news_updated), true);

@@ -7,7 +7,7 @@ import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
 
 @ReportsCrashes(formKey = "",
-        formUri = "http://khabarefori.ir/ACRA/index.php",
+        formUri = "http://91.109.23.175/ACRA/index.php",
         formUriBasicAuthLogin = "yourlogin",
         formUriBasicAuthPassword = "y0uRpa$$w0rd",
         mode = ReportingInteractionMode.TOAST,

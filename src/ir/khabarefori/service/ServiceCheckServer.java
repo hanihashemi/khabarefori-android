@@ -59,13 +59,13 @@ public class ServiceCheckServer extends Service {
 
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 30000);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
             Log.d("service", "Timer start " + serial_num);
         } else {
             Log.d("service", "Timer Set null " + serial_num);
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 30000);
+            timer.scheduleAtFixedRate(new mainTask(), 5000, 600000);
         }
     }
 

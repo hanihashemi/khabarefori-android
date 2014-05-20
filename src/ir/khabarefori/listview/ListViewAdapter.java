@@ -80,7 +80,7 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "خبرفوری ," + itemsArrayList.get(position).getSubject() + " http://khabarefori.ir";
+                String shareBody = "خبرفوری ," + itemsArrayList.get(position).getSubject() + " " + AppPath.Network.host;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "خبرفوری");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 sharingIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
