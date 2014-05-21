@@ -33,6 +33,11 @@ public class Notification {
         PendingIntent contentIntent = PendingIntent.getActivity(ApplicationContextProvider.getContext(), 0, new Intent(ApplicationContextProvider.getContext(), MyActivity.class), 0);
         notification.setLatestEventInfo(ApplicationContextProvider.getContext(), "خبرفوری", text, contentIntent);
 
+        notification.ledARGB = 0xFFFF0000; // Red
+        notification.flags = android.app.Notification.FLAG_SHOW_LIGHTS;
+        notification.ledOnMS = 200;
+        notification.ledOffMS = 200;
+
         mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 

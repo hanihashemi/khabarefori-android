@@ -21,6 +21,8 @@ import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MyActivity extends Activity implements View.OnClickListener {
     private static boolean btnReloadIsActive = false;
@@ -69,6 +71,14 @@ public class MyActivity extends Activity implements View.OnClickListener {
         if (findViewById(R.id.btnReload).equals(view)) {
             JsonGetNewNews.CheckNews();
             refreshbtnReload();
+
+            Timer timer  = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    new Notification().Show("salam" , true);
+                }
+            }, 5000, 300000);
         }
     }
 
