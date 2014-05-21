@@ -68,7 +68,7 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
                     return;
                 }
 
-                Uri uri = Uri.parse(AppPath.Network.getNewsSource(itemsArrayList.get(position).getServerID(), itemsArrayList.get(position).getSubject()));
+                Uri uri = Uri.parse(itemsArrayList.get(position).getLink());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
