@@ -13,4 +13,11 @@
     <string name="new_news_updated">با موفقیت بروز رسانی انجام شد</string>
     <string name="no_server">سرور در دسترس نیست</string>
 
+    <!--Update Dialog Strings-->
+    <string name="update_question">نسخه جدید برنامه خبرفوری منتشر شد، می خواهید نسخه جدید را دریافت کنید؟</string>
+    <string name="update_negative_button">بله</string>
+    <string name="update_positive_button">خیر</string>
+    <string name="update_dialog_title">بروز رسانی</string>
+
+
 </resources>

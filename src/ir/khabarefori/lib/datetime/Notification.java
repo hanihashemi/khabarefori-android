@@ -1,4 +1,4 @@
-package ir.khabarefori;
+package ir.khabarefori.lib.datetime;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import ir.khabarefori.ApplicationContextProvider;
+import ir.khabarefori.MyActivity;
+import ir.khabarefori.R;
 
 /**
  * Created by Hani on 5/20/14.

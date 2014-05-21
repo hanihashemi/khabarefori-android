@@ -14,6 +14,8 @@ import android.widget.ListView;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.JsonGetNewNews;
+import ir.khabarefori.lib.datetime.Notification;
+import ir.khabarefori.lib.datetime.update.UpdateManager;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.ServiceCheckServer;
@@ -37,6 +39,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
         btnReload.setOnClickListener(this);
 
         Knotify.updateMainActivity(this);
+
+        new UpdateManager().execute(this);
 
         Notification.Close();
 

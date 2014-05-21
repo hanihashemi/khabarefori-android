@@ -3,7 +3,7 @@ package ir.khabarefori.json;
 import com.google.gson.Gson;
 import ir.khabarefori.AppPath;
 import ir.khabarefori.MyActivity;
-import ir.khabarefori.Notification;
+import ir.khabarefori.lib.datetime.Notification;
 import ir.khabarefori.database.datasource.NewsDatasource;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.json.models.ModelNews;

@@ -12,7 +12,7 @@ import ir.khabarefori.database.datasource.NewsDatasource;
 
 public class SplashScreenActivity extends Activity {
 
-    private static final int SPLASH_SHOW_TIME = 2000;
+    private static final int SPLASH_SHOW_TIME = 1800;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,22 +54,28 @@ public class SplashScreenActivity extends Activity {
 
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            Intent i = new Intent(SplashScreenActivity.this,
-                    MyActivity.class);
-            // any info loaded can during splash_show
-            // can be passed to main activity using
-            // below
-            i.putExtra("loaded_info", " ");
-            startActivity(i);
 
-
-            if (NewsDatasource.getInstance().getLastId() == 0) {
-                Intent ii = new Intent(SplashScreenActivity.this,
-                        TutorialActivity.class);
-                startActivity(ii);
-            }
-
+            startApp();
             finish();
+        }
+
+
+    }
+
+    protected void startApp() {
+        Intent i = new Intent(SplashScreenActivity.this,
+                MyActivity.class);
+        // any info loaded can during splash_show
+        // can be passed to main activity using
+        // below
+        i.putExtra("loaded_info", " ");
+        startActivity(i);
+
+
+        if (NewsDatasource.getInstance().getLastId() == 0) {
+            Intent ii = new Intent(SplashScreenActivity.this,
+                    TutorialActivity.class);
+            startActivity(ii);
         }
     }
 }
