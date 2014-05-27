@@ -2,7 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
                     android:minWidth="250dip"
                     android:minHeight="20dip"
-                    android:updatePeriodMillis="300000"
+                    android:updatePeriodMillis="100000"
                     android:initialLayout="@layout/widget"
                     android:resizeMode="horizontal|vertical"
                     android:widgetCategory="home_screen|keyguard"
