@@ -1,4 +1,4 @@
-package ir.khabarefori.lib.datetime.update;
+package ir.khabarefori.lib.update;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -27,9 +27,11 @@ public class UpdateManager extends AsyncTask<Context, Void, Context> {
     }
 
     protected void onPostExecute(Context context) {
-        try {
-            new UpdateDialog().show(context);
-        } catch (Exception ex) {
+        if (checkVersion()) {
+            try {
+                new UpdateDialog().show(context);
+            } catch (Exception ex) {
+            }
         }
     }
 

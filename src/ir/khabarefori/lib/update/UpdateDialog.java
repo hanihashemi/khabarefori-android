@@ -1,4 +1,4 @@
-package ir.khabarefori.lib.datetime.update;
+package ir.khabarefori.lib.update;
 
 import android.app.AlertDialog;
 import android.content.Context;

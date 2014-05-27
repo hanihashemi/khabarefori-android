@@ -1,4 +1,4 @@
-package ir.khabarefori.lib.datetime;
+package ir.khabarefori.lib;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -35,8 +35,8 @@ public class Notification {
 
         notification.ledARGB = 0xFFFF0000; // Red
         notification.flags = android.app.Notification.FLAG_SHOW_LIGHTS;
-        notification.ledOnMS = 200;
-        notification.ledOffMS = 200;
+        notification.ledOnMS = 1000;
+        notification.ledOffMS = 500;
 
         mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
