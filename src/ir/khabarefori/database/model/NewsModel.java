@@ -1,5 +1,7 @@
 package ir.khabarefori.database.model;
 
+import ir.khabarefori.lib.DateTime.GeneralFormat;
+import ir.khabarefori.lib.DateTime.HDateTime;
 import ir.khabarefori.lib.datetime.Roozh;
 
 /**
@@ -51,13 +53,10 @@ public class NewsModel {
 
     public void setPersianDatetime(String datetime) {
         try {
-            String[] strDate = datetime.split(" ")[0].split("-");
-            int[] intDate = new int[3];
-            for (int i = 0; i < strDate.length; i++)
-                intDate[i] = Integer.parseInt(strDate[i]);
+            GeneralFormat generalFormat = HDateTime.convertDatabaseFormatToGeneralFormat(datetime);
 
             Roozh roozh = new Roozh();
-            roozh.GregorianToPersian(intDate[0], intDate[1], intDate[2]);
+            roozh.GregorianToPersian(generalFormat.Year, generalFormat.Month, generalFormat.Day);
             this.datetime = roozh.toString();
         } catch (Exception ex) {
             this.datetime = "";
