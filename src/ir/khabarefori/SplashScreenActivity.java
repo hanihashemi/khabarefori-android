@@ -8,7 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.datasource.NewsTable;
 
 public class SplashScreenActivity extends Activity {
 
@@ -72,7 +72,7 @@ public class SplashScreenActivity extends Activity {
         startActivity(i);
 
 
-        if (NewsDatasource.getInstance().getLastId() == 0) {
+        if (NewsTable.getInstance().getLastId() == 0) {
             Intent ii = new Intent(SplashScreenActivity.this,
                     TutorialActivity.class);
             startActivity(ii);

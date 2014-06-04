@@ -2,6 +2,7 @@ package ir.khabarefori.database.datasource;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import ir.khabarefori.database.SqlLite;
 import ir.khabarefori.database.model.NewsModel;
 
@@ -11,9 +12,9 @@ import java.util.List;
 /**
  * Created by hani on 2/1/14.
  */
-public class NewsDatasource {
-    private String LOGTAG = getClass().getName();
-    private static NewsDatasource instance;
+public class NewsTable {
+    private static NewsTable instance;
+    private SQLiteDatabase sqlLite;
     public static final String TABLE = "news";
 
     public static final String COLUMN_ID = "id";
@@ -22,6 +23,7 @@ public class NewsDatasource {
     public static final String COLUMN_CONTEXT = "context";
     public static final String COLUMN_LINK = "link";
     public static final String COLUMN_DATETIME = "datetime";
+    public static final String COLUMN_PERSIAN_DATETIME = "persian_datetime";
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_IS_BREAKING_NEWS = "is_breaking_news";
 
@@ -32,16 +34,31 @@ public class NewsDatasource {
             "    \"" + COLUMN_CONTEXT + "\" TEXT," +
             "    \"" + COLUMN_LINK + "\" TEXT," +
             "    \"" + COLUMN_DATETIME + "\" TEXT," +
+            "    \"" + COLUMN_PERSIAN_DATETIME + "\" TEXT," +
             "    \"" + COLUMN_IMAGE + "\" TEXT," +
             "    \"" + COLUMN_IS_BREAKING_NEWS + "\" INTEGER DEFAULT (0)" +
             ");";
 
-    public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE;
-
-    public static NewsDatasource getInstance() {
+    public static NewsTable getInstance(SQLiteDatabase sqlLite) {
         if (instance == null)
-            instance = new NewsDatasource();
+            instance = new NewsTable();
+
+        instance.sqlLite = sqlLite;
         return instance;
+    }
+
+    public static NewsTable getInstance() {
+        if (instance == null)
+            instance = new NewsTable();
+
+        return instance;
+    }
+
+    private SQLiteDatabase getSqlLite()
+    {
+        if (this.sqlLite == null)
+            this.sqlLite = SqlLite.getInstance();
+        return this.sqlLite;
     }
 
     public long add(NewsModel model) {
@@ -52,38 +69,31 @@ public class NewsDatasource {
         initialValues.put(COLUMN_IMAGE, model.getImage());
         initialValues.put(COLUMN_LINK, model.getLink());
         initialValues.put(COLUMN_DATETIME, model.getDatetime());
+        initialValues.put(COLUMN_PERSIAN_DATETIME, model.getPersianDateTime());
         initialValues.put(COLUMN_IS_BREAKING_NEWS, model.getIsBreakingNews());
 
-        return SqlLite.getInstance().insert(TABLE, null, initialValues);
-    }
-
-    public boolean deleteContact(int id) {
-        return SqlLite.getInstance().delete(TABLE, COLUMN_ID + "=" + id, null) > 0;
+        return getSqlLite().insert(TABLE, null, initialValues);
     }
 
     public void deleteAll() {
-        SqlLite.getInstance().delete(TABLE, "1=1", null);
+        getSqlLite().delete(TABLE, "1=1", null);
     }
 
     public NewsModel getRow(int id) {
-        //@TODO fix this
-//        Cursor cursor = SqlLite.instance().query(TABLE, new String[]{KEY_ROWID, KEY_NAME,
-//                KEY_DESC, KEY_ABS, KEY_PAGECOUNT, KEY_PRICE, KEY_PATH, KEY_RATEVALUE, KEY_PUBDATETIME, KEY_PUBLISHER
-//                , KEY_WRITER, KEY_TRANSLATOR, KEY_CATEGORY, KEY_TYPE}, KEY_ROWID + "=?", new String[]{String.valueOf(id)}, null, null, null);
-//
-//        if (cursor != null) {
-//            cursor.moveToFirst();
-//        }
-//
-//        return createModel(cursor);
-        return null;
+        Cursor cursor = getSqlLite().query(TABLE, new String[]{"*"}, COLUMN_ID + "=?", new String[]{String.valueOf(id)}, null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        return createModel(cursor);
     }
 
     public NewsModel getLastNews() {
         Cursor cursor = null;
         try {
-            cursor = SqlLite.getInstance().query(TABLE, new String[]{
-                    "max(" + COLUMN_SERVER_ID + ") , " + COLUMN_SERVER_ID + " , " + COLUMN_SUBJECT + " ,*"}, null, null, null, null, null);
+            cursor = getSqlLite().query(TABLE, new String[]{
+                    "*"}, null, null, null, null, null);
         } catch (Exception ex) {
             return null;
         }
@@ -99,7 +109,7 @@ public class NewsDatasource {
     public int getLastId() {
         Cursor cursor = null;
         try {
-            cursor = SqlLite.getInstance().query(TABLE, new String[]{
+            cursor = getSqlLite().query(TABLE, new String[]{
                     "max(" + COLUMN_SERVER_ID + ")"}, null, null, null, null, null);
         } catch (Exception ex) {
             return 0;
@@ -114,15 +124,8 @@ public class NewsDatasource {
     }
 
     public List<NewsModel> getAllContents() {
-        Cursor cursor = SqlLite.getInstance().query(TABLE, new String[]{
-                COLUMN_ID,
-                COLUMN_SERVER_ID,
-                COLUMN_SUBJECT,
-                COLUMN_CONTEXT,
-                COLUMN_IMAGE,
-                COLUMN_LINK,
-                COLUMN_DATETIME,
-                COLUMN_IS_BREAKING_NEWS}, null, null, null, null, COLUMN_SERVER_ID + " DESC LIMIT 0,10");
+        Cursor cursor = getSqlLite().query(TABLE, new String[]{
+                "*"}, null, null, null, null, COLUMN_SERVER_ID + " DESC LIMIT 0,10");
 
         return createModelsOfArray(cursor);
     }
@@ -147,18 +150,12 @@ public class NewsDatasource {
         model.setServerID(cursor.getInt(1));
         model.setSubject(cursor.getString(2));
         model.setContext(cursor.getString(3));
-        model.setLink(cursor.getString(5));
-        model.setDatetime(cursor.getString(6));
-        model.setImage(cursor.getString(4));
-        model.setIsBreakingNewsParamInt(cursor.getInt(7));
+        model.setLink(cursor.getString(4));
+        model.setDatetime(cursor.getString(5));
+        model.setPersianDatetime(cursor.getString(6));
+        model.setImage(cursor.getString(7));
+        model.setIsBreakingNewsParamInt(cursor.getInt(8));
 
         return model;
-    }
-
-    /**
-     * Remove table
-     */
-    public void dropTable() {
-        SqlLite.getInstance().execSQL("DROP TABLE IF EXISTS " + TABLE);
     }
 }

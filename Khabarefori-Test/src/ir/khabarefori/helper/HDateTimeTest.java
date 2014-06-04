@@ -1,8 +1,8 @@
-package ir.khabarefori;
+package ir.khabarefori.helper;
 
 import android.test.suitebuilder.annotation.MediumTest;
-import ir.khabarefori.lib.DateTime.GeneralFormat;
-import ir.khabarefori.lib.DateTime.HDateTime;
+import ir.khabarefori.helper.DateTime.GeneralFormat;
+import ir.khabarefori.helper.DateTime.HDateTime;
 import junit.framework.TestCase;
 
 /**

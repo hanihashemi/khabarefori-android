@@ -1,13 +1,9 @@
 package ir.khabarefori.Activity;
 
-import android.app.Instrumentation;
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
-import android.test.TouchUtils;
-import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.MediumTest;
 import ir.khabarefori.MyActivity;
-import ir.khabarefori.service.ServiceCheckServer;
 
 /**
  * Created by Hani on 5/27/14.

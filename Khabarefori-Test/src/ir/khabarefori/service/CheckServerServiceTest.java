@@ -1,16 +1,14 @@
 package ir.khabarefori.service;
 
-import android.content.Intent;
 import android.test.ServiceTestCase;
-import ir.khabarefori.MyActivity;
 
 /**
  * Created by Hani on 5/27/14.
  */
-public class CheckServerServiceTest extends ServiceTestCase<ServiceCheckServer>{
+public class CheckServerServiceTest extends ServiceTestCase<CheckServerService>{
 
     public CheckServerServiceTest() {
-        super(ServiceCheckServer.class);
+        super(CheckServerService.class);
     }
 
     @Override

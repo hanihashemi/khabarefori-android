@@ -9,7 +9,7 @@ import android.widget.RemoteViews;
 import ir.khabarefori.ApplicationContextProvider;
 import ir.khabarefori.MyActivity;
 import ir.khabarefori.R;
-import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
 
 /**
@@ -37,7 +37,7 @@ public class WidgetActivity extends AppWidgetProvider {
 //            views.setOnClickPendingIntent(R.id.txtNews, contentIntent);
 //
 
-            NewsModel lastNews = NewsDatasource.getInstance().getLastNews();
+            NewsModel lastNews = NewsTable.getInstance().getLastNews();
             if (lastNews != null)
                 views.setTextViewText(R.id.txtNews, lastNews.getSubject());
             else

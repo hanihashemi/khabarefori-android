@@ -1,4 +1,4 @@
-package ir.khabarefori.lib.update;
+package ir.khabarefori.helper.update;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

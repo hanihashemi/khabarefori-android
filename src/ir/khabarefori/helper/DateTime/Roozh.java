@@ -1,4 +1,4 @@
-package ir.khabarefori.lib.datetime;
+package ir.khabarefori.helper.DateTime;
 
 /**
  * Created by hani on 3/31/14.

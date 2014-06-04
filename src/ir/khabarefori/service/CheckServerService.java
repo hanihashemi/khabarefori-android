@@ -7,15 +7,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.*;
 import android.util.Log;
-import ir.khabarefori.json.JsonGetNewNews;
+import ir.khabarefori.helper.CheckServerThread;
 
 import java.util.*;
 
 /**
  * Created by hani on 1/19/14.
  */
-public class ServiceCheckServer extends Service {
-    private final String LOGTAG = "ServiceCheckServer";
+public class CheckServerService extends Service {
     private static Timer timer;
     private Context context;
 
@@ -39,22 +38,22 @@ public class ServiceCheckServer extends Service {
 
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 5000, 300000);
         } else {
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new mainTask(), 5000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 5000, 300000);
         }
     }
 
-    /**
-     * Do some work in thread , by default service run in main thread :O
-     */
-    private class mainTask extends TimerTask {
-        public void run() {
-            JsonGetNewNews.CheckNews();
-        }
-    }
+//    /**
+//     * Do some work in thread , by default service run in main thread :O
+//     */
+//    private class mainTask extends TimerTask {
+//        public void run() {
+//            CheckServerThread.CheckNews();
+//        }
+//    }
 
     /**
      * this method call when service kill

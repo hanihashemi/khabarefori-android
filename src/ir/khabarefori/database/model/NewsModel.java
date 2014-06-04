@@ -1,8 +1,15 @@
 package ir.khabarefori.database.model;
 
-import ir.khabarefori.lib.DateTime.GeneralFormat;
-import ir.khabarefori.lib.DateTime.HDateTime;
-import ir.khabarefori.lib.datetime.Roozh;
+import ir.khabarefori.database.datasource.NewsTable;
+import ir.khabarefori.helper.DateTime.GeneralFormat;
+import ir.khabarefori.helper.DateTime.HDateTime;
+import ir.khabarefori.helper.DateTime.Roozh;
+import ir.khabarefori.json.models.NewsJsonModel;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by hani on 2/3/14.
@@ -14,20 +21,12 @@ public class NewsModel {
     private String context;
     private String link;
     private String datetime;
+    private String persian_datetime;
     private String image;
     private boolean is_breaking_news;
 
     public NewsModel() {
 
-    }
-
-    public NewsModel(int serverID, String subject, String context, String link, String datetime, String image, boolean is_breaking_news) {
-        this.serverID = serverID;
-        this.subject = subject;
-        this.context = context;
-        this.link = link;
-        this.datetime = datetime;
-        this.is_breaking_news = is_breaking_news;
     }
 
     public int getid() {
@@ -51,16 +50,20 @@ public class NewsModel {
     }
 
 
-    public void setPersianDatetime(String datetime) {
+    public void setPersianDatetimeAndConvert(String datetime) {
         try {
             GeneralFormat generalFormat = HDateTime.convertDatabaseFormatToGeneralFormat(datetime);
 
             Roozh roozh = new Roozh();
             roozh.GregorianToPersian(generalFormat.Year, generalFormat.Month, generalFormat.Day);
-            this.datetime = roozh.toString();
+            this.persian_datetime = roozh.toString();
         } catch (Exception ex) {
-            this.datetime = "";
+            this.persian_datetime = "";
         }
+    }
+
+    public void setPersianDatetime(String datetime) {
+        this.persian_datetime = datetime;
     }
 
     public String getDatetime() {
@@ -108,11 +111,15 @@ public class NewsModel {
         this.is_breaking_news = is_breaking_news == 1 ? true : false;
     }
 
+    public String getPersianDateTime() {
+        return this.persian_datetime;
+    }
+
     public void setIsBreakingNewsParamBoolean(boolean is_breaking_news) {
         this.is_breaking_news = is_breaking_news;
     }
 
-    public String getContextShort() {
+    public String getShortContext() {
 
         if (context == null)
             return "null";
@@ -128,5 +135,65 @@ public class NewsModel {
             result += texts[i] + " ";
 
         return result + "...";
+    }
+
+    public boolean isNew() {
+        try {
+            GeneralFormat newsDate = HDateTime.convertDatabaseFormatToGeneralFormat(this.datetime);
+
+            Calendar c = Calendar.getInstance();
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            int month = c.get(Calendar.MONTH) + 1;
+            int year = c.get(Calendar.YEAR);
+
+            if (newsDate.Year == year && newsDate.Month == month && newsDate.Day == day)
+                return true;
+        } catch (Exception ex) {
+        }
+
+        return false;
+    }
+
+    public String formatToYesterdayOrToday() {
+        try {
+            Date dateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:SS").parse(this.datetime);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(dateTime);
+            Calendar today = Calendar.getInstance();
+            Calendar yesterday = Calendar.getInstance();
+            yesterday.add(Calendar.DATE, -1);
+
+            if (calendar.get(Calendar.YEAR) == today.get(Calendar.YEAR) && calendar.get(Calendar.DAY_OF_YEAR) == today.get(Calendar.DAY_OF_YEAR)) {
+                return "امروز";
+            } else if (calendar.get(Calendar.YEAR) == yesterday.get(Calendar.YEAR) && calendar.get(Calendar.DAY_OF_YEAR) == yesterday.get(Calendar.DAY_OF_YEAR)) {
+                return "دیروز";
+            } else {
+                return this.datetime;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return this.datetime;
+        }
+    }
+
+    public static void createRows(NewsJsonModel news) {
+        for (int i = 0; i < news.getNews().size(); i++)
+            NewsModel.createRow(news.getNews().get(i));
+    }
+
+    public static NewsModel createRow(NewsJsonModel.News news) {
+        NewsModel model = new NewsModel();
+        model.setServerID(news.id);
+        model.setSubject(news.subject);
+        model.setContext(news.context);
+        model.setPersianDatetimeAndConvert(news.datetime);
+        model.setDatetime(news.datetime);
+        model.setIsBreakingNewsParamBoolean(news.getIsBreakingNews());
+        model.setLink(news.link);
+
+        NewsTable.getInstance().add(model);
+
+        return model;
     }
 }

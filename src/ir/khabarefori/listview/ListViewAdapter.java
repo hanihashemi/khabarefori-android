@@ -116,7 +116,7 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
             lastItemSelected.viewUiUpdate = rowView;
             itemButtonStatus(rowView, true);
         } else
-            txtContext.setText(itemsArrayList.get(position).getContextShort());
+            txtContext.setText(itemsArrayList.get(position).getShortContext());
 
 
         return rowView;
@@ -177,7 +177,7 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
 
         openItem(view, txtContext,
                 itemsArrayList.get(position).getContext(),
-                itemsArrayList.get(position).getContextShort(),
+                itemsArrayList.get(position).getShortContext(),
                 position);
     }
 

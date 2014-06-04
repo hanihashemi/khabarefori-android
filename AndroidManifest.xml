@@ -60,7 +60,7 @@
         </receiver>
 
         <service
-                android:name=".service.ServiceCheckServer"
+                android:name=".service.CheckServerService"
                 android:icon="@drawable/logo_circle"
                 android:label="@string/service_name"
                 android:enabled="true"/>

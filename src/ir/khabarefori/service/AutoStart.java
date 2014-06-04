@@ -12,7 +12,7 @@ public class AutoStart extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent intentService = new Intent(context,ServiceCheckServer.class);
+        Intent intentService = new Intent(context,CheckServerService.class);
         context.startService(intentService);
     }
 }

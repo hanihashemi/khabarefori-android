@@ -1,11 +1,12 @@
 package ir.khabarefori.json.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by hani on 1/11/14.
  */
-public class ModelNews {
+public class NewsJsonModel {
 
     private List<News> news;
 
@@ -15,6 +16,12 @@ public class ModelNews {
 
     public void setNews(List<News> news) {
         this.news = news;
+    }
+
+    public void addNews(News newsData) {
+        if (news == null)
+            news = new ArrayList<News>();
+        news.add(newsData);
     }
 
     public class News {

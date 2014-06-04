@@ -11,14 +11,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
-import ir.khabarefori.json.JsonGetNewNews;
-import ir.khabarefori.lib.Notification;
-import ir.khabarefori.lib.update.UpdateManager;
+import ir.khabarefori.helper.CheckServerThread;
+import ir.khabarefori.helper.Notification;
+import ir.khabarefori.helper.update.UpdateManager;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
-import ir.khabarefori.service.ServiceCheckServer;
+import ir.khabarefori.service.CheckServerService;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
         // run service
         if (!isSCheckServerRunning())
-            startService(new Intent(this, ServiceCheckServer.class));
+            startService(new Intent(this, CheckServerService.class));
     }
 
     public void refreshListView() {
@@ -67,7 +67,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (findViewById(R.id.btnReload).equals(view)) {
-            JsonGetNewNews.CheckNews();
+            CheckServerThread.CheckNews();
             refreshbtnReload();
         }
     }
@@ -104,7 +104,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
     }
 
     private ArrayList<NewsModel> generateData() {
-        ArrayList<NewsModel> models = (ArrayList<NewsModel>) NewsDatasource.getInstance().getAllContents();
+        ArrayList<NewsModel> models = (ArrayList<NewsModel>) NewsTable.getInstance().getAllContents();
         return models;
     }
 
@@ -117,7 +117,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
         try {
             ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
             for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
-                if (ServiceCheckServer.class.getName().equals(service.service.getClassName()))
+                if (CheckServerService.class.getName().equals(service.service.getClassName()))
                     return true;
         } catch (NullPointerException e) {
         }

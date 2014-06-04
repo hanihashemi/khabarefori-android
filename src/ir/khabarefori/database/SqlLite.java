@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import ir.khabarefori.ApplicationContextProvider;
-import ir.khabarefori.database.datasource.NewsDatasource;
+import ir.khabarefori.database.datasource.NewsTable;
 
 /**
  * Created by hani on 2/1/14.
@@ -12,7 +12,7 @@ import ir.khabarefori.database.datasource.NewsDatasource;
 public class SqlLite extends SQLiteOpenHelper {
     private static SqlLite sqlLite;
     public static final String DATABASE = "khabarefori";
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
 
     public SqlLite(Context context) {
         super(context, DATABASE, null, VERSION);
@@ -26,12 +26,29 @@ public class SqlLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(NewsDatasource.CREATE_TABLE);
+        this.CreateDatabase(sqLiteDatabase);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + NewsDatasource.TABLE);
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if (newVersion > oldVersion)
+            this.DropDatabase(sqLiteDatabase);
         onCreate(sqLiteDatabase);
+    }
+
+    /**
+     * Drop database
+     */
+    public void DropDatabase(SQLiteDatabase sqLiteDatabase)
+    {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + NewsTable.TABLE);
+    }
+
+    /**
+     * Create Database
+     */
+    public void CreateDatabase(SQLiteDatabase sqLiteDatabase)
+    {
+        sqLiteDatabase.execSQL(NewsTable.CREATE_TABLE);
     }
 }

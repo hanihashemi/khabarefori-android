@@ -1,4 +1,4 @@
-package ir.khabarefori.lib;
+package ir.khabarefori.helper;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
