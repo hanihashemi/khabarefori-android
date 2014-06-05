@@ -844,7 +844,11 @@
       <created>1401990130876</created>
       <updated>1401990130876</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Optimize import">
+      <created>1401990156957</created>
+      <updated>1401990156957</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
