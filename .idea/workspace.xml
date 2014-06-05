@@ -30,8 +30,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dea6009-219f-44e1-8abb-059f38a57477" name="Default" comment="Optimize import">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" />
+    <list default="true" id="7dea6009-219f-44e1-8abb-059f38a57477" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Khabarefori.iws" />
@@ -100,7 +99,7 @@
       <file leaf-file-name="ListViewAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="1" selection-start="7994" selection-end="7994" vertical-scroll-proportion="1.2655827" vertical-offset="3061" max-vertical-offset="3636">
+            <state line="41" column="39" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.09756097" vertical-offset="702" max-vertical-offset="3636">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,6 +116,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -832,7 +836,11 @@
       <created>1401982489495</created>
       <updated>1401982489495</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Optimize import">
+      <created>1401983308370</created>
+      <updated>1401983308370</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -857,12 +865,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="40" width="1366" height="728" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32520324" sideWeight="0.49906716" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33495936" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33495936" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1272,7 +1280,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="1" selection-start="7994" selection-end="7994" vertical-scroll-proportion="1.2655827" vertical-offset="3061" max-vertical-offset="3636">
+        <state line="41" column="39" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.09756097" vertical-offset="702" max-vertical-offset="3636">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
