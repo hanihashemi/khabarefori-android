@@ -82,7 +82,7 @@ public class NewsModelTest extends AndroidTestCase {
         NewsModel newsModel = new NewsModel();
         newsModel.setDatetime(year + "-" + month + "-" + day + " 12:00:00");
 
-        assertEquals("امروز", newsModel.formatToYesterdayOrToday());
+        assertEquals(" امروز ", newsModel.formatToYesterdayOrToday());
     }
 
     @MediumTest
@@ -95,7 +95,7 @@ public class NewsModelTest extends AndroidTestCase {
         NewsModel newsModel = new NewsModel();
         newsModel.setDatetime(year + "-" + month + "-" + (day-1) + " 12:00:00");
 
-        assertEquals("دیروز", newsModel.formatToYesterdayOrToday());
+        assertEquals(" دیروز ", newsModel.formatToYesterdayOrToday());
     }
 
     @MediumTest
@@ -107,6 +107,7 @@ public class NewsModelTest extends AndroidTestCase {
 
         NewsModel newsModel = new NewsModel();
         newsModel.setDatetime((year-1) + "-" + month + "-" + (day) + " 12:00:00");
+        newsModel.setPersianDatetime((year-1) + "-" + month + "-" + (day) + " 12:00:00");
 
         assertEquals((year-1) + "-" + month + "-" + (day) + " 12:00:00", newsModel.formatToYesterdayOrToday());
     }
