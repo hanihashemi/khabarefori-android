@@ -5,11 +5,12 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.os.*;
-import android.util.Log;
+import android.os.IBinder;
+import android.os.SystemClock;
 import ir.khabarefori.helper.CheckServerThread;
 
-import java.util.*;
+import java.util.Random;
+import java.util.Timer;
 
 /**
  * Created by hani on 1/19/14.
@@ -45,15 +46,6 @@ public class CheckServerService extends Service {
             timer.scheduleAtFixedRate(new CheckServerThread(), 5000, 300000);
         }
     }
-
-//    /**
-//     * Do some work in thread , by default service run in main thread :O
-//     */
-//    private class mainTask extends TimerTask {
-//        public void run() {
-//            CheckServerThread.CheckNews();
-//        }
-//    }
 
     /**
      * this method call when service kill

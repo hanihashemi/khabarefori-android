@@ -3,6 +3,7 @@ package ir.khabarefori.listview;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,6 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
     private static LastItem lastItemSelected;
     private final Context context;
     private final ArrayList<NewsModel> itemsArrayList;
-    private final String LOGTAG = "ListViewAdapter";
 
     public ListViewAdapter(Context context, ArrayList<NewsModel> itemsArrayList, ListView listView) {
         super(context, R.layout.list_row, itemsArrayList);
@@ -52,10 +52,10 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         TextView txtDateTime = (TextView) rowView.findViewById(R.id.txtDatetime);
 
         //set date time
-        txtDateTime.setText(itemsArrayList.get(position).getDatetime() + " ");
+        txtDateTime.setText(itemsArrayList.get(position).formatToYesterdayOrToday() + " ");
 
-        //set visible breaking news line
-        if (!itemsArrayList.get(position).getIsBreakingNews())
+        //set visible today news line
+        if (!itemsArrayList.get(position).isNew())
             lineBreakingNews.setVisibility(View.INVISIBLE);
 
 

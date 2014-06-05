@@ -1,5 +1,6 @@
 package ir.khabarefori.database.model;
 
+import android.util.Log;
 import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.helper.DateTime.GeneralFormat;
 import ir.khabarefori.helper.DateTime.HDateTime;
@@ -165,15 +166,17 @@ public class NewsModel {
             yesterday.add(Calendar.DATE, -1);
 
             if (calendar.get(Calendar.YEAR) == today.get(Calendar.YEAR) && calendar.get(Calendar.DAY_OF_YEAR) == today.get(Calendar.DAY_OF_YEAR)) {
-                return "امروز";
+                return " امروز ";
             } else if (calendar.get(Calendar.YEAR) == yesterday.get(Calendar.YEAR) && calendar.get(Calendar.DAY_OF_YEAR) == yesterday.get(Calendar.DAY_OF_YEAR)) {
-                return "دیروز";
+                return " دیروز ";
             } else {
-                return this.datetime;
+                return this.getPersianDateTime();
             }
         } catch (ParseException e) {
             e.printStackTrace();
-            return this.datetime;
+            return this.getDatetime();
+        } catch (Exception e){
+            return this.getDatetime();
         }
     }
 

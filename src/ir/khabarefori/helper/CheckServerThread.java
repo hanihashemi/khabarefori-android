@@ -14,16 +14,10 @@ import java.util.TimerTask;
  */
 public class CheckServerThread extends TimerTask {
     private static boolean isRun = false;
-    private static boolean isTest = false;
 
     public static void CheckNews() {
         Thread thread = new Thread(new CheckServerThread());
         thread.start();
-    }
-
-    public static void CheckNews(boolean isTest) {
-        CheckServerThread.isTest = isTest;
-        CheckServerThread.CheckNews();
     }
 
     public void run() {
