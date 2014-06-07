@@ -8,7 +8,7 @@ import ir.khabarefori.MyActivity;
 /**
  * Created by Hani on 5/27/14.
  */
-public class MyActivityTest extends ActivityUnitTestCase<MyActivity> {
+public class MyActivityTest extends ActivityUnitTestCase <MyActivity> {
 
     public MyActivityTest() {
         super(MyActivity.class);

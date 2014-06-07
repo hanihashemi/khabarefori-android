@@ -5,12 +5,17 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.helper.CheckServerThread;
@@ -22,7 +27,7 @@ import ir.khabarefori.service.CheckServerService;
 
 import java.util.ArrayList;
 
-public class MyActivity extends Activity implements View.OnClickListener {
+public class MyActivity extends ActionBarActivity implements View.OnClickListener {
     private static boolean btnReloadIsActive = false;
 
     /**
@@ -48,6 +53,31 @@ public class MyActivity extends Activity implements View.OnClickListener {
         if (!isSCheckServerRunning())
             startService(new Intent(this, CheckServerService.class));
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu items for use in the action bar
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.main_activity_actions, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle presses on the action bar items
+//        switch (item.getItemId()) {
+//            case R.id.action_search:
+//                Toast.makeText(this , "search" , Toast.LENGTH_SHORT).show();
+////                openSearch();
+//                return true;
+//            case R.id.action_settings:
+//                Toast.makeText(this , "search" , Toast.LENGTH_SHORT).show();
+////                openSettings();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     public void refreshListView() {
         ListView listView = (ListView) findViewById(R.id.listView);

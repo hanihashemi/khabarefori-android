@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Khabarefori.iml" filepath="$PROJECT_DIR$/Khabarefori.iml" />
       <module fileurl="file://$PROJECT_DIR$/Khabarefori-Test/Khabarefori-Test.iml" filepath="$PROJECT_DIR$/Khabarefori-Test/Khabarefori-Test.iml" />
+      <module fileurl="file://$USER_HOME$/App/android-sdk/extras/android/support/v7/copy of appcompat/android-support-v7-appcompat.iml" filepath="$USER_HOME$/App/android-sdk/extras/android/support/v7/copy of appcompat/android-support-v7-appcompat.iml" />
     </modules>
   </component>
 </project>
