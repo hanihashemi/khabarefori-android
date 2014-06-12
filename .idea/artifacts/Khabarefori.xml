@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="Khabarefori">
+    <output-path>$PROJECT_DIR$/out/artifacts/Khabarefori</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="keyAlias" value="Khabarefori" />
+        <option name="keyPassword" value="bmh5Ymh1" />
+        <option name="keyStorePassword" value="bmh5Ymh1" />
+        <option name="keyStoreUrl" value="file://$USER_HOME$/Projects/Khabarefori.net/android/key-new" />
+        <option name="proGuardCfgFiles">
+          <list>
+            <option value="file://%MODULE_SDK_HOME%/tools/proguard/proguard-android.txt" />
+          </list>
+        </option>
+        <option name="signingMode" value="RELEASE_SIGNED" />
+      </options>
+    </properties>
+    <root id="archive" name="Khabarefori.apk">
+      <element id="android-final-package" facet="Khabarefori/android/Android" />
+    </root>
+  </artifact>
+</component>

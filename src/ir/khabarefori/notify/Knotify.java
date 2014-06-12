@@ -57,7 +57,7 @@ public class Knotify {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                activity.refreshbtnReload();
+                activity.refreshBtnReload();
             }
         });
     }

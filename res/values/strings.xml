@@ -5,6 +5,7 @@
     <string name="app_name_persian">خبرفوری</string>
     <string name="service_name">Khabarefori Service</string>
     <string name="crash_toast_text">متاسفانه برنامه با خطایی بسته شد،اما گزارشی از خطا برای ما ارسال خواهد شد و در اولین فرصت مشکل را حل خواهیم کرد.</string>
+    <string name="reload_button">بارگذاری مجدد</string>
 
     <!--Message String-->
     <string name="try_connect_to_server">در حال بر قراری ارتباط با سرور</string>

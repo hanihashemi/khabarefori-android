@@ -1,6 +1,5 @@
 package ir.khabarefori;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +9,6 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import ir.khabarefori.database.datasource.NewsTable;
@@ -27,8 +22,9 @@ import ir.khabarefori.service.CheckServerService;
 
 import java.util.ArrayList;
 
-public class MyActivity extends ActionBarActivity implements View.OnClickListener {
+public class MyActivity extends ActionBarActivity {
     private static boolean btnReloadIsActive = false;
+    private Menu menuBar;
 
     /**
      * Called when the activity is first created.
@@ -40,44 +36,34 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
         refreshListView();
 
-        ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
-        btnReload.setOnClickListener(this);
-
         Knotify.updateMainActivity(this);
 
         new UpdateManager().execute(this);
-
-        Notification.Close();
 
         // run service
         if (!isSCheckServerRunning())
             startService(new Intent(this, CheckServerService.class));
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu items for use in the action bar
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_activity_actions, menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle presses on the action bar items
-//        switch (item.getItemId()) {
-//            case R.id.action_search:
-//                Toast.makeText(this , "search" , Toast.LENGTH_SHORT).show();
-////                openSearch();
-//                return true;
-//            case R.id.action_settings:
-//                Toast.makeText(this , "search" , Toast.LENGTH_SHORT).show();
-////                openSettings();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        this.menuBar = menu;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_reload:
+                CheckServerThread.CheckNews();
+                refreshBtnReload();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     public void refreshListView() {
         ListView listView = (ListView) findViewById(R.id.listView);
@@ -89,34 +75,28 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     protected void onResume() {
         super.onResume();
 
-        refreshbtnReload();
+        refreshBtnReload();
         refreshListView();
         Knotify.updateMainActivity(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (findViewById(R.id.btnReload).equals(view)) {
-            CheckServerThread.CheckNews();
-            refreshbtnReload();
-        }
+        Notification.Close();
     }
 
     public static void setBtnReloadIsActive(boolean isActive) {
         btnReloadIsActive = isActive;
     }
 
-    public void refreshbtnReload() {
-        if (btnReloadIsActive) {
-            ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
+    public void refreshBtnReload() {
+        try {
+            if (android.os.Build.VERSION.SDK_INT < 11)
+                return;
 
-            Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
-            if (hyperspaceJumpAnimation != null)
-                btnReload.startAnimation(hyperspaceJumpAnimation);
-        } else {
-            ImageButton btnReload = (ImageButton) findViewById(R.id.btnReload);
-
-            btnReload.clearAnimation();
+            MenuItem item = menuBar.findItem(R.id.action_reload);
+            if (btnReloadIsActive) {
+                item.setActionView(R.layout.reload_progress);
+            } else {
+                item.setActionView(null);
+            }
+        } catch (Exception ex) {
         }
     }
 
