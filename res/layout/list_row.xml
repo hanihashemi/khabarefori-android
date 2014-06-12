@@ -110,6 +110,7 @@
                 android:id="@+id/lineBreakingNews"
                 android:orientation="horizontal"
                 android:layout_margin="4dp"
+                android:visibility="invisible"
                 />
     </LinearLayout>
 </LinearLayout>
