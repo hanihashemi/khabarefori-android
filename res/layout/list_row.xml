@@ -46,50 +46,59 @@
 
         <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:padding="5dp"
-                android:gravity="center_vertical">
-            <TextView
+                android:layout_height="fill_parent">
+
+            <LinearLayout
+                    android:id="@+id/LayoutLeft"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11/02 "
-                    android:textColor="@color/item_text_color"
-                    android:id="@+id/txtDatetime"
-                    android:layout_alignParentTop="true"
-                    android:drawableRight="@drawable/calendar"
-                    android:padding="5dp"
+                    android:orientation="horizontal"
                     android:layout_alignParentLeft="true"
-                    android:gravity="center"
-                    android:textSize="14dp"
-                    android:layout_marginTop="10dp"/>
-            <Button
+                    android:paddingLeft="10dp"
+                    >
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11/02 "
+                        android:textColor="@color/item_text_color"
+                        android:id="@+id/txtDatetime"
+                        android:drawableRight="@drawable/calendar"
+                        android:background="@color/item_bg_default"
+                        android:textSize="14dp"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/LayoutRight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" منبع "
-                    android:textColor="@color/item_link_color"
-                    android:id="@+id/txtReadMore"
-                    android:layout_alignParentTop="true"
-                    android:layout_toLeftOf="@+id/txtShare"
-                    android:layout_marginRight="5dp"
-                    android:drawableRight="@drawable/open_web"
-                    android:background="@color/item_bg_default"
-                    android:padding="5dp"
-                    android:textSize="14dp"
-                    android:visibility="invisible"/>
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" اشتراک "
-                    android:textColor="@color/item_link_color"
-                    android:id="@+id/txtShare"
-                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
-                    android:drawableRight="@drawable/share"
-                    android:background="@color/item_bg_default"
-                    android:padding="5dp"
-                    android:textSize="14dp"
-                    android:visibility="invisible"
-                    />
+                    android:paddingRight="10dp"
+                    >
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" منبع "
+                        android:textColor="@color/item_link_color"
+                        android:id="@+id/txtReadMore"
+                        android:drawableRight="@drawable/open_web"
+                        android:background="@color/item_bg_default"
+                        android:textSize="14dp"
+                        android:paddingRight="5dp"
+                        />
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" اشتراک "
+                        android:textColor="@color/item_link_color"
+                        android:id="@+id/txtShare"
+                        android:drawableRight="@drawable/share"
+                        android:background="@color/item_bg_default"
+                        android:textSize="14dp"
+                        />
+            </LinearLayout>
+
         </RelativeLayout>
         <LinearLayout
                 android:layout_width="fill_parent"
