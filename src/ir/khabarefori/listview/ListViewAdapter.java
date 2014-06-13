@@ -117,18 +117,15 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
 
     private void itemButtonStatus(View view, boolean visible) {
         TextView txtReadMore = (Button) view.findViewById(R.id.txtReadMore);
-        TextView txtPoint = (TextView) view.findViewById(R.id.txtPoint);
         TextView txtShare = (Button) view.findViewById(R.id.txtShare);
         LinearLayout lineBreakingNews = (LinearLayout) view.findViewById(R.id.lineBreakingNews);
 
         if (visible) {
             txtShare.setVisibility(View.VISIBLE);
-            txtPoint.setVisibility(View.VISIBLE);
             txtReadMore.setVisibility(View.VISIBLE);
             lineBreakingNews.setVisibility(View.VISIBLE);
         } else {
             txtShare.setVisibility(View.INVISIBLE);
-            txtPoint.setVisibility(View.INVISIBLE);
             txtReadMore.setVisibility(View.INVISIBLE);
             lineBreakingNews.setVisibility(View.INVISIBLE);
         }
