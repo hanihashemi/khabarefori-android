@@ -34,6 +34,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dea6009-219f-44e1-8abb-059f38a57477" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Khabarefori-Test/src/ir/khabarefori/Activity/MyActivityTest.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" afterPath="$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list_row.xml" afterPath="$PROJECT_DIR$/res/layout/list_row.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -90,7 +92,53 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" line="135" class="ir.khabarefori.listview.ListViewAdapter" package="ir.khabarefori.listview">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" line="38" class="ir.khabarefori.listview.ListViewAdapter" package="ir.khabarefori.listview">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java" line="118" class="ir.khabarefori.listview.ListViewAdapter" package="ir.khabarefori.listview">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -100,14 +148,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list_row.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list_row.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
-          <provider editor-type-id="text-editor">
-            <state line="87" column="47" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.0" vertical-offset="1609" max-vertical-offset="2160">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="21" selection-start="3778" selection-end="3778" vertical-scroll-proportion="9.961538" vertical-offset="1843" max-vertical-offset="2196">
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
@@ -116,10 +164,7 @@
         <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/datasource/NewsTable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="56" column="27" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2880">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4425#4436#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,11 +178,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListViewAdapter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ListViewAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="57" selection-start="2629" selection-end="2629" vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="3690">
-              <folding />
+            <state line="138" column="17" selection-start="5880" selection-end="5880" vertical-scroll-proportion="4.058219" vertical-offset="1047" max-vertical-offset="3438">
+              <folding>
+                <element signature="e#2077#2775#0" expanded="true" />
+                <element signature="e#2764#2765#0" expanded="true" />
+                <element signature="e#2815#3529#0" expanded="true" />
+                <element signature="e#3518#3519#0" expanded="true" />
+                <element signature="e#3563#3993#0" expanded="true" />
+                <element signature="e#3982#3983#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -280,8 +332,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -372,8 +422,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori-Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori-Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Khabarefori-Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="khabarefori" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,7 +508,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Projects/Khabarefori.net/lib/android-support-v7-appcompat.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="OverrideImplement.combined" value="true" />
@@ -918,7 +1032,11 @@
       <created>1402648743670</created>
       <updated>1402648743670</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Change items style , 2">
+      <created>1402667228249</created>
+      <updated>1402667228249</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -961,10 +1079,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3691057" sideWeight="0.49951124" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31316188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31268883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29430893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29268292" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1015,7 +1133,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Show notification if there is new news" />
     <MESSAGE value="Fix widget" />
     <MESSAGE value="Create tutorial" />
     <MESSAGE value="fix tutorial" />
@@ -1040,7 +1157,8 @@
     <MESSAGE value="Add action bar :P" />
     <MESSAGE value="Highlight selected item" />
     <MESSAGE value="Change items style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change items style" />
+    <MESSAGE value="Change items style , 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change items style , 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1145,7 +1263,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/AppPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="29" selection-start="887" selection-end="887" vertical-scroll-proportion="0.7227488" vertical-offset="38" max-vertical-offset="882" />
+        <state line="37" column="29" selection-start="887" selection-end="887" vertical-scroll-proportion="0.7227488" vertical-offset="38" max-vertical-offset="882">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/json/models/NewsJsonModel.java">
@@ -1160,7 +1280,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="814" selection-end="814" vertical-scroll-proportion="0.52040815" vertical-offset="0" max-vertical-offset="588" />
+        <state line="26" column="0" selection-start="814" selection-end="814" vertical-scroll-proportion="0.52040815" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/SqlLite.java">
@@ -1185,7 +1307,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/ApplicationContextProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="491" selection-end="491" vertical-scroll-proportion="0.31142858" vertical-offset="143" max-vertical-offset="828" />
+        <state line="14" column="23" selection-start="491" selection-end="491" vertical-scroll-proportion="0.31142858" vertical-offset="143" max-vertical-offset="828">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#452#477#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/helper/Notification.java">
@@ -1210,11 +1337,6 @@
         <state line="40" column="21" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1296" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Khabarefori-Test/src/ir/khabarefori/Activity/MyActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="57" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="576" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/notify/Knotify.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="42" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.05172414" vertical-offset="666" max-vertical-offset="3348" />
@@ -1229,7 +1351,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/SplashScreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="681" selection-end="681" vertical-scroll-proportion="0.3130194" vertical-offset="319" max-vertical-offset="1494" />
+        <state line="28" column="0" selection-start="681" selection-end="681" vertical-scroll-proportion="0.3130194" vertical-offset="319" max-vertical-offset="1494">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/service/CheckServerService.java">
@@ -1312,23 +1436,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="57" selection-start="2629" selection-end="2629" vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="3582">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/datasource/NewsTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="27" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2880">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4425#4436#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="17" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
@@ -1336,14 +1443,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
-      <provider editor-type-id="text-editor">
-        <state line="87" column="47" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.0" vertical-offset="1609" max-vertical-offset="2160">
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/database/datasource/NewsTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="27" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2880">
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/list_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="21" selection-start="3778" selection-end="3778" vertical-scroll-proportion="9.961538" vertical-offset="1843" max-vertical-offset="2196">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khabarefori/listview/ListViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="17" selection-start="5880" selection-end="5880" vertical-scroll-proportion="4.058219" vertical-offset="1047" max-vertical-offset="3438">
+          <folding>
+            <element signature="e#2077#2775#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+            <element signature="e#2815#3529#0" expanded="true" />
+            <element signature="e#3518#3519#0" expanded="true" />
+            <element signature="e#3563#3993#0" expanded="true" />
+            <element signature="e#3982#3983#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
@@ -1400,7 +1528,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Khabarefori</last-edited>
+          <last-edited>android-support-v7-appcompat</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1412,7 +1540,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>android-support-v4</last-edited>
+          <last-edited>acra-4.5.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
