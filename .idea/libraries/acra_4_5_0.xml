@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="acra-4.5.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Projects/Khabarefori.net/lib/acra-4.5.0.jar!/" />
       <root url="jar://$USER_HOME$/Projects/Khabarefori.net/lib/gson-2.2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Projects/Khabarefori.net/lib/acra-4.5.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

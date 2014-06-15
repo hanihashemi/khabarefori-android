@@ -51,12 +51,13 @@
             <LinearLayout
                     android:id="@+id/LayoutLeft"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_alignParentLeft="true"
                     android:paddingLeft="10dp"
-                    >
-                <Button
+                    android:gravity="center_vertical|center|center_horizontal"
+                    android:layout_centerVertical="true" android:textAlignment="gravity">
+                <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="11/02 "
@@ -100,7 +101,6 @@
                         android:visibility="invisible"
                         />
             </LinearLayout>
-
         </RelativeLayout>
         <LinearLayout
                 android:layout_width="fill_parent"

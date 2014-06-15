@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
-import ir.khabarefori.AppPath;
 import ir.khabarefori.R;
 import ir.khabarefori.database.model.NewsModel;
 
@@ -45,8 +44,8 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         // 3. Get the two text view from the rowView
         TextView txtSubject = (TextView) rowView.findViewById(R.id.subject);
         TextSwitcher txtContext = (TextSwitcher) rowView.findViewById(R.id.context);
-        TextView txtReadMore = (Button) rowView.findViewById(R.id.txtReadMore);
-        TextView txtShare = (Button) rowView.findViewById(R.id.txtShare);
+        Button txtReadMore = (Button) rowView.findViewById(R.id.txtReadMore);
+        Button txtShare = (Button) rowView.findViewById(R.id.txtShare);
         TextView txtDateTime = (TextView) rowView.findViewById(R.id.txtDatetime);
 
         //set date time
@@ -95,11 +94,11 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
         Animation animIn = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
         Animation animOut = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
 
-        // set the animation type of textSwitcher
+//        set the animation type of textSwitcher
         txtContext.setInAnimation(animIn);
         txtContext.setOutAnimation(animOut);
 
-        // 4. Set the text for textView
+//        4. Set the text for textView
         txtSubject.setText(itemsArrayList.get(position).getSubject());
 
         if (lastItemSelected != null && lastItemSelected.isOpen &&
@@ -116,8 +115,8 @@ public class ListViewAdapter extends ArrayAdapter<NewsModel> implements AdapterV
     }
 
     private void itemButtonStatus(View view, boolean visible) {
-        TextView txtReadMore = (Button) view.findViewById(R.id.txtReadMore);
-        TextView txtShare = (Button) view.findViewById(R.id.txtShare);
+        Button txtReadMore = (Button) view.findViewById(R.id.txtReadMore);
+        Button txtShare = (Button) view.findViewById(R.id.txtShare);
         LinearLayout lineBreakingNews = (LinearLayout) view.findViewById(R.id.lineBreakingNews);
 
         if (visible) {
