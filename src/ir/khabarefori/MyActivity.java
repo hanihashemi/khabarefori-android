@@ -19,6 +19,7 @@ import ir.khabarefori.helper.update.UpdateManager;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.CheckServerService;
+import org.acra.ACRA;
 
 import java.util.ArrayList;
 
@@ -97,6 +98,8 @@ public class MyActivity extends ActionBarActivity {
                 item.setActionView(null);
             }
         } catch (Exception ex) {
+            ex.printStackTrace();
+            ACRA.getErrorReporter().handleException(ex);
         }
     }
 
