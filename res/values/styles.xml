@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="topper_bg">#BC0000</color>
-    <color name="waiting_bg">#ffdb6a60</color>
     <color name="widget_bg">#BC0000</color>
 
     <color name="knotify_text">#ffffff</color>

@@ -10,7 +10,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minHeight="5dp"
-            android:background="@color/waiting_bg"
+            android:background="@drawable/pnotify_background"
             android:id="@+id/layoutKnotify">
         <TextSwitcher
                 android:layout_width="fill_parent"

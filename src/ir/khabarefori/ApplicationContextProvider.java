@@ -25,6 +25,7 @@ public class ApplicationContextProvider extends Application {
         super.onCreate();
         ACRA.init(this);
 
+//        ACRA.getErrorReporter().handleException(ex);
         sContext = getApplicationContext();
 
     }

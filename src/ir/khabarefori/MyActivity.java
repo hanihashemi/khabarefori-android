@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
-import android.widget.Toast;
 import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.helper.CheckServerThread;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 public class MyActivity extends ActionBarActivity {
     private static boolean btnReloadIsActive = false;
     private Menu menuBar;
+
 
     /**
      * Called when the activity is first created.
@@ -48,10 +48,10 @@ public class MyActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        this.menuBar = menu;
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions, menu);
-        return super.onCreateOptionsMenu(menu);
+        menuBar = menu;
+        return true;
     }
 
     @Override
@@ -88,10 +88,12 @@ public class MyActivity extends ActionBarActivity {
 
     public void refreshBtnReload() {
         try {
-            if (android.os.Build.VERSION.SDK_INT < 11)
+            if (android.os.Build.VERSION.SDK_INT < 11 || menuBar == null)
                 return;
 
-            MenuItem item = menuBar.findItem(R.id.action_reload);
+            MenuItem item = menuBar
+                    .findItem(R.id.action_reload);
+
             if (btnReloadIsActive) {
                 item.setActionView(R.layout.reload_progress);
             } else {
