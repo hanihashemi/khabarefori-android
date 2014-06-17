@@ -63,12 +63,19 @@ public class MyActivity extends ActionBarActivity {
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        this.menuBar = menu;
+        this.refreshBtnReload();
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_reload:
-//                CheckServerThread.CheckNews();
-//                refreshBtnReload();
-                Knotify.getInstance().show(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
+                CheckServerThread.CheckNews();
+                refreshBtnReload();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -110,7 +117,7 @@ public class MyActivity extends ActionBarActivity {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            ACRA.getErrorReporter().handleException(ex);
+            ACRA.getErrorReporter().handleException(ex);// @TODO remove this code
         }
     }
 
@@ -128,8 +135,7 @@ public class MyActivity extends ActionBarActivity {
     }
 
     private ArrayList<NewsModel> generateData() {
-        ArrayList<NewsModel> models = (ArrayList<NewsModel>) NewsTable.getInstance().getAllContents();
-        return models;
+        return (ArrayList<NewsModel>) NewsTable.getInstance().getAllContents();
     }
 
     /**
