@@ -26,7 +26,6 @@ public class Knotify {
     private static Knotify instance;
 
     public static boolean isOpen = false;
-    private final String LOGTAG = "Knotify";
     protected MyActivity activity;
     private Timer timerWaiting = null;
     private Handler handlerFoldLayoutKnotify = new Handler() {
@@ -85,7 +84,6 @@ public class Knotify {
                     {
                         return true;
                     }
-
         }
         return false;
     }

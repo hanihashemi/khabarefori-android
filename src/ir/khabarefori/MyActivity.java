@@ -47,6 +47,14 @@ public class MyActivity extends ActionBarActivity {
     }
 
     @Override
+    public void onPause()
+    {
+        super.onPause();
+
+        Knotify.getInstance().hide();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions, menu);
@@ -58,8 +66,9 @@ public class MyActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_reload:
-                CheckServerThread.CheckNews();
-                refreshBtnReload();
+//                CheckServerThread.CheckNews();
+//                refreshBtnReload();
+                Knotify.getInstance().show(Knotify.MessageType.MSG_NEW_NEWS_UPDATED);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
