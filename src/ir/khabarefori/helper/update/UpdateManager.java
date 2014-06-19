@@ -1,5 +1,6 @@
 package ir.khabarefori.helper.update;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -16,6 +17,10 @@ import java.net.URLConnection;
  */
 public class UpdateManager extends AsyncTask<Context, Void, Context> {
 
+    public static AlertDialog dialog = null;
+    private static boolean neededUpdate = false;
+    public static boolean doNotUpdate = false;
+
     public UpdateManager() {
     }
 
@@ -27,9 +32,12 @@ public class UpdateManager extends AsyncTask<Context, Void, Context> {
     }
 
     protected void onPostExecute(Context context) {
-        if (checkVersion()) {
+        if (!doNotUpdate && (neededUpdate || checkVersion())) {
             try {
-                new UpdateDialog().show(context);
+                neededUpdate = true;
+                UpdateDialog updateDialog = new UpdateDialog();
+                updateDialog.show(context);
+                this.dialog = updateDialog.dialog;
             } catch (Exception ex) {
             }
         }
@@ -56,6 +64,7 @@ public class UpdateManager extends AsyncTask<Context, Void, Context> {
 
     private int getLastVersionCode() {
         try {
+            if (true) return 20;
             URL yahoo = new URL(AppPath.Network.getAppVersionPage());
             URLConnection yc = yahoo.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(

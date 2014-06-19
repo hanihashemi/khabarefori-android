@@ -17,7 +17,7 @@ public class AppPath {
 
         public static String getDownloadPage()
         {
-            return host + "android";
+            return "http://khabarefori.net/android";
         }
 
         public static String getAppVersionPage()

@@ -14,6 +14,7 @@ import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.helper.CheckServerThread;
 import ir.khabarefori.helper.Notification;
+import ir.khabarefori.helper.update.UpdateDialog;
 import ir.khabarefori.helper.update.UpdateManager;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
@@ -50,8 +51,14 @@ public class MyActivity extends ActionBarActivity {
     public void onPause()
     {
         super.onPause();
-
         Knotify.getInstance().hide();
+        if (UpdateManager.dialog != null) {
+            try {
+                UpdateManager.dialog.dismiss();
+            } catch (Exception ex) {
+
+            }
+        }
     }
 
     @Override
@@ -124,14 +131,12 @@ public class MyActivity extends ActionBarActivity {
     @Override
     protected void onStop() {
         super.onStop();
-
         Knotify.isOpen = false;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Knotify.isOpen = false;
     }
 
     private ArrayList<NewsModel> generateData() {

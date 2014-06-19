@@ -13,21 +13,25 @@ import ir.khabarefori.R;
  */
 
 public class UpdateDialog {
+    public AlertDialog dialog;
+
     public void show(final Context context) {
-        new AlertDialog.Builder(context)
+        dialog = new AlertDialog.Builder(context)
                 .setMessage(R.string.update_question)
                 .setCancelable(false)
                 .setTitle(R.string.update_dialog_title)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setNegativeButton(R.string.update_negative_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        UpdateManager.doNotUpdate = true;
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(AppPath.Network.getDownloadPage()));
                         context.startActivity(browserIntent);
                     }
                 })
                 .setPositiveButton(R.string.update_positive_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //no
+                        UpdateManager.doNotUpdate = true;
+                        dialog.dismiss();
                     }
                 }).show();
     }
