@@ -87,7 +87,7 @@
                   android:gravity="right"
                   android:layout_marginRight="10dp"
                   android:textAppearance="?android:attr/textAppearanceSmall"
-                  android:text="برای دسترسی به منبع اصلی خبر، باکلیک بر رویمتن دکمه منبع خبر ظاهر می شود"
+                  android:text="برای دسترسی به منبع اصلی خبر، باکلیک بر روی متن دکمه منبع خبر ظاهر می شود"
                   android:id="@+id/textView9"/>
     </LinearLayout>
 
