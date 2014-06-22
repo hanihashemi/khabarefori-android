@@ -39,11 +39,11 @@ public class CheckServerService extends Service {
 
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new CheckServerThread(), 5000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 15000, 300000);
         } else {
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new CheckServerThread(), 5000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 15000, 300000);
         }
     }
 

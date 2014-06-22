@@ -64,7 +64,6 @@ public class UpdateManager extends AsyncTask<Context, Void, Context> {
 
     private int getLastVersionCode() {
         try {
-            if (true) return 20;
             URL yahoo = new URL(AppPath.Network.getAppVersionPage());
             URLConnection yc = yahoo.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(

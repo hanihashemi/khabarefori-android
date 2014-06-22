@@ -3,6 +3,7 @@ package ir.khabarefori.database.datasource;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import ir.khabarefori.database.SqlLite;
 import ir.khabarefori.database.model.NewsModel;
 
@@ -54,8 +55,7 @@ public class NewsTable {
         return instance;
     }
 
-    private SQLiteDatabase getSqlLite()
-    {
+    private SQLiteDatabase getSqlLite() {
         if (this.sqlLite == null)
             this.sqlLite = SqlLite.getInstance();
         return this.sqlLite;
@@ -86,7 +86,10 @@ public class NewsTable {
             cursor.moveToFirst();
         }
 
-        return createModel(cursor);
+        NewsModel model = createModel(cursor);
+        cursor.close();
+
+        return model;
     }
 
     public NewsModel getLastNews() {
@@ -94,33 +97,31 @@ public class NewsTable {
         try {
             cursor = getSqlLite().query(TABLE, new String[]{
                     "*"}, null, null, null, null, null);
+
+            NewsModel model = null;
+            if (cursor.moveToFirst())
+                model = createModel(cursor);
+            cursor.close();
+            return model;
         } catch (Exception ex) {
             return null;
         }
-
-
-        if (cursor.moveToFirst()) {
-            return createModel(cursor);
-        }
-
-        return null;
     }
 
     public int getLastId() {
         Cursor cursor = null;
+        int result = 0;
         try {
             cursor = getSqlLite().query(TABLE, new String[]{
                     "max(" + COLUMN_SERVER_ID + ")"}, null, null, null, null, null);
+
+            if (cursor.moveToFirst())
+                result = cursor.getInt(0);
+            cursor.close();
+            return result;
         } catch (Exception ex) {
-            return 0;
+            return result;
         }
-
-
-        if (cursor.moveToFirst()) {
-            return cursor.getInt(0);
-        }
-
-        return 0;
     }
 
     public List<NewsModel> getAllContents() {
