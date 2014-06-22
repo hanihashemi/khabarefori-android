@@ -115,4 +115,16 @@ public class NewsTableTest extends AndroidTestCase {
         this.addRow(10);
     }
 
+    @LargeTest
+    public void test_getLastNews()
+    {
+        NewsTable.getInstance(database.getWritableDatabase()).deleteAll();
+        for (int i=0 ; i<10 ; i++)
+            this.addRow(i+10);
+
+        assertEquals(10, NewsTable.getInstance(database.getWritableDatabase()).getAllContents().size());
+
+        assertEquals(10 , NewsTable.getInstance(database.getWritableDatabase()).getLastNews().getid());
+    }
+
 }

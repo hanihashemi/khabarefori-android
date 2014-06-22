@@ -99,7 +99,7 @@ public class NewsTable {
                     "*"}, null, null, null, null, null);
 
             NewsModel model = null;
-            if (cursor.moveToFirst())
+            if (cursor.moveToLast())
                 model = createModel(cursor);
             cursor.close();
             return model;
