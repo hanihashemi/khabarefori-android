@@ -14,13 +14,10 @@ import ir.khabarefori.database.datasource.NewsTable;
 import ir.khabarefori.database.model.NewsModel;
 import ir.khabarefori.helper.CheckServerThread;
 import ir.khabarefori.helper.Notification;
-import ir.khabarefori.helper.update.UpdateDialog;
 import ir.khabarefori.helper.update.UpdateManager;
 import ir.khabarefori.listview.ListViewAdapter;
 import ir.khabarefori.notify.Knotify;
 import ir.khabarefori.service.CheckServerService;
-import org.acra.ACRA;
-
 import java.util.ArrayList;
 
 public class MyActivity extends ActionBarActivity {
@@ -124,7 +121,6 @@ public class MyActivity extends ActionBarActivity {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            ACRA.getErrorReporter().handleException(ex);// @TODO remove this code
         }
     }
 

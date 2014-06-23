@@ -17,9 +17,6 @@ import java.util.Timer;
  */
 public class CheckServerService extends Service {
     private static Timer timer;
-    private Context context;
-
-    private int serial_num = 0;
 
     public IBinder onBind(Intent arg0) {
         return null;
@@ -32,18 +29,13 @@ public class CheckServerService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        context = this;
-
-        Random randomGenerator = new Random();
-        serial_num = randomGenerator.nextInt(1000);
-
         if (timer == null) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new CheckServerThread(), 15000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 10000, 300000);
         } else {
             timer.cancel();
             timer = new Timer();
-            timer.scheduleAtFixedRate(new CheckServerThread(), 15000, 300000);
+            timer.scheduleAtFixedRate(new CheckServerThread(), 10000, 300000);
         }
     }
 

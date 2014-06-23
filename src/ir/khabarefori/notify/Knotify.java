@@ -130,6 +130,7 @@ public class Knotify {
         if (isOpen) {
             foldLayoutKnotify();
             setTextMessage("");
+            refreshBtnReload();
         }
     }
 
