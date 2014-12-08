@@ -12,7 +12,3 @@ I am waiting for your comments and suggestion.
 ![Khabarefori widget](https://github.com/hanihashemi/khabarefori-android/blob/master/screen-shot/ir.khabarefori1.jpg) 
 
 If you want to learn android programming, this is a good app to start with :D
-
-## Install on android phone
-
-Download link : http://khabarefori.net/android/
