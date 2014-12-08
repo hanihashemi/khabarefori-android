@@ -8,8 +8,8 @@ Khabarefori download news and save them on your phone so you can read the news i
 
 I am waiting for your comments and suggestion.
 
-![Khabarefori main activity](http://khabarefori.net/images/android-khabarefori-3.png) 
-![Khabarefori widget](http://khabarefori.net/images/android-khabarefori-1.png) 
+![Khabarefori main activity](https://github.com/hanihashemi/khabarefori-android/blob/master/screen-shot/ir.khabarefori0.jpg) 
+![Khabarefori widget](https://github.com/hanihashemi/khabarefori-android/blob/master/screen-shot/ir.khabarefori1.jpg) 
 
 If you want to learn android programming, this is a good app to start with :D
 
